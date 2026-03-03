@@ -3,6 +3,8 @@ services:
     name: wfa-app
     runtime: docker
     plan: free
+    repo: https://github.com/donleow-69/wfa-app.git
+    branch: master
     envVars:
       - key: SECRET_KEY
         generateValue: true
