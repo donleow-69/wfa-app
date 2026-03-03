@@ -14,7 +14,7 @@ from .models.user import User
 
 # Import models so Base.metadata knows about all tables.
 from .models import complaint, compliance, user  # noqa: F401
-from .routers import auth_routes, complaints, compliance as compliance_router, policies, rights
+from .routers import auth_routes, complaints, compliance as compliance_router, policies, rights, subscription
 
 
 @asynccontextmanager
@@ -23,7 +23,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="WFA — Workplace Fairness Act", lifespan=lifespan)
+app = FastAPI(title="Workplace Fairness", lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 templates = Jinja2Templates(directory="app/templates")
@@ -34,6 +34,7 @@ app.include_router(rights.router)
 app.include_router(complaints.router)
 app.include_router(compliance_router.router)
 app.include_router(policies.router)
+app.include_router(subscription.router)
 
 
 @app.get("/", response_class=HTMLResponse)

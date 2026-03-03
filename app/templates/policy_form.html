@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block title %}{{ policy.title }}{% endblock %}
 {% block content %}
-<p><a href="/policies" class="text-muted">&larr; Back to policies</a></p>
+<p><a href="/policies?country={{ selected_country }}" class="text-muted">&larr; Back to policies</a></p>
 <h1>{{ policy.title }}</h1>
 <p>{{ policy.summary }}</p>
 
 <div class="card">
     <h2>Customize for your organization</h2>
     <form method="post" action="/policies/{{ policy.id }}/generate">
+        <input type="hidden" name="country" value="{{ selected_country }}">
         <div class="form-group">
             <label for="company_name">Company Name</label>
             <input type="text" id="company_name" name="company_name" required placeholder="Acme Corp">

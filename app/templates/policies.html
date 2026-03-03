@@ -2,22 +2,39 @@
 {% block title %}Policy Drafting{% endblock %}
 {% block content %}
 <h1>Policy Drafting</h1>
-<p class="text-muted">Generate WFA-compliant workplace policies customized for your organization.</p>
+<p class="text-muted">Generate compliant workplace policies customized for your organization.</p>
 
-{% set categories = {} %}
-{% for p in policies %}
-    {% if p.category not in categories %}
-        {% set _ = categories.update({p.category: []}) %}
-    {% endif %}
-    {% set _ = categories[p.category].append(p) %}
-{% endfor %}
+{% if not user.is_subscribed %}
+<div class="card" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); color: #fff; text-align: center;">
+    <h3 style="color: #fff;">Upgrade to Draft Policies</h3>
+    <p style="color: #c4c4d4;">Subscribe to generate and customize policy documents for your organization.</p>
+    <a href="/subscribe" class="btn" style="background: #fff; color: #0f3460;">Subscribe Now</a>
+</div>
+{% endif %}
+
+<div class="tabs">
+    {% for code, name in countries.items() %}
+    <a href="/policies?country={{ code }}" class="tab {% if code == selected_country %}active{% endif %}" style="text-decoration: none;">{{ name }}</a>
+    {% endfor %}
+</div>
+
+{% if user.is_subscribed %}
+<div class="card" style="border: 2px dashed #0f3460;">
+    <h3>Custom Policy</h3>
+    <p>Draft a policy on any topic — enter your own subject and requirements.</p>
+    <a href="/policies/custom" class="btn btn-sm btn-primary">Create Custom Policy</a>
+</div>
+{% endif %}
 
 <div class="card-grid">
     {% for p in policies %}
-    <a href="/policies/{{ p.id }}" class="card" style="text-decoration: none; color: inherit;">
+    <a href="/policies/{{ p.id }}?country={{ selected_country }}" class="card" style="text-decoration: none; color: inherit;">
         <span class="badge badge-draft" style="margin-bottom: 0.5rem;">{{ p.category }}</span>
         <h3>{{ p.title }}</h3>
         <p>{{ p.summary }}</p>
+        {% if not user.is_subscribed %}
+        <span class="badge" style="background: #fef3c7; color: #92400e;">Subscription Required</span>
+        {% endif %}
     </a>
     {% endfor %}
 </div>

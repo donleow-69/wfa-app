@@ -28,6 +28,7 @@ async def register(
     email: str = Form(...),
     password: str = Form(..., min_length=8),
     role: str = Form("employee"),
+    country: str = Form("us"),
     db: AsyncSession = Depends(get_db),
 ):
     existing = await db.execute(select(User).where(User.email == email))
@@ -37,11 +38,16 @@ async def register(
             {"request": request, "error": "An account with that email already exists."},
         )
 
+    valid_countries = {"us", "sg", "my", "id", "ph", "th"}
+    if country not in valid_countries:
+        country = "us"
+
     user = User(
         email=email,
         full_name=full_name,
         hashed_password=hash_password(password),
         role=role,
+        country=country,
     )
     db.add(user)
     await db.commit()

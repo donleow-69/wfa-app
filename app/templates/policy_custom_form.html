@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Custom Policy{% endblock %}
+{% block content %}
+<p><a href="/policies" class="text-muted">&larr; Back to policies</a></p>
+<h1>Custom Policy Drafting</h1>
+<p class="text-muted">Draft a policy on any topic. Enter your requirements and we'll generate a structured policy document.</p>
+
+<div class="card">
+    <form method="post" action="/policies/custom/generate">
+        <div class="form-group">
+            <label for="topic">Policy Topic</label>
+            <input type="text" id="topic" name="topic" required placeholder="e.g., Remote Work, Social Media Usage, Employee Referral Programme">
+        </div>
+        <div class="form-group">
+            <label for="company_name">Company Name</label>
+            <input type="text" id="company_name" name="company_name" required placeholder="Acme Corp">
+        </div>
+        <div class="form-group">
+            <label for="country">Country / Legal Framework</label>
+            <select id="country" name="country">
+                {% for code, name in countries.items() %}
+                <option value="{{ code }}" {% if user.country == code %}selected{% endif %}>{{ name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="effective_date">Effective Date</label>
+            <input type="date" id="effective_date" name="effective_date">
+        </div>
+        <div class="form-group">
+            <label for="contact_person">Contact Person</label>
+            <input type="text" id="contact_person" name="contact_person" placeholder="Jane Smith, HR Director">
+        </div>
+        <div class="form-group">
+            <label for="additional_requirements">Additional Requirements (optional)</label>
+            <textarea id="additional_requirements" name="additional_requirements" placeholder="Any specific clauses, conditions, or details you want included in the policy..."></textarea>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Generate Policy</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

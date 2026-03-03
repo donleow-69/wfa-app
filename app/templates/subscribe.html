@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Subscribe{% endblock %}
+{% block content %}
+<h1>Upgrade to Pro</h1>
+<p class="text-muted">Unlock policy drafting tools to generate compliant workplace policies for your organization.</p>
+
+{% if request.query_params.get('cancelled') %}
+<div class="alert alert-error">Checkout was cancelled. You can try again below.</div>
+{% endif %}
+{% if request.query_params.get('error') == 'stripe_not_configured' %}
+<div class="alert alert-error">Payment system is not configured yet. Please contact the administrator.</div>
+{% endif %}
+
+<div class="card" style="max-width: 28rem; margin: 2rem auto; text-align: center; border: 2px solid #0f3460;">
+    <h2>Pro Plan</h2>
+    <p style="font-size: 2rem; font-weight: 700; color: #0f3460; margin: 1rem 0;">$19<span style="font-size: 1rem; font-weight: 400; color: #6b7280;">/month</span></p>
+
+    <ul class="detail-list" style="text-align: left; margin-bottom: 1.5rem;">
+        <li>Generate policy documents from templates</li>
+        <li>Country-specific policy templates (US, SG, MY, ID, PH, TH)</li>
+        <li>Custom free-text policy drafting</li>
+        <li>Copy-to-clipboard and print-ready output</li>
+        <li>All future policy templates included</li>
+    </ul>
+
+    {% if user %}
+    <form method="post" action="/subscribe/checkout">
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">Subscribe Now</button>
+    </form>
+    {% else %}
+    <a href="/register" class="btn btn-primary" style="width: 100%; display: block; padding: 0.75rem;">Create Account to Subscribe</a>
+    {% endif %}
+</div>
+
+<div style="text-align: center;">
+    <p class="text-muted" style="font-size: 0.85rem;">
+        Free features (rights information, complaints, compliance tracking) remain available without a subscription.
+    </p>
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ category.title }}{% endblock %}
 {% block content %}
-<p><a href="/rights" class="text-muted">&larr; Back to all rights</a></p>
+<p><a href="/rights?country={{ selected_country }}" class="text-muted">&larr; Back to {{ country_name }} rights</a></p>
 <h1>{{ category.title }}</h1>
 <p>{{ category.summary }}</p>
 

@@ -2,11 +2,17 @@
 {% block title %}Your Rights{% endblock %}
 {% block content %}
 <h1>Your Workplace Rights</h1>
-<p class="text-muted">Understand your protections under workplace fairness laws.</p>
+<p class="text-muted">Understand your protections under employment laws.</p>
+
+<div class="tabs">
+    {% for code, name in countries.items() %}
+    <a href="/rights?country={{ code }}" class="tab {% if code == selected_country %}active{% endif %}" style="text-decoration: none;">{{ name }}</a>
+    {% endfor %}
+</div>
 
 <div class="card-grid">
     {% for cat in categories %}
-    <a href="/rights/{{ cat.id }}" class="card" style="text-decoration: none; color: inherit;">
+    <a href="/rights/{{ cat.id }}?country={{ selected_country }}" class="card" style="text-decoration: none; color: inherit;">
         <h3>{{ cat.title }}</h3>
         <p>{{ cat.summary }}</p>
     </a>

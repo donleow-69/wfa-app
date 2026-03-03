@@ -87,8 +87,10 @@ p { margin-bottom: 0.75rem; }
 .footer { text-align: center; padding: 1.5rem 1rem; color: #9ca3af; font-size: 0.85rem; border-top: 1px solid #e5e7eb; margin-top: 3rem; }
 
 /* === Tabs === */
-.tabs { display: flex; gap: 0; border-bottom: 2px solid #e2e8f0; margin-bottom: 1.5rem; }
-.tab { padding: 0.6rem 1.25rem; font-size: 0.95rem; font-weight: 500; color: #6b7280; cursor: default; border-bottom: 2px solid transparent; margin-bottom: -2px; }
+.tabs { display: flex; gap: 0; border-bottom: 2px solid #e2e8f0; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.tab { padding: 0.6rem 1.25rem; font-size: 0.95rem; font-weight: 500; color: #6b7280; cursor: default; border-bottom: 2px solid transparent; margin-bottom: -2px; text-decoration: none; }
+a.tab { cursor: pointer; }
+a.tab:hover { color: #0f3460; }
 .tab.active { color: #0f3460; border-bottom-color: #0f3460; }
 
 /* === Utility === */

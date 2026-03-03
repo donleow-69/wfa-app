@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "wfa-app"
 version = "0.1.0"
-description = "Workplace Fairness Act — employee rights, compliance tracking, and complaint filing"
+description = "Workplace Fairness — employee rights, compliance tracking, policy drafting, and complaint filing"
 requires-python = ">=3.10"
 dependencies = [
     "fastapi>=0.110",
@@ -17,6 +17,7 @@ dependencies = [
     "python-jose[cryptography]>=3.3",
     "bcrypt>=4.0",
     "python-dotenv>=1.0",
+    "stripe>=8.0",
 ]
 
 [project.optional-dependencies]
