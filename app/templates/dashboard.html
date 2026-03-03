@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Welcome, {{ user.full_name }}</h1>
+
+<div class="tabs">
+    {% if user.role == 'employee' %}
+        <span class="tab active">Employee</span>
+    {% else %}
+        <span class="tab active">Employer</span>
+    {% endif %}
+</div>
+
+{% if user.role == 'employee' %}
+<div class="card-grid">
+    <div class="card">
+        <h3>Your Rights</h3>
+        <p>Learn about your protections under workplace fairness laws.</p>
+        <a href="/rights" class="btn btn-sm btn-primary">View Rights</a>
+    </div>
+    <div class="card">
+        <h3>File a Complaint</h3>
+        <p>Document and submit workplace fairness complaints.</p>
+        <a href="/complaints/new" class="btn btn-sm btn-primary">New Complaint</a>
+    </div>
+    <div class="card">
+        <h3>My Complaints</h3>
+        <p>View and track your submitted complaints.</p>
+        <a href="/complaints" class="btn btn-sm btn-secondary">View All</a>
+    </div>
+</div>
+
+{% else %}
+<div class="card-grid">
+    <div class="card">
+        <h3>Policy Drafting</h3>
+        <p>Generate WFA-compliant workplace policies customized for your organization.</p>
+        <a href="/policies" class="btn btn-sm btn-primary">Draft Policies</a>
+    </div>
+    <div class="card">
+        <h3>Compliance Checklists</h3>
+        <p>Track your progress on WFA compliance requirements.</p>
+        <a href="/compliance" class="btn btn-sm btn-primary">View Checklists</a>
+    </div>
+    <div class="card">
+        <h3>WFA Requirements</h3>
+        <p>Review the workplace fairness requirements your organization must meet.</p>
+        <a href="/rights" class="btn btn-sm btn-secondary">View Requirements</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}My Complaints{% endblock %}
+{% block content %}
+<h1>My Complaints</h1>
+<a href="/complaints/new" class="btn btn-primary btn-sm mb-1">New Complaint</a>
+
+{% if complaints %}
+    {% for c in complaints %}
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+                <h3>{{ c.category | replace("_", " ") | capitalize }}</h3>
+                <p class="text-muted" style="margin-bottom: 0.25rem;">{{ c.employer_name or "Employer not specified" }} &mdash; {{ c.incident_date or "Date not specified" }}</p>
+            </div>
+            <span class="badge badge-{{ c.status }}">{{ c.status | replace("_", " ") | capitalize }}</span>
+        </div>
+        <p>{{ c.description[:150] }}{% if c.description|length > 150 %}&hellip;{% endif %}</p>
+        <div style="display: flex; gap: 0.5rem;">
+            <a href="/complaints/{{ c.id }}" class="btn btn-sm btn-secondary">View</a>
+            {% if c.status == 'draft' %}
+            <a href="/complaints/{{ c.id }}/edit" class="btn btn-sm btn-secondary">Edit</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <div class="card">
+        <p class="text-muted">You haven't filed any complaints yet.</p>
+    </div>
+{% endif %}
+{% endblock %}

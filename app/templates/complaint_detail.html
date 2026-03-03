@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Complaint #{{ complaint.id }}{% endblock %}
+{% block content %}
+<p><a href="/complaints" class="text-muted">&larr; Back to complaints</a></p>
+<h1>Complaint #{{ complaint.id }}</h1>
+<span class="badge badge-{{ complaint.status }}">{{ complaint.status | replace("_", " ") | capitalize }}</span>
+
+<div class="card mt-1">
+    <h3>Category</h3>
+    <p>{{ complaint.category | replace("_", " ") | capitalize }}</p>
+
+    <h3>Employer</h3>
+    <p>{{ complaint.employer_name or "Not specified" }}</p>
+
+    <h3>Incident Date</h3>
+    <p>{{ complaint.incident_date or "Not specified" }}</p>
+
+    <h3>Description</h3>
+    <p>{{ complaint.description }}</p>
+
+    {% if complaint.desired_outcome %}
+    <h3>Desired Outcome</h3>
+    <p>{{ complaint.desired_outcome }}</p>
+    {% endif %}
+
+    {% if complaint.supporting_details %}
+    <h3>Supporting Details</h3>
+    <p>{{ complaint.supporting_details }}</p>
+    {% endif %}
+
+    <p class="text-muted" style="margin-top: 1rem; font-size: 0.85rem;">
+        Filed: {{ complaint.created_at }} &mdash; Last updated: {{ complaint.updated_at }}
+    </p>
+
+    {% if complaint.status == 'draft' %}
+    <div class="mt-1">
+        <a href="/complaints/{{ complaint.id }}/edit" class="btn btn-sm btn-secondary">Edit</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

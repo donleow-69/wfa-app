@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ category.title }}{% endblock %}
+{% block content %}
+<p><a href="/rights" class="text-muted">&larr; Back to all rights</a></p>
+<h1>{{ category.title }}</h1>
+<p>{{ category.summary }}</p>
+
+<div class="card">
+    <h2>What the law says</h2>
+    <ul class="detail-list">
+        {% for item in category.details %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card">
+    <h2>What you can do</h2>
+    <p>{{ category.what_to_do }}</p>
+    <div class="mt-1">
+        <a href="/complaints/new" class="btn btn-primary btn-sm">File a Complaint</a>
+    </div>
+</div>
+{% endblock %}

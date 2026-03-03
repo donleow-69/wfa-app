@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ policy.title }}{% endblock %}
+{% block content %}
+<p><a href="/policies" class="text-muted">&larr; Back to policies</a></p>
+<h1>{{ policy.title }}</h1>
+<p>{{ policy.summary }}</p>
+
+<div class="card">
+    <h2>Customize for your organization</h2>
+    <form method="post" action="/policies/{{ policy.id }}/generate">
+        <div class="form-group">
+            <label for="company_name">Company Name</label>
+            <input type="text" id="company_name" name="company_name" required placeholder="Acme Corp">
+        </div>
+        <div class="form-group">
+            <label for="effective_date">Effective Date</label>
+            <input type="date" id="effective_date" name="effective_date">
+        </div>
+        <div class="form-group">
+            <label for="contact_person">Compliance Contact Person</label>
+            <input type="text" id="contact_person" name="contact_person" placeholder="Jane Smith, Compliance Officer">
+        </div>
+        <div class="form-group">
+            <label for="hr_contact">HR Contact Info</label>
+            <input type="text" id="hr_contact" name="hr_contact" placeholder="hr@acmecorp.com or (555) 123-4567">
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Generate Policy</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

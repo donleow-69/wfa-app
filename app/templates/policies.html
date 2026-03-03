@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Policy Drafting{% endblock %}
+{% block content %}
+<h1>Policy Drafting</h1>
+<p class="text-muted">Generate WFA-compliant workplace policies customized for your organization.</p>
+
+{% set categories = {} %}
+{% for p in policies %}
+    {% if p.category not in categories %}
+        {% set _ = categories.update({p.category: []}) %}
+    {% endif %}
+    {% set _ = categories[p.category].append(p) %}
+{% endfor %}
+
+<div class="card-grid">
+    {% for p in policies %}
+    <a href="/policies/{{ p.id }}" class="card" style="text-decoration: none; color: inherit;">
+        <span class="badge badge-draft" style="margin-bottom: 0.5rem;">{{ p.category }}</span>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.summary }}</p>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

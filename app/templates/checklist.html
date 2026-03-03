@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ checklist.company_name or "Checklist" }}{% endblock %}
+{% block content %}
+<p><a href="/compliance" class="text-muted">&larr; Back to checklists</a></p>
+<h1>{{ checklist.company_name or "Compliance Checklist" }}</h1>
+<p>{{ completed }} of {{ total }} items completed</p>
+<div class="progress-bar"><div class="progress-fill" style="width: {{ (completed / total * 100) if total else 0 }}%"></div></div>
+
+{% for category_name, items in categories.items() %}
+<div class="card mt-1">
+    <h2>{{ category_name }}</h2>
+    {% for item in items %}
+    <div class="checklist-item {% if item.completed %}done{% endif %}">
+        <form method="post" action="/compliance/{{ checklist.id }}/toggle/{{ item.id }}">
+            <button type="submit" class="btn btn-sm {% if item.completed %}btn-secondary{% else %}btn-primary{% endif %}" style="min-width: 2rem;">
+                {% if item.completed %}&#10003;{% else %}&nbsp;{% endif %}
+            </button>
+        </form>
+        <div class="checklist-text">
+            <strong>{{ item.requirement }}</strong>
+            <small>{{ item.description }}</small>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

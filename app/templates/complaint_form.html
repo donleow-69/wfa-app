@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{% if complaint %}Edit Complaint{% else %}New Complaint{% endif %}{% endblock %}
+{% block content %}
+<p><a href="/complaints" class="text-muted">&larr; Back to complaints</a></p>
+<h1>{% if complaint %}Edit Complaint{% else %}File a Complaint{% endif %}</h1>
+<p class="text-muted">Fill out the details below. You can save as a draft and come back to finish later.</p>
+
+<div class="card">
+    <form method="post" action="{% if complaint %}/complaints/{{ complaint.id }}/edit{% else %}/complaints/new{% endif %}">
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="">-- Select --</option>
+                {% for value, label in categories %}
+                <option value="{{ value }}" {% if complaint and complaint.category == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="employer_name">Employer Name</label>
+            <input type="text" id="employer_name" name="employer_name" value="{{ complaint.employer_name if complaint else '' }}">
+        </div>
+        <div class="form-group">
+            <label for="incident_date">Date of Incident</label>
+            <input type="date" id="incident_date" name="incident_date" value="{{ complaint.incident_date if complaint else '' }}">
+        </div>
+        <div class="form-group">
+            <label for="description">What happened?</label>
+            <textarea id="description" name="description" required placeholder="Describe the incident in as much detail as possible...">{{ complaint.description if complaint else '' }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="desired_outcome">Desired Outcome</label>
+            <textarea id="desired_outcome" name="desired_outcome" placeholder="What resolution are you seeking?">{{ complaint.desired_outcome if complaint else '' }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="supporting_details">Supporting Details</label>
+            <textarea id="supporting_details" name="supporting_details" placeholder="Witnesses, documents, prior reports, etc.">{{ complaint.supporting_details if complaint else '' }}</textarea>
+        </div>
+        <div class="form-actions">
+            <button type="submit" name="action" value="save" class="btn btn-secondary">Save Draft</button>
+            <button type="submit" name="action" value="submit" class="btn btn-primary">Submit Complaint</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
