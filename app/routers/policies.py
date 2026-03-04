@@ -544,6 +544,147 @@ Approved by: ____________________
 Title: ____________________
 Date: {effective_date}""",
         },
+        {
+            "id": "employment_terms_sg",
+            "title": "Employment Terms & Conditions Policy",
+            "category": "Core",
+            "summary": "Employment Act compliance covering wages, working hours, overtime, rest days, leave entitlements, itemised payslips, and key employment terms.",
+            "template": """EMPLOYMENT TERMS AND CONDITIONS POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} establishes this policy to ensure that all employment terms and conditions comply with the Employment Act (Cap. 91) and related subsidiary legislation in Singapore.
+
+2. SCOPE
+This policy applies to all employees of {company_name} covered under the Employment Act, including full-time, part-time, and contract employees. Managers and executives earning above the salary threshold are covered for core provisions (payment of salary, hours of work, and related matters) as amended.
+
+3. KEY EMPLOYMENT TERMS (KET)
+In accordance with the Employment Act, {company_name} will provide every employee with written key employment terms within 14 days of the start of employment. KET includes:
+- Full name of employer and employee
+- Job title, main duties, and responsibilities
+- Start date of employment and duration (if fixed-term)
+- Working arrangements (hours of work, rest days, number of working days per week)
+- Salary period, basic salary, fixed allowances, fixed deductions, overtime payment period, and overtime rate of pay
+- Types of leave (annual leave, outpatient sick leave, hospitalisation leave, maternity/paternity/childcare leave)
+- Other employment terms (probation period, notice period, place of work)
+
+4. WAGES
+- Wages will be paid at least once a month, within 7 days after the end of the salary period.
+- Authorised deductions will not exceed 50% of wages in any one salary period (excluding deductions for absence, accommodation, and income tax).
+- {company_name} will not make unauthorised deductions from employee wages.
+
+5. ITEMISED PAYSLIPS
+{company_name} will provide itemised payslips to all employees for each salary payment. Payslips will include:
+- Employer and employee name
+- Date of payment and salary period
+- Basic salary, allowances, and additional payments (overtime, bonus, rest day/public holiday pay)
+- Deductions itemised by type
+- Net salary paid
+- Start and end dates of the overtime payment period, overtime hours worked, and overtime pay (for employees entitled to overtime)
+
+6. WORKING HOURS AND OVERTIME
+- Normal working hours shall not exceed 8 hours per day or 44 hours per week.
+- Employees covered under Part IV of the Employment Act are entitled to overtime pay at 1.5 times the hourly basic rate for work exceeding normal hours.
+- Overtime is capped at 72 hours per month.
+- {company_name} will maintain accurate records of hours worked.
+
+7. REST DAYS
+Every employee is entitled to 1 rest day per week without pay, or 2 rest days per week at {company_name}'s discretion. Work on a rest day requires employee consent (except in certain circumstances) and is compensated at the applicable rates.
+
+8. PUBLIC HOLIDAYS
+Employees are entitled to 11 gazetted public holidays per year with pay. If required to work on a public holiday, employees will receive an additional day's salary or a replacement day off.
+
+9. LEAVE ENTITLEMENTS
+- Annual leave: 7 days for the first year, increasing by 1 day per year to a maximum of 14 days.
+- Outpatient sick leave: 14 days per year (with medical certificate).
+- Hospitalisation leave: 60 days per year (inclusive of outpatient sick leave entitlement).
+- Maternity leave: 16 weeks for eligible employees (Government-Paid Maternity Leave under GPML scheme).
+- Paternity leave: 2 weeks (Government-Paid Paternity Leave).
+- Childcare leave: 6 days per year for employees with children under 7.
+- Extended childcare leave: 2 days per year for employees with children aged 7-12.
+
+10. TERMINATION AND NOTICE
+- Notice periods will be as specified in the employment contract.
+- In the absence of contractual terms, statutory notice periods apply (1 day to 4 weeks depending on length of service).
+- Termination with cause (misconduct) must follow the inquiry process under the Employment Act.
+
+11. EMPLOYER COMPLIANCE CUSTOMISATION
+{company_name} may, at its discretion, provide terms more favourable than the statutory minimums. Departments and business units may establish supplementary guidelines, subject to approval by {contact_person}, provided they meet or exceed the standards set out in this policy and the Employment Act.
+
+12. CONTACT
+For questions about employment terms and conditions, contact {hr_contact} or {contact_person}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "foreign_worker_sg",
+            "title": "Foreign Worker Management Policy",
+            "category": "Compliance",
+            "summary": "EFMA compliance covering valid work passes, salary protections, accommodation standards, medical coverage, and no passport retention.",
+            "template": """FOREIGN WORKER MANAGEMENT POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to responsible and lawful employment of foreign workers in Singapore, in full compliance with the Employment of Foreign Manpower Act (EFMA) and conditions imposed by the Ministry of Manpower (MOM).
+
+2. SCOPE
+This policy applies to the management of all foreign employees of {company_name} holding Work Permits, S Passes, Employment Passes, or any other work pass issued by MOM.
+
+3. VALID WORK PASSES
+- {company_name} will ensure that every foreign employee holds a valid work pass before commencing work.
+- {company_name} will not deploy foreign workers in occupations or at locations not permitted by their work pass conditions.
+- Work pass applications and renewals will be submitted in a timely manner to avoid lapses.
+- {company_name} will monitor work pass expiry dates and initiate renewals or cancellations as required.
+
+4. SALARY PROTECTIONS
+- {company_name} will pay foreign employees the salary declared in the work pass application, on time and in full.
+- No salary deductions, kickbacks, or recovery of recruitment costs from foreign employees will be permitted.
+- Foreign employees will not be required to pay for their own work pass fees, levy, or security bond.
+- All salary payments will be properly documented with itemised payslips.
+
+5. NO PASSPORT RETENTION
+- {company_name} strictly prohibits the retention of any foreign employee's passport, travel documents, or work pass.
+- All personal documents will remain in the possession of the foreign employee at all times.
+- Any request by a supervisor or manager to hold an employee's documents is a violation of this policy and the EFMA.
+
+6. ACCOMMODATION
+- Where {company_name} provides or arranges accommodation for foreign workers, the accommodation must meet MOM's standards for acceptable accommodation.
+- Accommodation must be safe, clean, and provide adequate living space, ventilation, sanitation, and cooking facilities.
+- {company_name} will conduct regular inspections to ensure continued compliance with accommodation standards.
+
+7. MEDICAL COVERAGE
+- {company_name} will purchase and maintain medical insurance for all Work Permit and S Pass holders as required by MOM.
+- Foreign employees will have access to medical treatment and will not be made to bear the cost of medical insurance.
+- {company_name} will ensure that employees who are injured or fall ill receive appropriate medical attention.
+
+8. UPKEEP AND MAINTENANCE
+- {company_name} will bear the costs of the foreign employee's upkeep and maintenance during the employment period.
+- Foreign employees will not be made to bear the costs of repatriation.
+
+9. COMPLIANCE CHECKS AND CUSTOMISATION
+{company_name} will maintain a compliance monitoring schedule tailored to the nature and scale of its foreign workforce. Each department or business unit may define supplementary compliance procedures, subject to approval by {contact_person}, provided they meet the standards of this policy and the EFMA. Compliance checks will include:
+- Quarterly review of work pass validity and conditions
+- Annual audit of salary records against declared amounts
+- Regular accommodation inspections (where applicable)
+- Periodic review of medical insurance coverage
+- Assessment of recruitment practices for compliance with anti-kickback provisions
+
+10. REPORTING AND ENFORCEMENT
+Any employee who becomes aware of a violation of this policy or the EFMA must report it immediately to {contact_person} or {hr_contact}. Violations may result in disciplinary action up to and including termination. {company_name} may also be subject to penalties under the EFMA, including fines, debarment from hiring foreign workers, and criminal prosecution.
+
+11. REPATRIATION
+Upon cancellation of the work pass or termination of employment, {company_name} will arrange and bear the cost of repatriation of the foreign employee to their country of origin.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
     ],
     "my": [
         {
@@ -649,6 +790,218 @@ Approved by: ____________________
 Title: ____________________
 Date: {effective_date}""",
         },
+        {
+            "id": "employment_policy_my",
+            "title": "Employment Policy (EA 1955)",
+            "category": "Core",
+            "summary": "Employment Act 1955 compliance covering working hours, overtime, leave entitlements including maternity (98 days) and paternity (7 days), and flexible working arrangements under the 2022/2023 amendments.",
+            "template": """EMPLOYMENT POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+This policy establishes the employment terms and conditions at {company_name} in compliance with the Employment Act 1955 (EA 1955) as amended by the Employment (Amendment) Act 2022.
+
+2. SCOPE
+This policy applies to all employees of {company_name} in Malaysia. Following the 2022 amendment, the Employment Act now covers all employees regardless of wage level for core protections.
+
+3. WORKING HOURS
+- Maximum normal working hours: 45 hours per week (reduced from 48 hours under the 2022 amendment).
+- Daily working hours shall not exceed 8 hours, or such hours as agreed under a flexible working arrangement.
+- Rest period of at least 30 minutes after 5 consecutive hours of work.
+- At least 1 rest day per week.
+
+4. OVERTIME
+- Overtime is payable for work exceeding normal hours of work, at the following rates:
+  - Normal working day: 1.5 times the hourly rate of pay
+  - Rest day: 2.0 times the hourly rate of pay (for work exceeding normal hours)
+  - Public holiday: 3.0 times the hourly rate of pay
+- Maximum overtime: 104 hours per month.
+
+5. WAGES
+- All employees will be paid at least the applicable minimum wage.
+- Wages must be paid no later than the 7th day after the last day of the salary period.
+- {company_name} will not make unauthorised deductions from wages.
+
+6. LEAVE ENTITLEMENTS
+- Annual leave:
+  - Less than 2 years of service: 8 days
+  - 2 to 5 years: 12 days
+  - More than 5 years: 16 days
+- Sick leave (without hospitalisation):
+  - Less than 2 years: 14 days
+  - 2 to 5 years: 18 days
+  - More than 5 years: 22 days
+- Hospitalisation leave: 60 days per year (inclusive of non-hospitalisation sick leave).
+- Maternity leave: 98 days with pay for female employees (increased from 60 days under the 2022 amendment). Eligibility: employed for at least 90 days in the 9 months before confinement and fewer than 5 surviving children.
+- Paternity leave: 7 consecutive days with pay for married male employees (new entitlement under the 2022 amendment).
+- Public holidays: 11 gazetted public holidays per year, including at least 5 compulsory holidays (National Day, Yang di-Pertuan Agong's Birthday, Ruler's Birthday, Workers' Day, Malaysia Day).
+
+7. FLEXIBLE WORKING ARRANGEMENTS (2022/2023 AMENDMENT)
+- Employees may apply in writing to {company_name} for flexible working arrangements relating to:
+  - Hours of work (flexible start/end times)
+  - Days of work (compressed work week)
+  - Place of work (remote or hybrid working)
+- {company_name} will approve or refuse the application within 60 days with written reasons if refused.
+
+8. TERMINATION AND NOTICE
+- Notice periods as stipulated in the employment contract.
+- Statutory minimum notice periods:
+  - Less than 2 years of service: 4 weeks
+  - 2 to 5 years: 6 weeks
+  - More than 5 years: 8 weeks
+- Either party may pay wages in lieu of notice.
+
+9. EMPLOYER COMPLIANCE CUSTOMISATION
+{company_name} may establish additional employment standards that exceed the statutory minimums. Departments may implement supplementary procedures tailored to their operations, subject to approval by {contact_person}, provided they comply with the EA 1955 and applicable regulations.
+
+10. CONTACT
+For questions regarding employment terms, contact {hr_contact} or {contact_person}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "anti_discrimination_my",
+            "title": "Anti-Discrimination & Fair Employment Policy",
+            "category": "Core",
+            "summary": "Equal opportunity principles covering fair hiring, non-discrimination based on race, religion, gender, and disability, aligned with Industrial Relations Act 1967 unfair dismissal protections.",
+            "template": """ANTI-DISCRIMINATION AND FAIR EMPLOYMENT POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to fair and equitable employment practices. This policy establishes non-discrimination and equal opportunity standards in alignment with Malaysian employment law, including the Federal Constitution (Article 8 — equality before the law), the Industrial Relations Act 1967, and the Persons with Disabilities Act 2008.
+
+2. SCOPE
+This policy applies to all employees, job applicants, contractors, and agents of {company_name} in Malaysia. It covers all aspects of employment, including recruitment, selection, compensation, promotion, training, transfers, and termination.
+
+3. NON-DISCRIMINATION
+{company_name} prohibits discrimination in employment on the basis of:
+- Race or ethnic origin
+- Religion or belief
+- Gender or sexual identity
+- Age
+- Disability
+- Marital or family status
+- Political opinion
+- Place of origin or nationality (subject to immigration requirements)
+- Any other characteristic unrelated to job performance
+
+4. FAIR RECRUITMENT AND SELECTION
+- Job advertisements will focus on job-related qualifications and requirements.
+- Selection criteria will be based on merit — skills, qualifications, experience, and ability to perform the job.
+- Interview questions will be relevant to the position and will not probe into personal characteristics.
+- {company_name} will not impose discriminatory requirements such as specifying age, gender, ethnicity, or marital status in job postings.
+
+5. EQUAL OPPORTUNITY IN EMPLOYMENT
+- Compensation, benefits, and career development opportunities will be based on job scope, competencies, qualifications, and performance.
+- All employees will have equal access to training, mentoring, and promotion opportunities.
+- {company_name} will provide reasonable accommodations for employees with disabilities, consistent with the Persons with Disabilities Act 2008.
+
+6. PROTECTION AGAINST UNFAIR DISMISSAL
+In accordance with the Industrial Relations Act 1967:
+- No employee will be dismissed without just cause or excuse.
+- Dismissals motivated by discrimination constitute unfair dismissal.
+- Employees who believe they have been unfairly dismissed may file a complaint with the Director General of Industrial Relations within 60 days.
+
+7. PREVENTION OF WORKPLACE BULLYING
+{company_name} will not tolerate bullying, intimidation, or victimisation based on any protected characteristic. All employees are expected to treat colleagues with dignity and respect.
+
+8. GRIEVANCE MECHANISM
+Employees who believe they have been subjected to discrimination or unfair treatment should report the matter to {contact_person} or {hr_contact}. All complaints will be investigated promptly, confidentially, and impartially. No employee will face retaliation for making a complaint in good faith.
+
+9. COMPLIANCE CUSTOMISATION
+{company_name} recognises that different business units may operate in varying contexts. Each department may develop supplementary fair employment guidelines, subject to approval by {contact_person}, that address specific operational needs while maintaining the standards of this policy and applicable law.
+
+10. TRAINING AND AWARENESS
+All employees will receive training on fair employment practices. Managers and supervisors will receive additional training on preventing discrimination and handling complaints.
+
+11. DISCIPLINARY ACTION
+Violations of this policy will result in disciplinary action up to and including termination.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "foreign_worker_my",
+            "title": "Foreign Worker Management Policy",
+            "category": "Compliance",
+            "summary": "Immigration Act compliance covering work permits, no passport retention (Passport Act 1966), SOCSO/medical coverage, and anti-trafficking obligations (ATIPSOM 2007).",
+            "template": """FOREIGN WORKER MANAGEMENT POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to the lawful and ethical employment of foreign workers in Malaysia. This policy ensures compliance with the Immigration Act 1959/63, the Passport Act 1966, the Employment Act 1955, the Anti-Trafficking in Persons and Anti-Smuggling of Migrants Act 2007 (ATIPSOM), and related regulations.
+
+2. SCOPE
+This policy applies to the management of all foreign employees of {company_name} in Malaysia, including holders of Employment Passes, Visit Passes (Temporary Employment), and other work authorisations.
+
+3. VALID WORK AUTHORISATION
+- {company_name} will ensure that every foreign worker holds a valid work permit or pass before commencing employment.
+- Foreign workers will only be deployed in roles and sectors authorised by their work permit.
+- {company_name} will monitor permit expiry dates and ensure timely renewals or cancellations.
+- Employment of undocumented or illegal workers is strictly prohibited and constitutes a criminal offence under the Immigration Act.
+
+4. NO PASSPORT RETENTION
+- Under the Passport Act 1966, it is an offence to retain or withhold another person's passport or travel document without lawful authority.
+- {company_name} strictly prohibits the retention of any foreign worker's passport, travel documents, or personal identification.
+- All personal documents must remain in the worker's possession at all times.
+- Supervisors or managers who request to hold a foreign worker's documents will face disciplinary action.
+- {company_name} will provide secure personal storage facilities so workers can safely store their own documents.
+
+5. FAIR RECRUITMENT AND NO EXPLOITATION
+- {company_name} will not charge foreign workers any recruitment fees or costs.
+- Workers will not be required to repay recruitment costs, transportation, or levy charges through salary deductions or debt bondage arrangements.
+- {company_name} will verify that labour supply agencies used do not engage in exploitative practices.
+- These provisions are aligned with ATIPSOM 2007 anti-trafficking obligations.
+
+6. WAGES AND EMPLOYMENT TERMS
+- Foreign workers will be paid at least the applicable minimum wage, on time and in full.
+- Employment contracts will be provided in a language the worker can understand.
+- {company_name} will not make unauthorised deductions from foreign workers' wages.
+- All payments will be documented with itemised payslips.
+
+7. SOCIAL SECURITY AND MEDICAL COVERAGE
+- Foreign workers will be registered with SOCSO (Social Security Organisation) as required.
+- {company_name} will maintain valid medical insurance coverage or provide equivalent medical benefits.
+- Workers who are injured or fall ill will receive appropriate medical attention and will not be penalised.
+
+8. ACCOMMODATION
+Where {company_name} provides accommodation for foreign workers, it must meet minimum standards for safety, hygiene, space, ventilation, and sanitation as required by applicable regulations.
+
+9. COMPLIANCE MONITORING AND CUSTOMISATION
+{company_name} will conduct regular compliance audits of its foreign worker management practices. Each business unit may define supplementary compliance procedures tailored to their workforce composition and operational context, subject to approval by {contact_person}, provided they meet the requirements of this policy and all applicable laws. Compliance monitoring will include:
+- Quarterly review of work permit validity
+- Annual audit of salary records
+- Periodic accommodation inspections (where applicable)
+- Assessment of recruitment agency practices
+- Review of passport and document retention practices
+
+10. ANTI-TRAFFICKING OBLIGATIONS
+{company_name} is committed to preventing trafficking in persons and forced labour in accordance with ATIPSOM 2007. Indicators of trafficking include:
+- Restriction of movement or confinement
+- Retention of identity documents
+- Debt bondage or withholding of wages
+- Threats, intimidation, or physical harm
+Any employee who suspects trafficking or forced labour must report it immediately to {contact_person} or {hr_contact}. Reports may also be made to the relevant authorities.
+
+11. REPATRIATION
+Upon termination or expiry of employment, {company_name} will ensure the orderly and lawful repatriation of foreign workers.
+
+12. REPORTING AND ENFORCEMENT
+Violations of this policy will result in disciplinary action up to and including termination. {company_name} may also face penalties under the Immigration Act, ATIPSOM, and other applicable laws.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
     ],
     "id": [
         {
@@ -741,6 +1094,161 @@ Workplace accidents will be reported and investigated promptly. Injured workers 
 
 6. CONTACT
 For safety concerns, contact {contact_person} or {hr_contact}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "anti_discrimination_id",
+            "title": "Anti-Discrimination & Equal Opportunity Policy",
+            "category": "Core",
+            "summary": "Manpower Act Article 5-6 non-discrimination provisions, equal treatment regardless of gender, ethnicity, race, or religion, and women's protections including maternity leave, menstrual leave, and night work regulations.",
+            "template": """ANTI-DISCRIMINATION AND EQUAL OPPORTUNITY POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to equal opportunity and non-discrimination in the workplace. This policy implements the non-discrimination provisions of Law No. 13/2003 (Manpower Act), particularly Articles 5 and 6, and Law No. 6/2023 (Omnibus Law on Job Creation).
+
+2. SCOPE
+This policy applies to all employees, job applicants, contractors, and agents of {company_name} in Indonesia. It covers all aspects of employment including recruitment, compensation, promotion, training, and termination.
+
+3. NON-DISCRIMINATION (ARTICLES 5 AND 6)
+In accordance with the Manpower Act:
+- Article 5: Every worker has equal opportunity to obtain employment without discrimination.
+- Article 6: Every worker has the right to receive equal treatment without discrimination from the employer.
+- {company_name} prohibits discrimination on the basis of:
+  - Gender or sexual identity
+  - Ethnicity or ethnic origin
+  - Race
+  - Religion or belief
+  - Skin colour
+  - Political views
+  - Disability
+  - Any other characteristic unrelated to job qualifications
+
+4. FAIR RECRUITMENT AND SELECTION
+- Job postings will focus on qualifications and job requirements.
+- Selection decisions will be based on merit — skills, qualifications, experience, and competencies.
+- {company_name} will not impose discriminatory criteria in recruitment.
+- Interview processes will be fair, consistent, and job-relevant.
+
+5. EQUAL COMPENSATION
+- Employees performing substantially similar work will receive equal compensation regardless of gender, ethnicity, race, or other protected characteristics.
+- Compensation differences will be based solely on objective factors such as experience, qualifications, performance, and job complexity.
+
+6. WOMEN'S PROTECTIONS
+The Manpower Act provides specific protections for female employees, which {company_name} fully observes:
+a) Maternity leave: 3 months (1.5 months before and 1.5 months after childbirth) with full pay, or as adjusted by a doctor's recommendation. In case of miscarriage, 1.5 months of leave with pay.
+b) Menstrual leave: Female employees who experience pain during menstruation and notify the employer are not obligated to work on the first and second day of menstruation, as provided under Article 81.
+c) Breastfeeding: Female employees are entitled to reasonable opportunity and facilities to breastfeed during working hours, as required by the Manpower Act.
+d) Night work (23:00 to 07:00): Female employees under 18 are prohibited from night work. Employers who deploy female employees during night hours must:
+   - Provide nutritious food and drink
+   - Maintain safety, decency, and morality in the workplace
+   - Provide transportation to and from the workplace
+   - Not employ pregnant women whose health would be at risk (per doctor's certificate)
+
+7. DISABILITY INCLUSION
+{company_name} will provide reasonable accommodations for employees with disabilities, consistent with Law No. 8/2016 on Persons with Disabilities. Qualified individuals with disabilities will be considered for employment on an equal basis with other candidates.
+
+8. PREVENTION OF HARASSMENT
+{company_name} does not tolerate harassment or bullying based on any protected characteristic. All employees are expected to treat colleagues with dignity and respect.
+
+9. GRIEVANCE MECHANISM
+Employees who experience or witness discrimination should report the matter to {contact_person} or {hr_contact}. All complaints will be investigated promptly and confidentially. No employee will face retaliation for making a good-faith complaint.
+
+10. COMPLIANCE CUSTOMISATION
+{company_name} recognises that different business units may have varying operational contexts. Departments may develop supplementary equal opportunity guidelines, subject to approval by {contact_person}, that address specific operational needs while meeting or exceeding the standards of this policy and applicable law.
+
+11. DISCIPLINARY ACTION
+Violations of this policy will result in disciplinary action up to and including termination.
+
+12. DISPUTE RESOLUTION
+Discrimination disputes may be resolved through bipartite negotiation, mediation, or the Industrial Relations Court, in accordance with Law No. 2/2004 on Industrial Relations Dispute Settlement.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "bpjs_compliance_id",
+            "title": "Social Security (BPJS) Compliance Policy",
+            "category": "Compliance",
+            "summary": "BPJS Ketenagakerjaan (JKK, JKM, JHT, JP) and BPJS Kesehatan enrollment obligations, contribution rates, and worker entitlements under Law No. 24/2011 and Law No. 40/2004.",
+            "template": """SOCIAL SECURITY (BPJS) COMPLIANCE POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to fulfilling its social security obligations under Law No. 24/2011 on Social Security Administering Bodies (BPJS) and Law No. 40/2004 on the National Social Security System (SJSN). This policy establishes procedures for enrollment, contributions, and benefit administration.
+
+2. SCOPE
+This policy applies to all employees of {company_name} in Indonesia, including permanent (PKWTT) and fixed-term (PKWT) employees. Employers are legally required to enroll all employees in both BPJS Ketenagakerjaan and BPJS Kesehatan programmes.
+
+3. BPJS KETENAGAKERJAAN (EMPLOYMENT SOCIAL SECURITY)
+{company_name} will enroll all employees in the following BPJS Ketenagakerjaan programmes:
+
+a) Jaminan Kecelakaan Kerja (JKK) — Work Accident Insurance
+   - Covers medical expenses, rehabilitation, compensation for disability, and death benefits resulting from work accidents or occupational diseases.
+   - Contribution: Paid entirely by {company_name}, ranging from 0.24% to 1.74% of monthly wages depending on the level of work risk.
+   - Coverage includes accidents during commute to/from work.
+
+b) Jaminan Kematian (JKM) — Death Benefit
+   - Provides benefits to the family/heirs of an employee who dies not due to a work accident.
+   - Contribution: 0.30% of monthly wages, paid entirely by {company_name}.
+   - Benefits include funeral costs and a lump-sum payment to heirs.
+
+c) Jaminan Hari Tua (JHT) — Old Age Savings
+   - A savings programme where accumulated contributions are paid to the employee upon reaching retirement age, disability, or other qualifying events.
+   - Contribution: 5.7% of monthly wages (3.7% paid by {company_name}, 2.0% paid by the employee).
+   - Employees may claim JHT benefits upon reaching age 56, or earlier in case of resignation (after waiting period), termination, or permanent disability.
+
+d) Jaminan Pensiun (JP) — Pension
+   - Provides monthly pension benefits for employees who have contributed for a minimum qualifying period.
+   - Contribution: 3.0% of monthly wages (2.0% paid by {company_name}, 1.0% paid by the employee), subject to a maximum wage ceiling as determined by the government.
+   - Benefits include old-age pension, disability pension, survivor's pension, and funeral benefit.
+
+4. BPJS KESEHATAN (NATIONAL HEALTH INSURANCE)
+- {company_name} will enroll all employees and their eligible family members (spouse and up to 3 children) in BPJS Kesehatan.
+- Contribution: 5.0% of monthly wages (4.0% paid by {company_name}, 1.0% paid by the employee), subject to a maximum wage ceiling.
+- Coverage includes outpatient and inpatient care, maternity services, and other healthcare services as determined by BPJS Kesehatan.
+- Employees may add family members beyond the covered 3 children by paying additional contributions.
+
+5. ENROLLMENT PROCEDURES
+- {company_name} will register all new employees with BPJS Ketenagakerjaan and BPJS Kesehatan within 30 days of commencement of employment.
+- {company_name} will ensure that each employee receives their BPJS membership card/number.
+- Changes in employee data (salary changes, family status) will be reported to BPJS promptly.
+
+6. CONTRIBUTION PAYMENT
+- {company_name} will calculate and remit all employer and employee contributions to BPJS accurately and on time (by the 15th of each month).
+- Employee contributions will be deducted from wages with proper documentation.
+- Contribution records will be maintained and available for employee review.
+
+7. EMPLOYEE ENTITLEMENTS AND CLAIMS
+Employees are entitled to claim benefits under each programme as prescribed by law. {company_name} will:
+- Assist employees in understanding their BPJS entitlements
+- Facilitate the claims process for work accidents, death benefits, and other events
+- Provide necessary documentation for JHT withdrawals and pension claims
+- Ensure that employees receive timely medical care under BPJS Kesehatan
+
+8. COMPLIANCE MONITORING AND CUSTOMISATION
+{company_name} will conduct regular audits to ensure compliance with all BPJS contribution and enrollment obligations. Each business unit may establish supplementary procedures for BPJS administration, subject to approval by {contact_person}, provided they comply with Law No. 24/2011 and Law No. 40/2004. Monitoring activities include:
+- Monthly reconciliation of contribution payments
+- Quarterly review of employee enrollment status
+- Annual audit of compliance with contribution rates and wage ceilings
+- Periodic assessment of claims processing and employee support
+
+9. PENALTIES FOR NON-COMPLIANCE
+Failure to comply with BPJS obligations may result in:
+- Administrative penalties and fines
+- Denial of public services for the company
+- Criminal sanctions under Law No. 24/2011
+
+10. CONTACT
+For questions about BPJS enrollment, contributions, or claims, contact {hr_contact} or {contact_person}.
 
 Approved by: ____________________
 Title: ____________________
@@ -843,6 +1351,251 @@ Approved by: ____________________
 Title: ____________________
 Date: {effective_date}""",
         },
+        {
+            "id": "anti_harassment_ph",
+            "title": "Anti-Sexual Harassment & Safe Spaces Policy",
+            "category": "Core",
+            "summary": "Compliance with RA 7877 (workplace harassment by persons of authority) and RA 11313 (Safe Spaces Act / Bawal Bastos Law), including CODI requirement and penalties.",
+            "template": """ANTI-SEXUAL HARASSMENT AND SAFE SPACES POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to providing a workplace free from sexual harassment and gender-based violence. This policy implements the requirements of Republic Act No. 7877 (Anti-Sexual Harassment Act of 1995) and Republic Act No. 11313 (Safe Spaces Act or Bawal Bastos Law).
+
+2. SCOPE
+This policy applies to all employees, supervisors, managers, officers, contractors, clients, and visitors of {company_name} in the Philippines. It covers conduct in the workplace, work-related events, online communications, and public spaces in connection with work.
+
+3. SEXUAL HARASSMENT UNDER RA 7877
+Sexual harassment in the workplace is committed by a person who has authority, influence, or moral ascendancy over another, when:
+a) The sexual favour is made a condition for hiring, employment, re-employment, or continued employment (quid pro quo); or
+b) The refusal to grant the sexual favour results in limiting, segregating, or classifying the employee in ways that discriminate or diminish employment opportunities; or
+c) The conduct creates an intimidating, hostile, or offensive work environment.
+
+4. GENDER-BASED HARASSMENT UNDER RA 11313 (SAFE SPACES ACT)
+The Safe Spaces Act covers gender-based sexual harassment in the workplace, including:
+a) Unwelcome sexual advances, requests, or demands for sexual favours
+b) Sexist, homophobic, or transphobic slurs, statements, or jokes
+c) Use of sexual or discriminatory language
+d) Persistent telling of sexual jokes
+e) Unwanted sexual comments about a person's body
+f) Catcalling, wolf-whistling, or other forms of street-level harassment in connection with work
+g) Online gender-based sexual harassment including uploading or sharing of sexual content without consent
+
+5. COMMITTEE ON DECORUM AND INVESTIGATION (CODI)
+In compliance with RA 7877 and RA 11313, {company_name} establishes a Committee on Decorum and Investigation (CODI) composed of:
+- At least one representative from management
+- At least one representative from employees (selected by employees)
+- At least one representative from the union (if applicable)
+The CODI shall:
+- Receive and investigate complaints of sexual harassment
+- Create awareness on sexual harassment
+- Recommend appropriate disciplinary action
+- Ensure due process for both complainant and respondent
+
+6. COMPLAINT PROCEDURE
+a) A complaint may be filed with the CODI, {contact_person}, or {hr_contact}.
+b) The complaint may be written or verbal and shall detail the incident(s).
+c) The CODI shall investigate within 10 days of receiving the complaint.
+d) Both parties will be given the opportunity to be heard.
+e) The CODI shall submit its findings and recommendations within 30 days.
+
+7. PENALTIES
+a) Under RA 7877: Imprisonment of 1-6 months and/or fine of P10,000-P20,000.
+b) Under RA 11313: Fines ranging from P1,000 to P500,000 depending on severity, and/or imprisonment.
+c) Administrative penalties: Warning, reprimand, suspension, demotion, or termination depending on the gravity of the offence.
+
+8. EMPLOYER DUTIES UNDER RA 11313
+{company_name} is required to:
+- Disseminate this policy to all employees
+- Provide gender sensitivity training and seminars
+- Establish the CODI and internal mechanisms for complaint resolution
+- Provide safe reporting channels
+
+9. NO RETALIATION
+{company_name} strictly prohibits retaliation against any person who files a complaint, participates in an investigation, or serves as a witness. Retaliation is a separate offence subject to disciplinary action.
+
+10. COMPLIANCE CUSTOMISATION
+{company_name} departments may establish supplementary procedures for implementing this policy in their specific work environments, subject to CODI oversight and approval by {contact_person}, provided they meet all requirements of RA 7877 and RA 11313.
+
+11. TRAINING
+All employees will receive orientation on this policy upon hire and periodic training on sexual harassment prevention and the Safe Spaces Act.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "wages_benefits_ph",
+            "title": "Wages & Benefits Policy",
+            "category": "Compensation",
+            "summary": "Regional minimum wage, 13th month pay (PD 851), holiday pay rates, night shift differential, and SSS/PhilHealth/Pag-IBIG contributions, referencing RA 6727, PD 851, and Labor Code Book III.",
+            "template": """WAGES AND BENEFITS POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to fair and lawful compensation of all employees in compliance with the Labor Code of the Philippines (Book III), Republic Act No. 6727 (Wage Rationalisation Act), Presidential Decree No. 851 (13th Month Pay Law), and related wage orders and regulations.
+
+2. SCOPE
+This policy applies to all employees of {company_name} in the Philippines, including regular, probationary, seasonal, and project-based employees, unless specifically exempted by law.
+
+3. MINIMUM WAGE (RA 6727)
+- All employees will be paid at least the applicable regional daily minimum wage as set by the Regional Tripartite Wages and Productivity Board.
+- {company_name} will monitor and implement wage order adjustments within the prescribed period.
+- Wages will not be reduced on the basis of any wage order or adjustment.
+
+4. PAYMENT OF WAGES
+- Wages will be paid at least twice a month, at intervals not exceeding 16 days.
+- Payment will be made in legal tender (Philippine Peso) directly to the employee, or via bank transfer with the employee's written consent.
+- No deductions from wages will be made except those authorised by law, collective bargaining agreement, or with the employee's written consent.
+- Itemised pay slips will be provided with each payment.
+
+5. 13TH MONTH PAY (PD 851)
+- All rank-and-file employees who have worked for at least one month during the calendar year are entitled to 13th month pay.
+- 13th month pay is equivalent to one-twelfth (1/12) of the total basic salary earned within the calendar year.
+- Payment shall be made no later than December 24 of each year.
+- Resigned or separated employees are entitled to a proportionate 13th month pay.
+
+6. OVERTIME PAY
+In accordance with the Labor Code:
+- Ordinary day overtime: Additional 25% of the hourly rate for work beyond 8 hours.
+- Rest day / special non-working day overtime: Additional 30% of the hourly rate.
+- Regular holiday overtime: Additional 30% of the applicable holiday rate.
+- Double holiday: Rates as prescribed by DOLE.
+
+7. HOLIDAY PAY
+a) Regular holidays (Art. 94):
+   - Employee who did not work: Entitled to 100% of daily wage.
+   - Employee who worked: Entitled to 200% of daily wage.
+b) Special non-working days:
+   - Employee who did not work: No pay (unless company policy provides otherwise).
+   - Employee who worked: Entitled to additional 30% of daily wage.
+
+8. NIGHT SHIFT DIFFERENTIAL
+Employees working between 10:00 PM and 6:00 AM are entitled to an additional 10% of their regular wage for each hour of night work, as provided under the Labor Code.
+
+9. MANDATORY CONTRIBUTIONS
+{company_name} will ensure timely and accurate remittance of the following statutory contributions:
+a) Social Security System (SSS): Employer and employee shares as prescribed by the SSS contribution table.
+b) Philippine Health Insurance Corporation (PhilHealth): Employer and employee shares based on monthly basic salary.
+c) Home Development Mutual Fund (Pag-IBIG): Employer contribution of P100 and employee contribution of P100 (or 2% of salary, whichever is higher, based on the employee's choice).
+
+10. SERVICE CHARGES
+Where applicable, service charges collected by the establishment will be distributed to rank-and-file employees as required by law.
+
+11. COMPLIANCE MONITORING AND CUSTOMISATION
+{company_name} will maintain records of all wage and benefit payments for at least 3 years as required by law. Departments may establish supplementary compensation guidelines, subject to approval by {contact_person}, provided they meet or exceed statutory requirements. Monitoring includes:
+- Monthly review of minimum wage compliance against current wage orders
+- Quarterly audit of statutory contribution remittances
+- Annual review of 13th month pay calculations
+- Periodic verification of overtime and holiday pay computations
+
+12. EMPLOYEE RIGHTS
+- Employees may not waive their right to statutory wages and benefits.
+- Employees who believe they have not been properly compensated should contact {hr_contact} or {contact_person}. Complaints may also be filed with the DOLE Regional Office or NLRC.
+- No employee will face retaliation for raising compensation concerns.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "security_tenure_ph",
+            "title": "Security of Tenure & Due Process Policy",
+            "category": "Core",
+            "summary": "Twin-notice rule, just causes (Art 297) and authorised causes (Art 298-299), separation pay, constructive dismissal, and NLRC filing under Labor Code Articles 294-299.",
+            "template": """SECURITY OF TENURE AND DUE PROCESS POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} recognises and upholds the constitutional right of every employee to security of tenure. This policy ensures that all termination and disciplinary actions comply with the Labor Code of the Philippines (Articles 294-299) and the requirements of substantive and procedural due process.
+
+2. SCOPE
+This policy applies to all regular, probationary, and project/seasonal employees of {company_name} in the Philippines.
+
+3. SECURITY OF TENURE (ARTICLE 294)
+Every employee who has been engaged to perform activities that are usually necessary or desirable in the usual business of {company_name} shall be considered a regular employee. Regular employees shall not be terminated except for just cause or authorised cause, and only after observance of due process.
+
+4. JUST CAUSES FOR TERMINATION (ARTICLE 297)
+An employee may be terminated for any of the following just causes:
+a) Serious misconduct or wilful disobedience of lawful orders connected with work
+b) Gross and habitual neglect of duties
+c) Fraud or wilful breach of trust reposed by the employer
+d) Commission of a crime or offence against the employer, their family, or representative
+e) Other analogous causes
+
+5. AUTHORISED CAUSES FOR TERMINATION (ARTICLES 298-299)
+An employee may be terminated for any of the following authorised causes:
+a) Installation of labour-saving devices (Art. 298)
+b) Redundancy (Art. 298)
+c) Retrenchment to prevent losses (Art. 298)
+d) Closure or cessation of business (Art. 298)
+e) Disease not curable within 6 months and continued employment is prejudicial (Art. 299)
+
+6. DUE PROCESS — TWIN-NOTICE RULE (JUST CAUSES)
+For terminations based on just causes, {company_name} must observe the twin-notice rule:
+a) First notice (Notice to Explain / Show-Cause Memo):
+   - Written notice specifying the grounds for termination
+   - Detailed narration of the facts and circumstances
+   - A directive giving the employee a reasonable period (at least 5 calendar days) to submit a written explanation
+b) Hearing/Conference:
+   - The employee will be given a meaningful opportunity to be heard and present evidence
+   - The employee may be assisted by a representative
+   - {company_name} will consider the employee's explanation and evidence
+c) Second notice (Notice of Decision):
+   - Written notice informing the employee of {company_name}'s decision
+   - Must clearly state the reasons for the decision
+   - If termination, must specify the effective date
+
+7. DUE PROCESS — AUTHORISED CAUSES
+For terminations based on authorised causes:
+a) Written notice to the employee at least 30 days before the intended date of termination
+b) Written notice to DOLE at least 30 days before the intended date of termination
+c) Payment of separation pay as prescribed by law
+
+8. SEPARATION PAY
+a) For authorised causes under Article 298 (labour-saving devices, redundancy):
+   - At least one month pay OR one month pay per year of service, whichever is higher
+b) For authorised causes under Articles 298-299 (retrenchment, closure, disease):
+   - At least one-half month pay per year of service
+c) A fraction of at least 6 months of service is considered one whole year for computation purposes
+
+9. CONSTRUCTIVE DISMISSAL
+{company_name} recognises that constructive dismissal — where an employee is forced to resign due to harsh, hostile, or unfavourable conditions created by the employer — is illegal. Actions that constitute constructive dismissal include:
+- Demotion without valid cause
+- Diminution of pay or benefits without valid cause
+- Transfer designed to make the employee's continued employment unreasonable
+- Creating a hostile work environment to force resignation
+
+10. PREVENTIVE SUSPENSION
+{company_name} may place an employee under preventive suspension only if:
+- The employee's continued presence poses a serious and imminent threat to life or property
+- Preventive suspension shall not exceed 30 days
+- If the case is not resolved within 30 days, the employee must be reinstated or placed on payroll
+
+11. PROBATIONARY EMPLOYMENT
+- Probationary employees may be terminated for just cause or for failure to meet reasonable standards made known at the time of engagement.
+- The probationary period shall not exceed 6 months from the date of employment.
+- Probationary employees who are allowed to work beyond 6 months are deemed regular employees.
+
+12. COMPLIANCE CUSTOMISATION
+{company_name} departments may develop supplementary disciplinary procedures and codes of conduct, subject to approval by {contact_person}, provided they comply with the due process requirements of this policy and the Labor Code.
+
+13. FILING WITH NLRC
+Employees who believe they have been illegally dismissed may file a complaint with the National Labor Relations Commission (NLRC) within 4 years from the date of termination. Employees may also seek assistance from the DOLE Single Entry Approach (SEnA) for mandatory conciliation-mediation before formal filing.
+
+14. CONTACT
+For questions about this policy or employment status, contact {hr_contact} or {contact_person}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
     ],
     "th": [
         {
@@ -940,6 +1693,185 @@ All employees will receive OSH training appropriate to their roles and workplace
 
 7. CONTACT
 For safety concerns, contact {contact_person} or {hr_contact}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "anti_harassment_th",
+            "title": "Anti-Harassment Policy",
+            "category": "Core",
+            "summary": "LPA Section 16 (sexual harassment by employers/supervisors), Gender Equality Act B.E. 2558 (gender-based discrimination), complaint mechanisms, and disciplinary action.",
+            "template": """ANTI-HARASSMENT POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to providing a workplace free from sexual harassment and gender-based discrimination. This policy is established in compliance with Section 16 of the Labor Protection Act B.E. 2541 (1998) and the Gender Equality Act B.E. 2558 (2015).
+
+2. SCOPE
+This policy applies to all employees, supervisors, managers, officers, contractors, and visitors at all {company_name} workplaces and work-related events in Thailand.
+
+3. SEXUAL HARASSMENT UNDER LPA SECTION 16
+Section 16 of the Labor Protection Act prohibits an employer, supervisor, or work inspector from committing sexual harassment against an employee. Sexual harassment includes:
+- Unwelcome sexual advances or requests for sexual favours
+- Unwanted physical contact of a sexual nature
+- Sexually suggestive comments, jokes, or gestures
+- Display of offensive or pornographic materials in the workplace
+- Any other verbal, non-verbal, or physical conduct of a sexual nature that is unwelcome
+This prohibition applies whether the victim is male, female, or of any gender identity.
+
+4. GENDER-BASED DISCRIMINATION UNDER GENDER EQUALITY ACT B.E. 2558
+The Gender Equality Act prohibits unfair gender discrimination by any person, including employers. Prohibited conduct includes:
+- Discrimination in employment on the basis of gender
+- Establishing rules, regulations, announcements, or conditions that are discriminatory based on gender
+- Treating a person differently on the basis of gender in a way that is an impediment or restriction, unless justified by the nature of the work
+- Sexual harassment
+Exceptions apply only when justified by the nature of the work or academic purposes, by established religious principles, or for national security.
+
+5. PROHIBITED CONDUCT
+{company_name} prohibits the following conduct:
+a) Sexual harassment in any form (verbal, physical, visual, or electronic)
+b) Requests for sexual favours as a condition of employment, promotion, or favourable treatment
+c) Retaliation against any person who reports harassment or cooperates in an investigation
+d) Gender-based discrimination in hiring, compensation, promotion, training, or termination
+e) Creating a hostile, intimidating, or offensive work environment based on gender
+
+6. COMPLAINT MECHANISM
+a) Employees who experience or witness harassment should report to {contact_person} or {hr_contact}.
+b) Reports may be made verbally or in writing.
+c) Under the Gender Equality Act, employees may also file a complaint with the Committee on the Consideration of Unfair Gender Discrimination.
+d) {company_name} will acknowledge receipt of all complaints and commence investigation promptly.
+
+7. INVESTIGATION
+- All complaints will be investigated promptly, impartially, and confidentially.
+- Both the complainant and the respondent will be given the opportunity to present their account.
+- Investigations will be completed within a reasonable timeframe.
+- {company_name} will take appropriate interim measures to protect the complainant during the investigation.
+
+8. DISCIPLINARY ACTION
+Employees found to have engaged in sexual harassment or gender-based discrimination will face disciplinary action, which may include:
+- Written warning
+- Suspension without pay
+- Demotion
+- Termination with cause (no severance pay) under LPA Section 119(1) — serious misconduct
+{company_name} notes that under Section 16 of the LPA, if an employer commits sexual harassment, the employee has the right to terminate employment and claim severance pay and compensation.
+
+9. LEGAL REMEDIES
+- Under the Gender Equality Act, the Committee on the Consideration of Unfair Gender Discrimination may order remedial measures, compensation, and corrective action.
+- Under the LPA, sexual harassment by an employer constitutes grounds for the employee to terminate employment with right to severance pay.
+- Criminal remedies may also be available under the Criminal Code.
+
+10. COMPLIANCE CUSTOMISATION
+{company_name} departments may establish supplementary anti-harassment procedures tailored to their work environment, subject to approval by {contact_person}, provided they meet the requirements of this policy, the LPA, and the Gender Equality Act.
+
+11. TRAINING
+All employees will receive anti-harassment training upon hire and periodically thereafter. Supervisors and managers will receive additional training on their obligations under this policy and applicable law.
+
+12. NO RETALIATION
+{company_name} strictly prohibits retaliation against any person who reports harassment, files a complaint, or participates in an investigation. Retaliation is a separate disciplinary offence.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "social_security_th",
+            "title": "Social Security Compliance Policy",
+            "category": "Compliance",
+            "summary": "Social Security Act B.E. 2533 compliance covering employer/employee 5% contributions and 7 benefit categories (sickness, maternity, invalidity, death, child, old-age, unemployment).",
+            "template": """SOCIAL SECURITY COMPLIANCE POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to fulfilling its social security obligations under the Social Security Act B.E. 2533 (1990) and its amendments. This policy establishes procedures for enrollment, contributions, and benefit administration for all employees in Thailand.
+
+2. SCOPE
+This policy applies to all employees of {company_name} in Thailand. Under the Social Security Act, employers with one or more employees are required to register with the Social Security Office (SSO) and make contributions.
+
+3. REGISTRATION AND ENROLLMENT
+- {company_name} will register with the Social Security Office within 30 days of hiring the first employee.
+- All new employees will be enrolled with the SSO within 30 days of commencing employment.
+- {company_name} will ensure that each employee receives their social security card and number.
+- Changes in employee information will be reported to the SSO within the prescribed timeframe.
+
+4. CONTRIBUTION RATES
+- Employer contribution: 5% of monthly wages (subject to a wage ceiling as prescribed by the SSO).
+- Employee contribution: 5% of monthly wages (subject to the same wage ceiling).
+- Government contribution: As prescribed by law for each benefit category.
+- The wage ceiling for contribution calculation is as determined by ministerial regulation (currently THB 15,000 per month, subject to change).
+- {company_name} will deduct the employee's share from monthly wages and remit both the employer and employee contributions to the SSO by the 15th of the following month.
+
+5. SEVEN BENEFIT CATEGORIES
+Contributions fund the following 7 benefit categories:
+
+a) Sickness Benefit (Section 62-64)
+   - Cash benefit of 50% of wages for up to 90 days per time (maximum 180 days per year) when an employee is unable to work due to non-work-related illness.
+   - Medical treatment at the employee's registered hospital under the SSO network.
+   - Dental care benefits as prescribed.
+
+b) Maternity Benefit (Section 65-67)
+   - Cash benefit of 50% of wages for 90 days per pregnancy.
+   - Reimbursement of delivery expenses for up to 2 pregnancies.
+   - Prenatal care and postnatal check-up coverage.
+
+c) Invalidity Benefit (Section 68-74)
+   - Cash benefit of 50% of wages for employees who become disabled due to non-work-related causes.
+   - Medical treatment and rehabilitation services.
+   - Benefits continue for as long as the disability persists.
+
+d) Death Benefit (Section 73-76)
+   - Funeral grant to the person who arranges the funeral.
+   - Lump-sum payment to the designated beneficiary or legal heirs.
+   - Eligibility requires a minimum contribution period.
+
+e) Child Allowance (Section 74-76)
+   - Monthly allowance per child (up to 3 children at a time) from birth until the child reaches 6 years of age.
+   - Applicable to legitimate children, adopted children, or children acknowledged by the insured.
+
+f) Old-Age Benefit (Section 76-77)
+   - Lump-sum payment if contributions were made for less than 180 months.
+   - Monthly pension if contributions were made for 180 months or more.
+   - Payable from age 55 when the insured ceases employment.
+   - Additional pension supplement for contributions exceeding 180 months.
+
+g) Unemployment Benefit (Section 78-80)
+   - Involuntary unemployment: Cash benefit of 50% of wages for up to 180 days per year.
+   - Voluntary resignation: Cash benefit of 30% of wages for up to 90 days per year.
+   - Requires a minimum contribution period of 6 months within the preceding 15 months.
+   - Employees must register at the employment office and be available for suitable work.
+
+6. EMPLOYEE ENTITLEMENTS
+- Employees are entitled to choose one hospital from the SSO network as their designated hospital for medical treatment.
+- {company_name} will facilitate hospital selection and changes as needed.
+- Employees may access benefits by presenting their social security card at their registered hospital.
+
+7. CLAIMS AND DOCUMENTATION
+{company_name} will:
+- Assist employees in understanding their social security entitlements
+- Provide necessary documentation for benefit claims (e.g., salary certificates, employment records)
+- Support employees in the claims process for sickness, maternity, invalidity, and other benefits
+- Maintain records required by the SSO
+
+8. COMPLIANCE MONITORING AND CUSTOMISATION
+{company_name} will conduct regular reviews to ensure compliance with Social Security Act obligations. Each business unit may establish supplementary procedures for social security administration, subject to approval by {contact_person}, provided they comply with the Social Security Act B.E. 2533 and related regulations. Monitoring includes:
+- Monthly reconciliation of contribution payments
+- Quarterly review of employee enrollment status
+- Annual audit of contribution calculations against current wage ceilings
+- Periodic review of hospital registration and employee entitlements
+
+9. PENALTIES FOR NON-COMPLIANCE
+Failure to comply with social security obligations may result in:
+- Surcharges of 2% per month on late contributions
+- Fines for failure to register, failure to submit forms, or providing false information
+- Criminal penalties for deliberate non-compliance
+
+10. CONTACT
+For questions about social security enrollment, contributions, or benefits, contact {hr_contact} or {contact_person}.
 
 Approved by: ____________________
 Title: ____________________

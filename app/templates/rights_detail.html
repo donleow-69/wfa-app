@@ -5,6 +5,10 @@
 <h1>{{ category.title }}</h1>
 <p>{{ category.summary }}</p>
 
+{% if category.effective_date %}
+<p class="text-muted" style="font-size: 0.9rem;">Effective: {{ category.effective_date }}</p>
+{% endif %}
+
 <div class="card">
     <h2>What the law says</h2>
     <ul class="detail-list">
@@ -14,6 +18,38 @@
     </ul>
 </div>
 
+{% if category.key_laws %}
+<div class="card">
+    <h2>Applicable Laws</h2>
+    <ul class="detail-list">
+        {% for law in category.key_laws %}
+        <li><strong>{{ law.name }}</strong> — {{ law.scope }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if category.penalties %}
+<div class="card">
+    <h2>Penalties for Violations</h2>
+    <ul class="detail-list">
+        {% for penalty in category.penalties %}
+        <li>{{ penalty }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if category.enforcement_agency %}
+<div class="card">
+    <h2>Enforcement Agency</h2>
+    <p><strong>{{ category.enforcement_agency }}</strong></p>
+    {% if category.agency_contact %}
+    <p class="text-muted">{{ category.agency_contact }}</p>
+    {% endif %}
+</div>
+{% endif %}
+
 <div class="card">
     <h2>What you can do</h2>
     <p>{{ category.what_to_do }}</p>
@@ -21,4 +57,27 @@
         <a href="/complaints/new" class="btn btn-primary btn-sm">File a Complaint</a>
     </div>
 </div>
+
+{% if category.faq %}
+<div class="card">
+    <h2>Frequently Asked Questions</h2>
+    {% for item in category.faq %}
+    <div style="margin-bottom: 1rem;">
+        <p><strong>{{ item.q }}</strong></p>
+        <p>{{ item.a }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if category.case_examples %}
+<div class="card">
+    <h2>Common Scenarios</h2>
+    <ul class="detail-list">
+        {% for example in category.case_examples %}
+        <li>{{ example }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 {% endblock %}

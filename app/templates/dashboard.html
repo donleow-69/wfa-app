@@ -6,22 +6,17 @@
 {% set country_names = {"us": "United States", "sg": "Singapore", "my": "Malaysia", "id": "Indonesia", "ph": "Philippines", "th": "Thailand"} %}
 
 <div class="tabs">
-    {% if user.role == 'employee' %}
-        <span class="tab active">Employee</span>
-    {% else %}
-        <span class="tab active">Employer</span>
-    {% endif %}
+    <a href="/dashboard?view=employee" class="tab {{ 'active' if active_view == 'employee' }}">Employee</a>
+    <a href="/dashboard?view=employer" class="tab {{ 'active' if active_view == 'employer' }}">Employer</a>
     <span class="tab">{{ country_names.get(user.country, "United States") }}</span>
-    {% if user.role == 'employer' %}
-        {% if user.is_subscribed %}
-            <span class="tab" style="color: #065f46;">Pro</span>
-        {% else %}
-            <span class="tab" style="color: #92400e;">Free</span>
-        {% endif %}
+    {% if user.is_subscribed %}
+        <span class="tab" style="color: #065f46;">Pro</span>
+    {% else %}
+        <span class="tab" style="color: #92400e;">Free</span>
     {% endif %}
 </div>
 
-{% if user.role == 'employee' %}
+{% if active_view == 'employee' %}
 <div class="card-grid">
     <div class="card">
         <h3>Your Rights</h3>
@@ -66,7 +61,7 @@
 <div class="card" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); color: #fff; text-align: center; margin-top: 1rem;">
     <h3 style="color: #fff;">Upgrade to Pro</h3>
     <p style="color: #c4c4d4;">Unlock policy drafting tools — generate compliant policies from templates or create custom policies on any topic.</p>
-    <a href="/subscribe" class="btn" style="background: #fff; color: #0f3460;">Subscribe — $19/month</a>
+    <a href="/subscribe" class="btn" style="background: #fff; color: #0f3460;">Subscribe — $15/month</a>
 </div>
 {% endif %}
 {% endif %}

@@ -13,13 +13,10 @@
         <div class="nav-links">
             <a href="/rights">Your Rights</a>
             {% if user %}
-                {% if user.role == 'employee' %}
-                    <a href="/complaints">Complaints</a>
-                {% endif %}
-                {% if user.role == 'employer' %}
-                    <a href="/compliance">Compliance</a>
-                    <a href="/policies">Policies</a>
-                {% endif %}
+                <a href="/complaints">Complaints</a>
+                <a href="/compliance">Compliance</a>
+                <a href="/policies">Policies</a>
+                <a href="/chat/">Chat</a>
                 <a href="/dashboard">Dashboard</a>
                 <a href="/logout">Logout</a>
             {% else %}

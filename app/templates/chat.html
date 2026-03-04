@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Chat{% endblock %}
+{% block content %}
+<h1>Chat with AI Assistant</h1>
+<p class="text-muted">Ask questions about workplace fairness, employment rights, and labour law.</p>
+
+{% if not user.is_subscribed %}
+<div class="alert alert-rate-limit" id="rate-banner" style="display:none;">
+    You have reached your daily message limit (5 messages). <a href="/subscribe">Upgrade to Pro</a> for unlimited chat.
+</div>
+{% endif %}
+
+<div class="chat-container">
+    <div class="chat-messages" id="chat-messages"></div>
+    <form class="chat-input-form" id="chat-form">
+        <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off" required>
+        <button type="submit" class="btn btn-primary" id="chat-send">Send</button>
+    </form>
+</div>
+
+<script>
+(function() {
+    const messagesEl = document.getElementById('chat-messages');
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('chat-send');
+    const rateBanner = document.getElementById('rate-banner');
+
+    function addBubble(role, content) {
+        const bubble = document.createElement('div');
+        bubble.className = 'chat-bubble chat-' + role;
+        bubble.textContent = content;
+        messagesEl.appendChild(bubble);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    // Load history
+    fetch('/chat/history')
+        .then(r => r.json())
+        .then(msgs => {
+            msgs.forEach(m => addBubble(m.role, m.content));
+        });
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        addBubble('user', msg);
+        input.value = '';
+        sendBtn.disabled = true;
+        sendBtn.textContent = '...';
+
+        try {
+            const res = await fetch('/chat/send', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({message: msg})
+            });
+            const data = await res.json();
+
+            if (res.status === 429) {
+                if (rateBanner) rateBanner.style.display = 'block';
+                addBubble('assistant', data.error);
+            } else if (!res.ok) {
+                addBubble('assistant', data.error || 'Something went wrong.');
+            } else {
+                addBubble('assistant', data.content);
+            }
+        } catch (err) {
+            addBubble('assistant', 'Network error. Please try again.');
+        }
+
+        sendBtn.disabled = false;
+        sendBtn.textContent = 'Send';
+    });
+})();
+</script>
+{% endblock %}

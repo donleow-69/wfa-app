@@ -13,8 +13,8 @@ from .database import init_db
 from .models.user import User
 
 # Import models so Base.metadata knows about all tables.
-from .models import complaint, compliance, user  # noqa: F401
-from .routers import auth_routes, complaints, compliance as compliance_router, policies, rights, subscription
+from .models import chat, complaint, compliance, user  # noqa: F401
+from .routers import auth_routes, chat as chat_router, complaints, compliance as compliance_router, policies, rights, subscription
 
 
 @asynccontextmanager
@@ -35,6 +35,7 @@ app.include_router(complaints.router)
 app.include_router(compliance_router.router)
 app.include_router(policies.router)
 app.include_router(subscription.router)
+app.include_router(chat_router.router)
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -43,8 +44,11 @@ async def home(request: Request, user: User | None = Depends(get_optional_user))
 
 
 @app.get("/dashboard", response_class=HTMLResponse)
-async def dashboard(request: Request, user: User = Depends(get_optional_user)):
+async def dashboard(request: Request, view: str | None = None, user: User = Depends(get_optional_user)):
     if not user:
         from fastapi.responses import RedirectResponse
         return RedirectResponse("/login", status_code=303)
-    return templates.TemplateResponse("dashboard.html", {"request": request, "user": user})
+    active_view = view if view in ("employee", "employer") else user.role
+    return templates.TemplateResponse(
+        "dashboard.html", {"request": request, "user": user, "active_view": active_view}
+    )
