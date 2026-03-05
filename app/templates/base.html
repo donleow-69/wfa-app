@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Home{% endblock %} — Workplace Fairness</title>
+    <meta name="description" content="Know your workplace rights, file complaints, and stay compliant.">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="manifest" href="/static/manifest.webmanifest">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
     <nav class="navbar">
@@ -33,5 +40,11 @@
     <footer class="footer">
         <p>Workplace Fairness &mdash; This tool provides general information and is not legal advice.</p>
     </footer>
+
+    <script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").catch(() => {});
+    }
+    </script>
 </body>
 </html>

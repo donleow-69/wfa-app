@@ -8,7 +8,7 @@ load_dotenv()
 
 from fastapi import Depends, Request
 from fastapi.applications import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -28,6 +28,12 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Workplace Fairness", lifespan=lifespan)
+
+# Serve sw.js from root so its scope covers the whole origin
+@app.get("/sw.js")
+async def service_worker():
+    return FileResponse("app/static/sw.js", media_type="application/javascript")
+
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 templates = Jinja2Templates(directory="app/templates")
@@ -45,6 +51,30 @@ app.include_router(chat_router.router)
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request, user: User | None = Depends(get_optional_user)):
     return templates.TemplateResponse("index.html", {"request": request, "user": user})
+
+
+@app.get("/offline", response_class=HTMLResponse)
+async def offline(request: Request):
+    return templates.TemplateResponse("offline.html", {"request": request})
+
+
+@app.get("/.well-known/assetlinks.json")
+async def asset_links():
+    """Digital Asset Links for Google Play TWA verification.
+
+    Replace the placeholder SHA-256 fingerprint with your actual signing
+    certificate fingerprint after building and signing your Android app.
+    """
+    return JSONResponse([{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.workplacefairness.app",
+            "sha256_cert_fingerprints": [
+                "YOUR_SHA256_FINGERPRINT_HERE"
+            ],
+        },
+    }])
 
 
 @app.get("/dashboard", response_class=HTMLResponse)
