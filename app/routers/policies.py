@@ -350,16 +350,16 @@ Date: {effective_date}""",
     "sg": [
         {
             "id": "fair_employment",
-            "title": "TAFEP-Compliant Fair Employment Policy",
+            "title": "Workplace Fairness Act-Compliant Fair Employment Policy",
             "category": "Core",
-            "summary": "Ensures non-discriminatory hiring and employment practices per TAFEP guidelines.",
+            "summary": "Ensures non-discriminatory hiring and employment practices per the Workplace Fairness Act.",
             "template": """FAIR EMPLOYMENT POLICY
 
 Company: {company_name}
 Effective Date: {effective_date}
 
 1. PURPOSE
-{company_name} is committed to fair and merit-based employment practices in accordance with the Tripartite Guidelines on Fair Employment Practices (TGFEP) and Singapore's workplace fairness legislation.
+{company_name} is committed to fair and merit-based employment practices in accordance with Singapore's Workplace Fairness Act and the Employment Act (Cap. 91).
 
 2. SCOPE
 This policy applies to all employees, job applicants, contractors, and agents of {company_name} in Singapore.
@@ -385,7 +385,7 @@ All employees will have equal access to training, development, and promotion opp
 Employees who believe they have been subjected to discriminatory treatment should report to {contact_person} or {hr_contact}. All complaints will be investigated promptly and confidentially. No retaliation will be tolerated.
 
 9. COMPLIANCE
-This policy is aligned with the Tripartite Guidelines on Fair Employment Practices and the Employment Act (Cap. 91). Violations will result in disciplinary action.
+This policy is aligned with the Workplace Fairness Act and the Employment Act (Cap. 91). Violations will result in disciplinary action.
 
 Approved by: ____________________
 Title: ____________________

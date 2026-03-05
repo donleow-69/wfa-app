@@ -2,6 +2,10 @@
 
 from contextlib import asynccontextmanager
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from fastapi import Depends, Request
 from fastapi.applications import FastAPI
 from fastapi.responses import HTMLResponse

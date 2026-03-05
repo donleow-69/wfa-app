@@ -76,8 +76,8 @@ DEFAULT_ITEMS_BY_COUNTRY = {
     "sg": [
         {
             "category": "Policies",
-            "requirement": "TAFEP-compliant fair employment policy adopted",
-            "description": "Written policy aligned with Tripartite Guidelines on Fair Employment Practices covering merit-based hiring, non-discrimination, and fair HR practices.",
+            "requirement": "Workplace Fairness Act-compliant fair employment policy adopted",
+            "description": "Written policy compliant with the Workplace Fairness Act covering merit-based hiring, non-discrimination, and fair HR practices.",
         },
         {
             "category": "Policies",
