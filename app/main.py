@@ -71,7 +71,7 @@ async def asset_links():
             "namespace": "android_app",
             "package_name": "com.workplacefairness.app",
             "sha256_cert_fingerprints": [
-                "YOUR_SHA256_FINGERPRINT_HERE"
+                "16:A0:D4:DB:77:D2:C2:9E:5C:87:58:B4:C3:39:85:24:25:75:15:F4:F8:64:1C:23:33:08:37:51:2C:B6:CB:93"
             ],
         },
     }])
