@@ -46,6 +46,14 @@
         {% endif %}
     </div>
     <div class="card">
+        <h3>Policy Compliance Checker</h3>
+        <p>Upload or paste a policy to check it against {{ country_names.get(user.country, "your region") }} compliance requirements.</p>
+        <a href="/policy-checker" class="btn btn-sm btn-primary">Check a Policy</a>
+        {% if not user.is_subscribed %}
+        <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;">Requires Pro subscription</p>
+        {% endif %}
+    </div>
+    <div class="card">
         <h3>Compliance Checklists</h3>
         <p>Track your progress on compliance requirements.</p>
         <a href="/compliance" class="btn btn-sm btn-primary">View Checklists</a>

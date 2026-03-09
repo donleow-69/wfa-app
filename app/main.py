@@ -18,7 +18,7 @@ from .models.user import User
 
 # Import models so Base.metadata knows about all tables.
 from .models import chat, complaint, compliance, user  # noqa: F401
-from .routers import auth_routes, chat as chat_router, complaints, compliance as compliance_router, policies, rights, subscription
+from .routers import auth_routes, chat as chat_router, complaints, compliance as compliance_router, policies, policy_checker, rights, subscription
 
 
 @asynccontextmanager
@@ -44,6 +44,7 @@ app.include_router(rights.router)
 app.include_router(complaints.router)
 app.include_router(compliance_router.router)
 app.include_router(policies.router)
+app.include_router(policy_checker.router)
 app.include_router(subscription.router)
 app.include_router(chat_router.router)
 
