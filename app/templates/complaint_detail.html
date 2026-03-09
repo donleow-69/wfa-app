@@ -28,6 +28,27 @@
     <p>{{ complaint.supporting_details }}</p>
     {% endif %}
 
+    {% if complaint.status != 'draft' and complaint.authority_name %}
+    <hr style="margin: 1.5rem 0;">
+    <h3>Authority</h3>
+    <p><strong>{{ complaint.authority_name }}</strong></p>
+    {% if complaint.authority_email %}
+    <p>Email: {{ complaint.authority_email }}</p>
+    {% endif %}
+    {% if complaint.authority_portal_url %}
+    <p>Portal: <a href="{{ complaint.authority_portal_url }}" target="_blank" rel="noopener">{{ complaint.authority_portal_url }}</a></p>
+    {% endif %}
+    <p>
+        {% if complaint.email_sent %}
+        <span class="badge badge-submitted">Emailed</span>
+        {% elif complaint.authority_email %}
+        <span class="badge badge-draft">Email not sent</span>
+        {% else %}
+        <span class="badge badge-draft">Portal only</span>
+        {% endif %}
+    </p>
+    {% endif %}
+
     <p class="text-muted" style="margin-top: 1rem; font-size: 0.85rem;">
         Filed: {{ complaint.created_at }} &mdash; Last updated: {{ complaint.updated_at }}
     </p>

@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from sqlalchemy import DateTime, ForeignKey, Integer, String, Text, func
+from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, String, Text, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from ..database import Base
@@ -24,6 +24,10 @@ class Complaint(Base):
     incident_date: Mapped[str] = mapped_column(String(20), default="")
     desired_outcome: Mapped[str] = mapped_column(Text, default="")
     supporting_details: Mapped[str] = mapped_column(Text, default="")
+    authority_name: Mapped[str] = mapped_column(String(255), default="")
+    authority_email: Mapped[str] = mapped_column(String(255), default="")
+    authority_portal_url: Mapped[str] = mapped_column(String(512), default="")
+    email_sent: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(
         DateTime, server_default=func.now(), onupdate=func.now()

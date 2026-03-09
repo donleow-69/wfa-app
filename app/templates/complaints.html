@@ -13,6 +13,7 @@
                 <p class="text-muted" style="margin-bottom: 0.25rem;">{{ c.employer_name or "Employer not specified" }} &mdash; {{ c.incident_date or "Date not specified" }}</p>
             </div>
             <span class="badge badge-{{ c.status }}">{{ c.status | replace("_", " ") | capitalize }}</span>
+            {% if c.email_sent %}<span class="badge badge-submitted" style="font-size: 0.7rem;">Emailed</span>{% endif %}
         </div>
         <p>{{ c.description[:150] }}{% if c.description|length > 150 %}&hellip;{% endif %}</p>
         <div style="display: flex; gap: 0.5rem;">

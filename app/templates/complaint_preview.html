@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Review Complaint{% endblock %}
+{% block content %}
+<p><a href="/complaints/{{ complaint.id }}/edit" class="text-muted">&larr; Back to edit</a></p>
+<h1>Review Your Complaint</h1>
+<p class="text-muted">Please review the details below before submitting to the relevant authority.</p>
+
+<div class="card">
+    <h2>Authority Information</h2>
+    <p><strong>Country:</strong> {{ country_name }}</p>
+    <p><strong>Authority:</strong> {{ authority.name }}</p>
+    <p class="text-muted">{{ authority.description }}</p>
+
+    {% if authority.email %}
+    <p><strong>Email:</strong> {{ authority.email }}</p>
+    {% endif %}
+
+    {% if authority.portal_url %}
+    <p><strong>Online Portal:</strong> <a href="{{ authority.portal_url }}" target="_blank" rel="noopener">{{ authority.portal_url }}</a></p>
+    {% endif %}
+
+    {% if not authority.email %}
+    <p style="color: #b8860b; margin-top: 0.5rem;"><strong>Note:</strong> This authority only accepts complaints via their online portal. No email will be sent.</p>
+    {% elif not smtp_configured %}
+    <p style="color: #b8860b; margin-top: 0.5rem;"><strong>Note:</strong> Email sending is not configured on this server. Your complaint will be recorded but not emailed. Please use the portal link above to file directly.</p>
+    {% endif %}
+</div>
+
+<div class="card mt-1">
+    <h2>Complaint Summary</h2>
+    <h3>Category</h3>
+    <p>{{ category_label }}</p>
+
+    <h3>Employer</h3>
+    <p>{{ complaint.employer_name or "Not specified" }}</p>
+
+    <h3>Incident Date</h3>
+    <p>{{ complaint.incident_date or "Not specified" }}</p>
+
+    <h3>Description</h3>
+    <p>{{ complaint.description }}</p>
+
+    {% if complaint.desired_outcome %}
+    <h3>Desired Outcome</h3>
+    <p>{{ complaint.desired_outcome }}</p>
+    {% endif %}
+
+    {% if complaint.supporting_details %}
+    <h3>Supporting Details</h3>
+    <p>{{ complaint.supporting_details }}</p>
+    {% endif %}
+</div>
+
+<div class="card mt-1">
+    <div class="form-actions">
+        <a href="/complaints/{{ complaint.id }}/edit" class="btn btn-secondary">Edit</a>
+        <form method="post" action="/complaints/{{ complaint.id }}/submit" style="display: inline;">
+            <button type="submit" class="btn btn-primary">Confirm &amp; Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
