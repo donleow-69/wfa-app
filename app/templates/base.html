@@ -12,24 +12,32 @@
     <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script>
+    (function() {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark') document.documentElement.classList.add('dark');
+        else if (t === 'light') document.documentElement.classList.add('light');
+    })();
+    </script>
 </head>
 <body>
     <nav class="navbar">
         <a href="/" class="nav-brand">Workplace Fairness</a>
         <button class="nav-toggle" onclick="this.parentElement.classList.toggle('open')" aria-label="Menu">&#9776;</button>
         <div class="nav-links">
-            <a href="/rights">Your Rights</a>
+            <a href="/rights" {% if request and request.url.path.startswith('/rights') %}class="active"{% endif %}>Your Rights</a>
             {% if user %}
-                <a href="/complaints">Complaints</a>
-                <a href="/compliance">Compliance</a>
-                <a href="/policies">Policies</a>
-                <a href="/chat/">Chat</a>
-                <a href="/dashboard">Dashboard</a>
+                <a href="/complaints" {% if request and request.url.path.startswith('/complaints') %}class="active"{% endif %}>Complaints</a>
+                <a href="/compliance" {% if request and request.url.path.startswith('/compliance') %}class="active"{% endif %}>Compliance</a>
+                <a href="/policies" {% if request and request.url.path.startswith('/polic') %}class="active"{% endif %}>Policies</a>
+                <a href="/chat/" {% if request and request.url.path.startswith('/chat') %}class="active"{% endif %}>Chat</a>
+                <a href="/dashboard" {% if request and request.url.path == '/dashboard' %}class="active"{% endif %}>Dashboard</a>
                 <a href="/logout">Logout</a>
             {% else %}
-                <a href="/login">Login</a>
-                <a href="/register">Register</a>
+                <a href="/login" {% if request and request.url.path == '/login' %}class="active"{% endif %}>Login</a>
+                <a href="/register" {% if request and request.url.path == '/register' %}class="active"{% endif %}>Register</a>
             {% endif %}
+            <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
         </div>
     </nav>
 
@@ -43,8 +51,73 @@
 
     <script>
     if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/sw.js").catch(() => {});
+        navigator.serviceWorker.register("/sw.js").catch(function() {});
     }
+
+    // Dark mode toggle
+    (function() {
+        var btn = document.getElementById('dark-toggle');
+        function isDark() {
+            return document.documentElement.classList.contains('dark') ||
+                (!document.documentElement.classList.contains('light') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
+        function updateIcon() {
+            btn.textContent = isDark() ? '\u2600' : '\u263E';
+        }
+        btn.addEventListener('click', function() {
+            if (isDark()) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.remove('light');
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateIcon();
+        });
+        updateIcon();
+    })();
+
+    // Relative timestamps
+    (function() {
+        var els = document.querySelectorAll('.timestamp[datetime]');
+        if (!els.length) return;
+        var now = Date.now();
+        var units = [
+            { label: 'year', ms: 31536000000 },
+            { label: 'month', ms: 2592000000 },
+            { label: 'day', ms: 86400000 },
+            { label: 'hour', ms: 3600000 },
+            { label: 'minute', ms: 60000 }
+        ];
+        var rtf;
+        try { rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' }); } catch(e) { return; }
+        els.forEach(function(el) {
+            var dt = new Date(el.getAttribute('datetime'));
+            if (isNaN(dt)) return;
+            var diff = dt - now;
+            el.title = el.textContent;
+            for (var i = 0; i < units.length; i++) {
+                if (Math.abs(diff) >= units[i].ms || i === units.length - 1) {
+                    el.textContent = rtf.format(Math.round(diff / units[i].ms), units[i].label);
+                    break;
+                }
+            }
+        });
+    })();
+
+    // Toast notifications
+    window.showToast = function(msg, type) {
+        var toast = document.createElement('div');
+        toast.className = 'toast' + (type ? ' toast-' + type : '');
+        toast.textContent = msg;
+        document.body.appendChild(toast);
+        setTimeout(function() {
+            toast.classList.add('toast-out');
+            setTimeout(function() { toast.remove(); }, 300);
+        }, 3000);
+    };
     </script>
 </body>
 </html>

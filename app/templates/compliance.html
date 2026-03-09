@@ -5,7 +5,7 @@
 <p class="text-muted">Create and manage WFA compliance checklists for your organization.</p>
 
 <div class="card">
-    <form method="post" action="/compliance/create" style="display: flex; gap: 0.75rem; align-items: end; flex-wrap: wrap;">
+    <form method="post" action="/compliance/create" class="flex-actions">
         <div class="form-group" style="flex: 1; min-width: 12rem; margin-bottom: 0;">
             <label for="company_name">Company Name</label>
             <input type="text" id="company_name" name="company_name" placeholder="Your company name">
@@ -16,9 +16,9 @@
 
 {% if checklists %}
     {% for cl in checklists %}
-    <a href="/compliance/{{ cl.id }}" class="card" style="display: block; text-decoration: none; color: inherit;">
+    <a href="/compliance/{{ cl.id }}" class="card card-hover" style="display: block; text-decoration: none; color: inherit;">
         <h3>{{ cl.company_name or "Untitled Checklist" }}</h3>
-        <p class="text-muted">Created: {{ cl.created_at }}</p>
+        <p class="text-muted">Created: <time class="timestamp" datetime="{{ cl.created_at.isoformat() }}">{{ cl.created_at }}</time></p>
     </a>
     {% endfor %}
 {% else %}

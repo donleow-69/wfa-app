@@ -6,7 +6,7 @@
 <p>{{ category.summary }}</p>
 
 {% if category.effective_date %}
-<p class="text-muted" style="font-size: 0.9rem;">Effective: {{ category.effective_date }}</p>
+<p class="text-muted text-hint">Effective: {{ category.effective_date }}</p>
 {% endif %}
 
 <div class="card">
@@ -62,7 +62,7 @@
 <div class="card">
     <h2>Frequently Asked Questions</h2>
     {% for item in category.faq %}
-    <div style="margin-bottom: 1rem;">
+    <div class="mb-1">
         <p><strong>{{ item.q }}</strong></p>
         <p>{{ item.a }}</p>
     </div>

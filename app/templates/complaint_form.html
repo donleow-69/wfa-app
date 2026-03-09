@@ -1,6 +1,21 @@
 {% extends "base.html" %}
 {% block title %}{% if complaint %}Edit Complaint{% else %}New Complaint{% endif %}{% endblock %}
 {% block content %}
+<div class="step-indicator">
+    <div class="step active">
+        <span class="step-num">1</span>
+        <span class="step-label">Draft</span>
+    </div>
+    <div class="step">
+        <span class="step-num">2</span>
+        <span class="step-label">Review</span>
+    </div>
+    <div class="step">
+        <span class="step-num">3</span>
+        <span class="step-label">Submitted</span>
+    </div>
+</div>
+
 <p><a href="/complaints" class="text-muted">&larr; Back to complaints</a></p>
 <h1>{% if complaint %}Edit Complaint{% else %}File a Complaint{% endif %}</h1>
 <p class="text-muted">Fill out the details below. You can save as a draft and come back to finish later.</p>

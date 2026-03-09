@@ -1,6 +1,21 @@
 {% extends "base.html" %}
 {% block title %}Complaint #{{ complaint.id }}{% endblock %}
 {% block content %}
+<div class="step-indicator">
+    <div class="step completed">
+        <span class="step-num">1</span>
+        <span class="step-label">Draft</span>
+    </div>
+    <div class="step {% if complaint.status != 'draft' %}completed{% else %}active{% endif %}">
+        <span class="step-num">2</span>
+        <span class="step-label">Review</span>
+    </div>
+    <div class="step {% if complaint.status != 'draft' %}active{% endif %}">
+        <span class="step-num">3</span>
+        <span class="step-label">Submitted</span>
+    </div>
+</div>
+
 <p><a href="/complaints" class="text-muted">&larr; Back to complaints</a></p>
 <h1>Complaint #{{ complaint.id }}</h1>
 <span class="badge badge-{{ complaint.status }}">{{ complaint.status | replace("_", " ") | capitalize }}</span>
@@ -29,7 +44,7 @@
     {% endif %}
 
     {% if complaint.status != 'draft' and complaint.authority_name %}
-    <hr style="margin: 1.5rem 0;">
+    <hr class="separator">
     <h3>Authority</h3>
     <p><strong>{{ complaint.authority_name }}</strong></p>
     {% if complaint.authority_email %}
@@ -49,8 +64,9 @@
     </p>
     {% endif %}
 
-    <p class="text-muted" style="margin-top: 1rem; font-size: 0.85rem;">
-        Filed: {{ complaint.created_at }} &mdash; Last updated: {{ complaint.updated_at }}
+    <p class="text-muted text-hint" style="margin-top: 1rem;">
+        Filed: <time class="timestamp" datetime="{{ complaint.created_at.isoformat() }}">{{ complaint.created_at }}</time>
+        &mdash; Last updated: <time class="timestamp" datetime="{{ complaint.updated_at.isoformat() }}">{{ complaint.updated_at }}</time>
     </p>
 
     {% if complaint.status == 'draft' %}

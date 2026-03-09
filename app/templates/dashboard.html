@@ -10,25 +10,25 @@
     <a href="/dashboard?view=employer" class="tab {{ 'active' if active_view == 'employer' }}">Employer</a>
     <span class="tab">{{ country_names.get(user.country, "United States") }}</span>
     {% if user.is_subscribed %}
-        <span class="tab" style="color: #065f46;">Pro</span>
+        <span class="tab text-pro">Pro</span>
     {% else %}
-        <span class="tab" style="color: #92400e;">Free</span>
+        <span class="tab text-free">Free</span>
     {% endif %}
 </div>
 
 {% if active_view == 'employee' %}
 <div class="card-grid">
-    <div class="card">
+    <div class="card card-hover">
         <h3>Your Rights</h3>
         <p>Learn about your protections under {{ country_names.get(user.country, "United States") }} employment laws.</p>
         <a href="/rights?country={{ user.country }}" class="btn btn-sm btn-primary">View Rights</a>
     </div>
-    <div class="card">
+    <div class="card card-hover">
         <h3>File a Complaint</h3>
         <p>Document and submit workplace fairness complaints.</p>
         <a href="/complaints/new" class="btn btn-sm btn-primary">New Complaint</a>
     </div>
-    <div class="card">
+    <div class="card card-hover">
         <h3>My Complaints</h3>
         <p>View and track your submitted complaints.</p>
         <a href="/complaints" class="btn btn-sm btn-secondary">View All</a>
@@ -37,28 +37,28 @@
 
 {% else %}
 <div class="card-grid">
-    <div class="card">
+    <div class="card card-hover">
         <h3>Policy Drafting</h3>
         <p>Generate compliant workplace policies for {{ country_names.get(user.country, "your region") }}.</p>
         <a href="/policies" class="btn btn-sm btn-primary">Draft Policies</a>
         {% if not user.is_subscribed %}
-        <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;">Requires Pro subscription</p>
+        <p class="text-muted text-hint">Requires Pro subscription</p>
         {% endif %}
     </div>
-    <div class="card">
+    <div class="card card-hover">
         <h3>Policy Compliance Checker</h3>
         <p>Upload or paste a policy to check it against {{ country_names.get(user.country, "your region") }} compliance requirements.</p>
         <a href="/policy-checker" class="btn btn-sm btn-primary">Check a Policy</a>
         {% if not user.is_subscribed %}
-        <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.5rem;">Requires Pro subscription</p>
+        <p class="text-muted text-hint">Requires Pro subscription</p>
         {% endif %}
     </div>
-    <div class="card">
+    <div class="card card-hover">
         <h3>Compliance Checklists</h3>
         <p>Track your progress on compliance requirements.</p>
         <a href="/compliance" class="btn btn-sm btn-primary">View Checklists</a>
     </div>
-    <div class="card">
+    <div class="card card-hover">
         <h3>Employment Laws</h3>
         <p>Review the employment law requirements for {{ country_names.get(user.country, "your region") }}.</p>
         <a href="/rights?country={{ user.country }}" class="btn btn-sm btn-secondary">View Requirements</a>
@@ -66,10 +66,10 @@
 </div>
 
 {% if not user.is_subscribed %}
-<div class="card" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); color: #fff; text-align: center; margin-top: 1rem;">
-    <h3 style="color: #fff;">Upgrade to Pro</h3>
-    <p style="color: #c4c4d4;">Unlock policy drafting tools — generate compliant policies from templates or create custom policies on any topic.</p>
-    <a href="/subscribe" class="btn" style="background: #fff; color: #0f3460;">Subscribe — $15/month</a>
+<div class="card upgrade-card">
+    <h3>Upgrade to Pro</h3>
+    <p>Unlock policy drafting tools — generate compliant policies from templates or create custom policies on any topic.</p>
+    <a href="/subscribe" class="btn">Subscribe — $15/month</a>
 </div>
 {% endif %}
 {% endif %}

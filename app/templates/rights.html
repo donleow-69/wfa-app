@@ -6,13 +6,13 @@
 
 <div class="tabs">
     {% for code, name in countries.items() %}
-    <a href="/rights?country={{ code }}" class="tab {% if code == selected_country %}active{% endif %}" style="text-decoration: none;">{{ name }}</a>
+    <a href="/rights?country={{ code }}" class="tab {% if code == selected_country %}active{% endif %}">{{ name }}</a>
     {% endfor %}
 </div>
 
 <div class="card-grid">
     {% for cat in categories %}
-    <a href="/rights/{{ cat.id }}?country={{ selected_country }}" class="card" style="text-decoration: none; color: inherit;">
+    <a href="/rights/{{ cat.id }}?country={{ selected_country }}" class="card card-hover" style="text-decoration: none; color: inherit;">
         <h3>{{ cat.title }}</h3>
         <p>{{ cat.summary }}</p>
     </a>

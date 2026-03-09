@@ -11,7 +11,7 @@
 {% endif %}
 
 <div class="chat-container">
-    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
     <form class="chat-input-form" id="chat-form">
         <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off" required>
         <button type="submit" class="btn btn-primary" id="chat-send">Send</button>
@@ -20,14 +20,14 @@
 
 <script>
 (function() {
-    const messagesEl = document.getElementById('chat-messages');
-    const form = document.getElementById('chat-form');
-    const input = document.getElementById('chat-input');
-    const sendBtn = document.getElementById('chat-send');
-    const rateBanner = document.getElementById('rate-banner');
+    var messagesEl = document.getElementById('chat-messages');
+    var form = document.getElementById('chat-form');
+    var input = document.getElementById('chat-input');
+    var sendBtn = document.getElementById('chat-send');
+    var rateBanner = document.getElementById('rate-banner');
 
     function addBubble(role, content) {
-        const bubble = document.createElement('div');
+        var bubble = document.createElement('div');
         bubble.className = 'chat-bubble chat-' + role;
         bubble.textContent = content;
         messagesEl.appendChild(bubble);
@@ -36,14 +36,14 @@
 
     // Load history
     fetch('/chat/history')
-        .then(r => r.json())
-        .then(msgs => {
-            msgs.forEach(m => addBubble(m.role, m.content));
+        .then(function(r) { return r.json(); })
+        .then(function(msgs) {
+            msgs.forEach(function(m) { addBubble(m.role, m.content); });
         });
 
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const msg = input.value.trim();
+        var msg = input.value.trim();
         if (!msg) return;
 
         addBubble('user', msg);
@@ -52,12 +52,12 @@
         sendBtn.textContent = '...';
 
         try {
-            const res = await fetch('/chat/send', {
+            var res = await fetch('/chat/send', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({message: msg})
             });
-            const data = await res.json();
+            var data = await res.json();
 
             if (res.status === 429) {
                 if (rateBanner) rateBanner.style.display = 'block';

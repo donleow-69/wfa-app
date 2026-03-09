@@ -2,12 +2,12 @@
 {% block title %}{{ topic }} Policy — {{ company_name }}{% endblock %}
 {% block content %}
 <p><a href="/policies/custom" class="text-muted">&larr; Draft another custom policy</a></p>
-<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-    <h1 style="margin-bottom: 0;">{{ topic }} Policy</h1>
+<div class="flex-between mb-1">
+    <h1 class="no-mb">{{ topic }} Policy</h1>
     <button onclick="copyPolicy()" class="btn btn-sm btn-secondary" id="copyBtn">Copy to Clipboard</button>
 </div>
 
-<div class="card" id="policyContent" style="white-space: pre-wrap; font-family: inherit; line-height: 1.8;">{{ rendered }}</div>
+<div class="card policy-content" id="policyContent">{{ rendered }}</div>
 
 <div class="form-actions">
     <button onclick="copyPolicy()" class="btn btn-primary">Copy to Clipboard</button>
@@ -16,17 +16,15 @@
     <a href="/policies" class="btn btn-secondary">All Policies</a>
 </div>
 
-<p class="text-muted mt-1" style="font-size: 0.85rem;">
+<p class="text-muted mt-1 text-hint">
     This policy provides a general framework and should be reviewed by legal counsel to ensure full compliance with your specific jurisdiction and circumstances.
 </p>
 
 <script>
 function copyPolicy() {
-    const text = document.getElementById('policyContent').innerText;
-    navigator.clipboard.writeText(text).then(() => {
-        const btn = document.getElementById('copyBtn');
-        btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = 'Copy to Clipboard', 2000);
+    var text = document.getElementById('policyContent').innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        window.showToast('Copied to clipboard!', 'success');
     });
 }
 </script>

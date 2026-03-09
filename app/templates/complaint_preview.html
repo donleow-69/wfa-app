@@ -1,6 +1,21 @@
 {% extends "base.html" %}
 {% block title %}Review Complaint{% endblock %}
 {% block content %}
+<div class="step-indicator">
+    <div class="step completed">
+        <span class="step-num">1</span>
+        <span class="step-label">Draft</span>
+    </div>
+    <div class="step active">
+        <span class="step-num">2</span>
+        <span class="step-label">Review</span>
+    </div>
+    <div class="step">
+        <span class="step-num">3</span>
+        <span class="step-label">Submitted</span>
+    </div>
+</div>
+
 <p><a href="/complaints/{{ complaint.id }}/edit" class="text-muted">&larr; Back to edit</a></p>
 <h1>Review Your Complaint</h1>
 <p class="text-muted">Please review the details below before submitting to the relevant authority.</p>
@@ -20,9 +35,9 @@
     {% endif %}
 
     {% if not authority.email %}
-    <p style="color: #b8860b; margin-top: 0.5rem;"><strong>Note:</strong> This authority only accepts complaints via their online portal. No email will be sent.</p>
+    <p class="text-warning-note text-hint"><strong>Note:</strong> This authority only accepts complaints via their online portal. No email will be sent.</p>
     {% elif not smtp_configured %}
-    <p style="color: #b8860b; margin-top: 0.5rem;"><strong>Note:</strong> Email sending is not configured on this server. Your complaint will be recorded but not emailed. Please use the portal link above to file directly.</p>
+    <p class="text-warning-note text-hint"><strong>Note:</strong> Email sending is not configured on this server. Your complaint will be recorded but not emailed. Please use the portal link above to file directly.</p>
     {% endif %}
 </div>
 
@@ -54,7 +69,7 @@
 <div class="card mt-1">
     <div class="form-actions">
         <a href="/complaints/{{ complaint.id }}/edit" class="btn btn-secondary">Edit</a>
-        <form method="post" action="/complaints/{{ complaint.id }}/submit" style="display: inline;">
+        <form method="post" action="/complaints/{{ complaint.id }}/submit" class="inline">
             <button type="submit" class="btn btn-primary">Confirm &amp; Submit</button>
         </form>
     </div>

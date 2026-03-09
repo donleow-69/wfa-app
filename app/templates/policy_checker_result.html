@@ -8,12 +8,10 @@
 <div class="card">
     <h3>{{ analysis.policy_type | default("Workplace Policy") }}</h3>
     <p>{{ analysis.summary | default("") }}</p>
-    <div style="margin-top: 1rem;">
+    <div class="mt-1">
         <strong>Overall Compliance Score: {{ analysis.overall_score }}/100</strong>
-        <div class="progress-bar" style="margin-top: 0.5rem;">
-            <div style="width: {{ analysis.overall_score }}%;
-                        background: {% if analysis.overall_score >= 70 %}#059669{% elif analysis.overall_score >= 40 %}#d97706{% else %}#dc2626{% endif %};
-                        height: 100%; border-radius: 4px; transition: width 0.5s;"></div>
+        <div class="progress-bar mt-1">
+            <div class="progress-fill {% if analysis.overall_score >= 70 %}score-high{% elif analysis.overall_score >= 40 %}score-mid{% else %}score-low{% endif %}" style="width: {{ analysis.overall_score }}%;"></div>
         </div>
     </div>
 </div>
@@ -21,16 +19,14 @@
 <!-- Covered Requirements -->
 {% if analysis.covered %}
 <div class="card">
-    <h3 style="color: #059669;">Covered Requirements ({{ analysis.covered | length }})</h3>
+    <h3 class="text-success">Covered Requirements ({{ analysis.covered | length }})</h3>
     {% for item in analysis.covered %}
-    <div class="checklist-item" style="border-bottom: 1px solid #eee; padding: 0.75rem 0;">
-        <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
-            <span style="color: #059669; font-size: 1.2rem;">&#10003;</span>
-            <div>
-                <strong>{{ item.requirement }}</strong>
-                <span class="badge" style="background: #d1fae5; color: #065f46; margin-left: 0.5rem;">{{ item.category }}</span>
-                <p class="text-muted" style="margin: 0.25rem 0 0; font-size: 0.9rem;">{{ item.assessment }}</p>
-            </div>
+    <div class="result-item">
+        <span class="result-check">&#10003;</span>
+        <div>
+            <strong>{{ item.requirement }}</strong>
+            <span class="badge badge-category">{{ item.category }}</span>
+            <p class="text-muted text-hint" style="margin: 0.25rem 0 0;">{{ item.assessment }}</p>
         </div>
     </div>
     {% endfor %}
@@ -40,23 +36,21 @@
 <!-- Gaps -->
 {% if analysis.gaps %}
 <div class="card">
-    <h3 style="color: #dc2626;">Gaps Found ({{ analysis.gaps | length }})</h3>
+    <h3 class="text-danger">Gaps Found ({{ analysis.gaps | length }})</h3>
     {% for item in analysis.gaps %}
-    <div class="checklist-item" style="border-bottom: 1px solid #eee; padding: 0.75rem 0;">
-        <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
-            <span style="color: #dc2626; font-size: 1.2rem;">&#10007;</span>
-            <div>
-                <strong>{{ item.requirement }}</strong>
-                <span class="badge" style="background: #d1fae5; color: #065f46; margin-left: 0.5rem;">{{ item.category }}</span>
-                {% if item.severity == "high" %}
-                <span class="badge" style="background: #fecaca; color: #991b1b;">High</span>
-                {% elif item.severity == "medium" %}
-                <span class="badge" style="background: #fef3c7; color: #92400e;">Medium</span>
-                {% else %}
-                <span class="badge" style="background: #e0e7ff; color: #3730a3;">Low</span>
-                {% endif %}
-                <p class="text-muted" style="margin: 0.25rem 0 0; font-size: 0.9rem;">{{ item.explanation }}</p>
-            </div>
+    <div class="result-item">
+        <span class="result-cross">&#10007;</span>
+        <div>
+            <strong>{{ item.requirement }}</strong>
+            <span class="badge badge-category">{{ item.category }}</span>
+            {% if item.severity == "high" %}
+            <span class="badge badge-severity-high">High</span>
+            {% elif item.severity == "medium" %}
+            <span class="badge badge-severity-medium">Medium</span>
+            {% else %}
+            <span class="badge badge-severity-low">Low</span>
+            {% endif %}
+            <p class="text-muted text-hint" style="margin: 0.25rem 0 0;">{{ item.explanation }}</p>
         </div>
     </div>
     {% endfor %}
@@ -68,23 +62,25 @@
 <div class="card">
     <h3>Recommendations</h3>
     {% for rec in analysis.recommendations %}
-    <div style="border-bottom: 1px solid #eee; padding: 0.75rem 0;">
-        <strong>{{ rec.priority }}. {{ rec.action }}</strong>
-        <p class="text-muted" style="margin: 0.25rem 0 0; font-size: 0.9rem;">{{ rec.rationale }}</p>
+    <div class="result-item">
+        <div>
+            <strong>{{ rec.priority }}. {{ rec.action }}</strong>
+            <p class="text-muted text-hint" style="margin: 0.25rem 0 0;">{{ rec.rationale }}</p>
+        </div>
     </div>
     {% endfor %}
 </div>
 {% endif %}
 
 <!-- Actions -->
-<div class="card" style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
+<div class="card flex-actions">
     <a href="/policy-checker" class="btn btn-primary">Analyze Another Policy</a>
     <a href="/policies/custom" class="btn btn-secondary">Draft a New Policy</a>
     <button onclick="window.print()" class="btn btn-secondary">Print Results</button>
 </div>
 
 <!-- Disclaimer -->
-<div class="card" style="background: #f9fafb; border-left: 4px solid #d1d5db; margin-top: 1rem;">
+<div class="card disclaimer">
     <p class="text-muted" style="margin: 0; font-size: 0.85rem;">
         <strong>Disclaimer:</strong> This analysis is generated by AI and provides general guidance only.
         It does not constitute legal advice. Consult a qualified legal professional for compliance decisions.

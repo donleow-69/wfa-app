@@ -11,9 +11,9 @@
 <div class="alert alert-error">Payment system is not configured yet. Please contact the administrator.</div>
 {% endif %}
 
-<div class="card" style="max-width: 28rem; margin: 2rem auto; text-align: center; border: 2px solid #0f3460;">
+<div class="card pricing-card">
     <h2>Pro Plan</h2>
-    <p style="font-size: 2rem; font-weight: 700; color: #0f3460; margin: 1rem 0;">$15<span style="font-size: 1rem; font-weight: 400; color: #6b7280;">/month</span></p>
+    <p class="price">$15<span>/month</span></p>
 
     <ul class="detail-list" style="text-align: left; margin-bottom: 1.5rem;">
         <li>Generate policy documents from templates</li>
@@ -25,15 +25,15 @@
 
     {% if user %}
     <form method="post" action="/subscribe/checkout">
-        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">Subscribe Now</button>
+        <button type="submit" class="btn btn-primary">Subscribe Now</button>
     </form>
     {% else %}
-    <a href="/register" class="btn btn-primary" style="width: 100%; display: block; padding: 0.75rem;">Create Account to Subscribe</a>
+    <a href="/register" class="btn btn-primary" style="display: block;">Create Account to Subscribe</a>
     {% endif %}
 </div>
 
-<div style="text-align: center;">
-    <p class="text-muted" style="font-size: 0.85rem;">
+<div class="text-center">
+    <p class="text-muted text-hint">
         Free features (rights information, complaints, compliance tracking) remain available without a subscription.
     </p>
 </div>

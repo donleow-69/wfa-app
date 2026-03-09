@@ -5,15 +5,15 @@
 <p class="text-muted">Upload or paste an existing workplace policy to check it against compliance requirements.</p>
 
 {% if error %}
-<div class="card" style="border-left: 4px solid #dc2626; background: #fef2f2;">
-    <p style="color: #dc2626; margin: 0;">{{ error }}</p>
+<div class="card error-card">
+    <p>{{ error }}</p>
 </div>
 {% endif %}
 
 <form action="/policy-checker/analyze" method="post" enctype="multipart/form-data" id="checker-form">
     <div class="card">
         <h3>Select Country</h3>
-        <select name="country" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+        <select name="country" class="checker-select">
             {% for code, name in countries.items() %}
             <option value="{{ code }}" {% if code == user.country %}selected{% endif %}>{{ name }}</option>
             {% endfor %}
@@ -22,26 +22,26 @@
 
     <div class="card">
         <h3>Upload Policy Document</h3>
-        <p class="text-muted" style="font-size: 0.85rem;">PDF or DOCX, max 2 MB</p>
-        <input type="file" name="file" id="file-input" accept=".pdf,.docx" style="width: 100%; padding: 0.5rem;">
+        <p class="text-muted text-hint">PDF or DOCX, max 2 MB</p>
+        <input type="file" name="file" id="file-input" accept=".pdf,.docx" class="checker-file">
     </div>
 
     <div class="card">
         <h3>Or Paste Policy Text</h3>
-        <textarea name="policy_text" id="text-input" rows="12" placeholder="Paste your policy text here..." style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; resize: vertical;"></textarea>
+        <textarea name="policy_text" id="text-input" rows="12" placeholder="Paste your policy text here..." class="checker-textarea"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%; padding: 0.75rem; font-size: 1.1rem;">
+    <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
         Analyze Policy
     </button>
 </form>
 
 <script>
 (function() {
-    const fileInput = document.getElementById('file-input');
-    const textInput = document.getElementById('text-input');
-    const form = document.getElementById('checker-form');
-    const submitBtn = document.getElementById('submit-btn');
+    var fileInput = document.getElementById('file-input');
+    var textInput = document.getElementById('text-input');
+    var form = document.getElementById('checker-form');
+    var submitBtn = document.getElementById('submit-btn');
 
     fileInput.addEventListener('change', function() {
         if (this.files.length > 0) {
@@ -67,7 +67,7 @@
 
     form.addEventListener('submit', function() {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Analyzing... this may take 15–30 seconds';
+        submitBtn.textContent = 'Analyzing... this may take 15\u201330 seconds';
     });
 })();
 </script>
