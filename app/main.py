@@ -82,6 +82,38 @@ async def asset_links():
     }])
 
 
+@app.get("/delete-account", response_class=HTMLResponse)
+async def delete_account_page(request: Request, user: User | None = Depends(get_optional_user)):
+    return templates.TemplateResponse("delete_account.html", {"request": request, "user": user})
+
+
+@app.post("/delete-account", response_class=HTMLResponse)
+async def delete_account(request: Request, user: User | None = Depends(get_optional_user)):
+    if not user:
+        from fastapi.responses import RedirectResponse
+        return RedirectResponse("/login", status_code=303)
+    from .database import get_db
+    from sqlalchemy import delete, select
+    from .models.chat import ChatMessage
+    from .models.complaint import Complaint
+    from .models.compliance import ComplianceChecklist, ComplianceItem
+    async for db in get_db():
+        # Delete compliance items for user's checklists
+        checklist_ids = (await db.execute(
+            select(ComplianceChecklist.id).where(ComplianceChecklist.user_id == user.id)
+        )).scalars().all()
+        if checklist_ids:
+            await db.execute(delete(ComplianceItem).where(ComplianceItem.checklist_id.in_(checklist_ids)))
+        await db.execute(delete(ComplianceChecklist).where(ComplianceChecklist.user_id == user.id))
+        await db.execute(delete(ChatMessage).where(ChatMessage.user_id == user.id))
+        await db.execute(delete(Complaint).where(Complaint.user_id == user.id))
+        await db.execute(delete(User).where(User.id == user.id))
+        await db.commit()
+    response = templates.TemplateResponse("delete_account.html", {"request": request, "user": None, "success": True})
+    response.delete_cookie("session_token")
+    return response
+
+
 @app.get("/dashboard", response_class=HTMLResponse)
 async def dashboard(request: Request, view: str | None = None, user: User = Depends(get_optional_user)):
     if not user:
