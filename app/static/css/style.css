@@ -1,8 +1,10 @@
 img.emoji {
-    height: 1.2em;
-    width: 1.2em;
-    vertical-align: -0.2em;
+    height: 1em;
+    width: 1em;
+    vertical-align: -0.1em;
     display: inline;
+    margin: 0 0.05em;
+    object-fit: contain;
 }
 
 /* === CSS Custom Properties === */
