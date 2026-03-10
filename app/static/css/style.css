@@ -1,9 +1,10 @@
 img.emoji {
-    height: 1em;
-    width: auto;
-    vertical-align: -0.1em;
+    height: 16px;
+    width: 16px;
+    vertical-align: -2px;
     display: inline-block;
-    margin: 0 0.05em;
+    margin: 0 2px;
+    object-fit: contain;
 }
 
 .tab, .country-name {
