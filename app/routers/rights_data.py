@@ -1,12 +1,12 @@
 """Centralised rights data for all supported countries."""
 
 COUNTRY_NAMES = {
-    "us": "United States",
-    "sg": "Singapore",
-    "my": "Malaysia",
-    "id": "Indonesia",
-    "ph": "Philippines",
-    "th": "Thailand",
+    "us": "🇺🇸 United States",
+    "sg": "🇸🇬 Singapore",
+    "my": "🇲🇾 Malaysia",
+    "id": "🇮🇩 Indonesia",
+    "ph": "🇵🇭 Philippines",
+    "th": "🇹🇭 Thailand",
 }
 
 RIGHTS_BY_COUNTRY = {
@@ -103,7 +103,7 @@ RIGHTS_BY_COUNTRY = {
             "penalties": [
                 "Back wages for unpaid overtime or minimum wage violations.",
                 "Liquidated damages equal to the amount of back wages.",
-                "Civil penalties up to $2,374 per violation for repeated or wilful violations.",
+                "Civil penalties up to $2,584 per violation for repeated or wilful violations.",
                 "Criminal penalties for wilful violations (fines up to $10,000 and/or imprisonment).",
             ],
             "key_laws": [
@@ -134,9 +134,9 @@ RIGHTS_BY_COUNTRY = {
             "enforcement_agency": "Occupational Safety and Health Administration (OSHA)",
             "agency_contact": "1-800-321-6742 | www.osha.gov",
             "penalties": [
-                "Serious violations: up to $16,131 per violation.",
-                "Wilful or repeated violations: up to $161,323 per violation.",
-                "Failure to abate: up to $16,131 per day beyond abatement date.",
+                "Serious violations: up to $17,004 per violation.",
+                "Wilful or repeated violations: up to $170,046 per violation.",
+                "Failure to abate: up to $17,004 per day beyond abatement date.",
             ],
             "key_laws": [
                 {"name": "Occupational Safety and Health Act of 1970 (OSH Act)", "scope": "Most private-sector employers; general duty clause and specific standards"},
@@ -305,7 +305,6 @@ RIGHTS_BY_COUNTRY = {
             "penalties": [
                 "Misclassification: back taxes, benefits, and penalties for employers.",
                 "Breach of contract: damages as specified in the contract or determined by court.",
-                "FTC Non-Compete Ban (if enacted): voiding of non-compete clauses.",
             ],
             "key_laws": [
                 {"name": "At-will employment doctrine", "scope": "Default in all states except Montana"},
@@ -394,16 +393,16 @@ RIGHTS_BY_COUNTRY = {
                 "Job advertisements must not state preference for any particular characteristic unless it is an inherent job requirement.",
                 "Selection criteria should be based on skills, experience, and ability to perform the job.",
                 "The Tripartite Guidelines on Fair Employment Practices (TGFEP) are enforceable under the Employment Act.",
-                "From 2024, workplace fairness legislation strengthens protections against discrimination.",
+                "The Workplace Fairness Act was passed in January 2025 and is expected to take effect in late 2027, providing statutory protections against workplace discrimination.",
             ],
             "what_to_do": "Report discriminatory practices to TAFEP (tafep.sg). You can file a complaint online or call the TAFEP hotline at 6838 0969.",
             "enforcement_agency": "Tripartite Alliance for Fair & Progressive Employment Practices (TAFEP)",
             "agency_contact": "6838 0969 | www.tafep.sg",
             "key_laws": [
                 {"name": "Tripartite Guidelines on Fair Employment Practices (TGFEP)", "scope": "All employers in Singapore"},
-                {"name": "Workplace Fairness Legislation (from 2024)", "scope": "Strengthened protections against workplace discrimination"},
+                {"name": "Workplace Fairness Act 2025", "scope": "Statutory protections against workplace discrimination (effective late 2027)"},
             ],
-            "effective_date": "TGFEP: 2007; Workplace Fairness Legislation: 2024",
+            "effective_date": "TGFEP: 2007; Workplace Fairness Act: passed 2025, effective late 2027",
         },
         {
             "id": "poha",
@@ -429,8 +428,8 @@ RIGHTS_BY_COUNTRY = {
             "title": "Retirement & Re-employment Act",
             "summary": "Protects older workers from premature retirement and ensures re-employment opportunities.",
             "details": [
-                "Minimum retirement age is 63 years (raised progressively to 65 by 2030).",
-                "Employers must offer re-employment to eligible employees up to age 68 (rising to 70 by 2030).",
+                "Minimum retirement age is 64 years from 1 July 2026 (rising to 65 by 2030).",
+                "Employers must offer re-employment to eligible employees up to age 69 from 1 July 2026 (rising to 70 by 2030).",
                 "Re-employment must be on reasonable terms based on the employee's last drawn salary.",
                 "Employers who cannot re-employ must offer an Employment Assistance Payment (EAP).",
                 "Employers cannot dismiss employees to avoid re-employment obligations.",
@@ -497,20 +496,21 @@ RIGHTS_BY_COUNTRY = {
             "summary": "Paid maternity and paternity leave, childcare leave, and protection against dismissal during pregnancy.",
             "details": [
                 "16 weeks of Government-Paid Maternity Leave (GPML) for eligible working mothers.",
-                "2 weeks of Government-Paid Paternity Leave (GPPL) for eligible working fathers.",
+                "4 weeks of Government-Paid Paternity Leave (GPPL) for eligible working fathers.",
                 "6 days of paid childcare leave per year for each parent with children under 7.",
                 "2 days of paid extended childcare leave per year for each parent with children aged 7-12.",
                 "Employers cannot dismiss a female employee during maternity leave.",
                 "Adoption leave of 12 weeks for qualifying adoptive mothers.",
+                "Shared Parental Leave (SPL): 10 weeks shared between parents for children born from 1 April 2026 onwards (6 weeks for births from 1 April 2025 to 31 March 2026).",
             ],
             "what_to_do": "Notify your employer at least one week before the start of maternity leave. Ensure you meet eligibility requirements for government-paid leave (3+ months of employment, child is a Singapore citizen).",
             "enforcement_agency": "Ministry of Manpower (MOM)",
             "agency_contact": "6438 5122 | www.mom.gov.sg",
             "key_laws": [
-                {"name": "Child Development Co-Savings Act", "scope": "Government-paid maternity, paternity, and childcare leave"},
+                {"name": "Child Development Co-Savings Act", "scope": "Government-paid maternity, paternity, shared parental, and childcare leave"},
                 {"name": "Employment Act (maternity provisions)", "scope": "Maternity leave and dismissal protections"},
             ],
-            "effective_date": "Various — GPML: 2008, GPPL: 2017",
+            "effective_date": "Various — GPML: 2008, GPPL: 2017 (4 weeks mandatory from Apr 2025), SPL: Apr 2025",
             "faq": [
                 {"q": "Am I eligible for 16 weeks of maternity leave?", "a": "You need to have worked for your employer for at least 3 months, and the child must be a Singapore citizen. Otherwise, you are entitled to 8 weeks under the Employment Act."},
             ],
@@ -621,8 +621,7 @@ RIGHTS_BY_COUNTRY = {
             "title": "Minimum Wages",
             "summary": "National minimum wage requirements and compliance obligations for employers.",
             "details": [
-                "National minimum wage of RM1,500 per month (effective 2023) for employers with 5 or more employees.",
-                "Employers with fewer than 5 employees had a transitional period for compliance.",
+                "National minimum wage of RM1,700 per month (effective February 2025) for all employers regardless of size.",
                 "The minimum wage applies to all employees regardless of nationality.",
                 "Employers cannot offset housing, food allowances, or other benefits against the minimum wage.",
                 "Piece-rated workers must receive at least the minimum wage equivalent.",
@@ -637,9 +636,9 @@ RIGHTS_BY_COUNTRY = {
             ],
             "key_laws": [
                 {"name": "National Wages Consultative Council Act 2011", "scope": "All employers in Peninsular Malaysia, Sabah, Sarawak, and Labuan"},
-                {"name": "Minimum Wages Order 2022", "scope": "Sets current minimum wage at RM1,500"},
+                {"name": "Minimum Wages Order 2025", "scope": "Sets current minimum wage at RM1,700"},
             ],
-            "effective_date": "2013 (first minimum wage); 2023 (RM1,500 rate)",
+            "effective_date": "2013 (first minimum wage); 2025 (RM1,700 rate)",
         },
         {
             "id": "social_security",
@@ -650,7 +649,7 @@ RIGHTS_BY_COUNTRY = {
                 "Employment Injury Scheme: covers work-related accidents and occupational diseases.",
                 "Invalidity Scheme: provides benefits for non-work-related invalidity or death.",
                 "Employment Insurance System (EIS): provides temporary financial assistance for loss of employment.",
-                "Both employer and employee contribute to SOCSO and EIS.",
+                "Both employer and employee contribute to SOCSO and EIS. Insurable salary ceiling is RM6,000/month (effective October 2024).",
                 "Benefits include medical treatment, temporary/permanent disability benefits, dependants' benefits, and funeral benefits.",
             ],
             "what_to_do": "Verify your SOCSO registration with your employer. In case of workplace injury, report to your employer immediately and seek treatment at a SOCSO panel clinic.",
@@ -720,8 +719,9 @@ RIGHTS_BY_COUNTRY = {
                 "Fixed-term employment contracts (PKWT) can be extended but limited to 5 years total.",
                 "Severance pay required for termination: up to 9 months' salary depending on tenure.",
                 "Outsourcing is permitted for supporting activities with worker protections maintained.",
-                "Working hours: maximum 7 hours/day (6-day week) or 8 hours/day (5-day week), with overtime up to 4 hours/day.",
+                "Working hours: maximum 7 hours/day (6-day week) or 8 hours/day (5-day week), with overtime up to 4 hours/day and 18 hours/week.",
                 "Overtime pay at 1.5x for the first hour and 2x for subsequent hours.",
+                "Workers must receive two rest days per week for a 5-day work week.",
             ],
             "what_to_do": "File disputes with the local Manpower Office (Disnaker). Industrial disputes follow bipartite negotiation, then mediation, and finally the Industrial Relations Court.",
             "enforcement_agency": "Ministry of Manpower (Kemenaker) / Local Manpower Offices (Disnaker)",
@@ -744,7 +744,7 @@ RIGHTS_BY_COUNTRY = {
             "details": [
                 "Prohibition of child labour (under 15 years) with limited exceptions for light work.",
                 "Equal opportunity and treatment without discrimination based on gender, ethnicity, race, religion, or political views.",
-                "Female workers entitled to 3 months maternity leave (1.5 months before and after birth).",
+                "Female workers entitled to 3 months maternity leave, extendable to 6 months with medical certification (full pay months 1-4, 75% months 5-6 under Law 4/2024).",
                 "Workers entitled to annual leave of at least 12 days after 12 months of continuous employment.",
                 "Workers have the right to form and join trade unions.",
                 "Employers must enrol workers in social security (BPJS Ketenagakerjaan and BPJS Kesehatan).",
@@ -808,8 +808,9 @@ RIGHTS_BY_COUNTRY = {
             "title": "Women Workers' Protections",
             "summary": "Special protections for female workers including maternity, menstrual leave, and night work.",
             "details": [
-                "3 months of fully paid maternity leave (1.5 months before and 1.5 months after birth).",
-                "Miscarriage leave of 1.5 months.",
+                "3 months of fully paid maternity leave, extendable to 6 months with medical certification (full pay months 1-4, 75% months 5-6 under Law 4/2024).",
+                "Miscarriage leave of 1.5 months minimum, extendable with medical recommendation.",
+                "Paternity leave of 2 days paid, extendable to 5 days with employer agreement. 2 days paid leave for miscarriage (Law 4/2024).",
                 "2 days of menstrual leave per month (first and second day of menstruation).",
                 "Female workers under 18 or pregnant women cannot be required to work between 11pm and 7am.",
                 "Employers must provide transportation and adequate security for women working night shifts.",
@@ -820,11 +821,12 @@ RIGHTS_BY_COUNTRY = {
             "agency_contact": "Kemenaker: (021) 5255 733 | Ministry of Women Empowerment: (021) 3842638",
             "key_laws": [
                 {"name": "Law No. 13/2003 on Manpower (Articles 76-83)", "scope": "Special protections for female workers"},
+                {"name": "Law No. 4/2024 on Mother and Child Healthcare", "scope": "Extended maternity leave, paternity leave, breastfeeding facilities"},
             ],
-            "effective_date": "2003",
+            "effective_date": "2003 (Manpower Act); 2024 (Law 4/2024)",
             "faq": [
                 {"q": "Is menstrual leave mandatory?", "a": "Employers must grant menstrual leave if the employee feels pain and cannot work. No medical certificate is required, but company policies may vary."},
-                {"q": "Is maternity leave fully paid?", "a": "Yes, female workers are entitled to 3 months of fully paid maternity leave under the Manpower Act."},
+                {"q": "Is maternity leave fully paid?", "a": "Yes, the first 4 months are fully paid. If extended to 6 months with medical certification, months 5-6 are paid at 75% under Law 4/2024."},
             ],
         },
     ],
@@ -909,8 +911,8 @@ RIGHTS_BY_COUNTRY = {
             "title": "Social Benefits (SSS, PhilHealth, Pag-IBIG)",
             "summary": "Mandatory social security, health insurance, and housing fund contributions for all employees.",
             "details": [
-                "SSS (Social Security System): provides sickness, maternity, disability, retirement, death, and funeral benefits.",
-                "PhilHealth: national health insurance providing inpatient and outpatient coverage.",
+                "SSS (Social Security System): provides sickness, maternity, disability, retirement, death, and funeral benefits. Contribution rate: 15% (10% employer + 5% employee) with maximum monthly salary credit of ₱35,000.",
+                "PhilHealth: national health insurance providing inpatient and outpatient coverage. Premium rate: 5% of monthly salary (effective January 2025).",
                 "Pag-IBIG (HDMF): housing fund with savings programme and housing loan access.",
                 "Both employer and employee make monthly contributions to all three programmes.",
                 "Self-employed individuals and voluntary members can also participate.",
@@ -989,7 +991,8 @@ RIGHTS_BY_COUNTRY = {
                 "Minimum wage set by the National Wage Committee (varies by province).",
                 "Annual leave of at least 6 working days after 1 year of service.",
                 "Sick leave up to 30 working days per year with pay (medical certificate required after 3 days).",
-                "Maternity leave of 98 days (45 days paid by employer, remainder by Social Security).",
+                "Maternity leave of 120 days (60 days paid by employer, remainder by Social Security) — increased from 98 days under LPA No. 9 (effective December 2025).",
+                "Paternity leave of 15 days at full pay (LPA No. 9, effective December 2025).",
                 "Severance pay required for termination: 30 days to 400 days of wages depending on tenure.",
                 "Employers cannot dismiss employees for exercising legal rights, filing complaints, or union activities.",
             ],
@@ -1003,9 +1006,10 @@ RIGHTS_BY_COUNTRY = {
             ],
             "key_laws": [
                 {"name": "Labor Protection Act B.E. 2541 (1998)", "scope": "All employers and employees in Thailand (with limited exclusions)"},
-                {"name": "Labor Protection Act (No. 7) B.E. 2562 (2019)", "scope": "Amendments — increased severance pay tier, expanded paternity leave"},
+                {"name": "Labor Protection Act (No. 7) B.E. 2562 (2019)", "scope": "Amendments — increased severance pay tier"},
+                {"name": "Labor Protection Act (No. 9) B.E. 2568 (2025)", "scope": "Amendments — maternity leave increased to 120 days, 15-day paternity leave"},
             ],
-            "effective_date": "1998 (amended 2019)",
+            "effective_date": "1998 (amended 2019, 2025)",
         },
         {
             "id": "labor_relations",
@@ -1032,10 +1036,10 @@ RIGHTS_BY_COUNTRY = {
             "summary": "Mandatory social insurance covering sickness, maternity, disability, death, child allowance, old age, and unemployment.",
             "details": [
                 "All employers with 1 or more employees must register with the Social Security Office (SSO).",
-                "Both employer and employee contribute 5% of wages (capped at THB 15,000/month) each.",
+                "Both employer and employee contribute 5% of wages (capped at THB 17,500/month from January 2026) each.",
                 "Government also contributes a portion to the fund.",
                 "Benefits cover 7 categories: sickness, maternity, invalidity, death, child allowance, old-age pension, and unemployment.",
-                "Maternity benefit: 90 days of wages at 50% from the Social Security Fund (in addition to 45 days from employer).",
+                "Maternity benefit: 90 days of wages at 50% from the Social Security Fund (in addition to 60 days from employer).",
                 "Old-age pension payable from age 55 after at least 180 months of contributions.",
                 "Unemployment benefits: up to 50% of wages for up to 6 months (for involuntary separation).",
             ],
@@ -1057,8 +1061,8 @@ RIGHTS_BY_COUNTRY = {
             "title": "Foreign Worker Protections",
             "summary": "Regulations governing the employment of foreign workers in Thailand.",
             "details": [
-                "Foreign workers must hold a valid work permit under the Working of Aliens Act.",
-                "Certain occupations are reserved for Thai nationals (39 prohibited occupations).",
+                "Foreign workers must hold a valid work permit under the Royal Ordinance on Management of Employment of Foreign Workers B.E. 2560 (2017).",
+                "Certain occupations are reserved for Thai nationals (20 strictly prohibited occupations per 2022 DOE Notification).",
                 "Foreign workers have the same labour protection rights as Thai workers under the Labor Protection Act.",
                 "Employers must not confiscate passports or work permits.",
                 "MOU workers from Myanmar, Laos, Cambodia, and Vietnam have specific import/regularisation processes.",
@@ -1068,10 +1072,10 @@ RIGHTS_BY_COUNTRY = {
             "enforcement_agency": "Department of Employment / Department of Labour Protection and Welfare",
             "agency_contact": "Hotline: 1506 | Anti-Trafficking: 1300",
             "key_laws": [
-                {"name": "Working of Aliens Act B.E. 2551 (2008)", "scope": "Work permits and employment of foreign workers"},
+                {"name": "Royal Ordinance on Management of Employment of Foreign Workers B.E. 2560 (2017)", "scope": "Work permits and employment of foreign workers"},
                 {"name": "Anti-Trafficking in Persons Act B.E. 2551 (2008)", "scope": "Forced labour and human trafficking protections"},
             ],
-            "effective_date": "2008",
+            "effective_date": "2017 (Royal Ordinance); 2022 (revised occupation list)",
         },
         {
             "id": "workplace_harassment_th",
