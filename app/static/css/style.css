@@ -2,9 +2,13 @@ img.emoji {
     height: 1em;
     width: 1em;
     vertical-align: -0.1em;
-    display: inline;
+    display: inline-block;
     margin: 0 0.05em;
     object-fit: contain;
+}
+
+.tab, .country-name {
+    min-height: 1.5em;
 }
 
 /* === CSS Custom Properties === */
