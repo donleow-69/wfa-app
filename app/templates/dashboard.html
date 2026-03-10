@@ -3,12 +3,12 @@
 {% block content %}
 <h1>Welcome, {{ user.full_name }}</h1>
 
-{% set country_names = {"us": "🇺🇸 United States", "sg": "🇸🇬 Singapore", "my": "🇲🇾 Malaysia", "id": "🇮🇩 Indonesia", "ph": "🇵🇭 Philippines", "th": "🇹🇭 Thailand"} %}
+{% set country_names = {"us": "United States", "sg": "Singapore", "my": "Malaysia", "id": "Indonesia", "ph": "Philippines", "th": "Thailand"} %}
 
 <div class="tabs">
     <a href="/dashboard?view=employee" class="tab {{ 'active' if active_view == 'employee' }}">Employee</a>
     <a href="/dashboard?view=employer" class="tab {{ 'active' if active_view == 'employer' }}">Employer</a>
-    <span class="tab">{{ country_names.get(user.country, "United States") }}</span>
+    <span class="tab"><img class="flag" src="https://flagcdn.com/20x15/{{ user.country }}.png" alt=""> {{ country_names.get(user.country, "United States") }}</span>
     {% if user.is_subscribed %}
         <span class="tab text-pro">Pro</span>
     {% else %}

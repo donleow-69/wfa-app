@@ -11,12 +11,12 @@ router = APIRouter(prefix="/policies")
 templates = Jinja2Templates(directory="app/templates")
 
 COUNTRY_NAMES = {
-    "us": "🇺🇸 United States",
-    "sg": "🇸🇬 Singapore",
-    "my": "🇲🇾 Malaysia",
-    "id": "🇮🇩 Indonesia",
-    "ph": "🇵🇭 Philippines",
-    "th": "🇹🇭 Thailand",
+    "us": "United States",
+    "sg": "Singapore",
+    "my": "Malaysia",
+    "id": "Indonesia",
+    "ph": "Philippines",
+    "th": "Thailand",
 }
 
 POLICY_TEMPLATES_BY_COUNTRY = {

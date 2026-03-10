@@ -14,7 +14,7 @@
 
 <div class="tabs">
     {% for code, name in countries.items() %}
-    <a href="/policies?country={{ code }}" class="tab {% if code == selected_country %}active{% endif %}">{{ name }}</a>
+    <a href="/policies?country={{ code }}" class="tab {% if code == selected_country %}active{% endif %}"><img class="flag" src="https://flagcdn.com/20x15/{{ code }}.png" alt="{{ name }}"> {{ name }}</a>
     {% endfor %}
 </div>
 

@@ -1,12 +1,12 @@
 """Centralised rights data for all supported countries."""
 
 COUNTRY_NAMES = {
-    "us": "🇺🇸 United States",
-    "sg": "🇸🇬 Singapore",
-    "my": "🇲🇾 Malaysia",
-    "id": "🇮🇩 Indonesia",
-    "ph": "🇵🇭 Philippines",
-    "th": "🇹🇭 Thailand",
+    "us": "United States",
+    "sg": "Singapore",
+    "my": "Malaysia",
+    "id": "Indonesia",
+    "ph": "Philippines",
+    "th": "Thailand",
 }
 
 RIGHTS_BY_COUNTRY = {

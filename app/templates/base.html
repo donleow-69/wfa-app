@@ -8,8 +8,7 @@
     <meta name="theme-color" content="#1a1a2e">
     <link rel="manifest" href="/static/manifest.webmanifest">
     <link rel="stylesheet" href="/static/css/style.css">
-    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="/static/icons/favicon.ico">
+<link rel="icon" href="/static/icons/favicon.ico">
     <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -119,19 +118,6 @@
             setTimeout(function() { toast.remove(); }, 300);
         }, 3000);
     };
-    </script>
-    <script>
-    (function() {
-        var opts = { folder: 'svg', ext: '.svg' };
-        twemoji.parse(document.body, opts);
-        new MutationObserver(function(mutations) {
-            mutations.forEach(function(m) {
-                m.addedNodes.forEach(function(n) {
-                    if (n.nodeType === 1) twemoji.parse(n, opts);
-                });
-            });
-        }).observe(document.body, { childList: true, subtree: true });
-    })();
     </script>
 </body>
 </html>
