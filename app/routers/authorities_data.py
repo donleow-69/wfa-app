@@ -233,6 +233,94 @@ AUTHORITIES: dict[str, dict[str, Authority]] = {
             description="Government department overseeing labor and employment.",
         ),
     },
+    "gb": {
+        "discrimination": Authority(
+            name="Equality and Human Rights Commission (EHRC)",
+            email="0808 800 0082",
+            portal_url="https://www.equalityhumanrights.com",
+            description="Enforces the Equality Act 2010 and promotes equality across the nine protected characteristics. Address: Arndale House, The Arndale Centre, Manchester, M4 3AQ",
+        ),
+        "wages": Authority(
+            name="Fair Work Agency / HMRC National Minimum Wage",
+            email="0300 123 1100 (ACAS)",
+            portal_url="https://www.gov.uk/national-minimum-wage",
+            description="Enforces minimum wage compliance and investigates underpayment. The Fair Work Agency consolidates NMW enforcement from April 2026. Address: ACAS, Euston Tower, 286 Euston Road, London, NW1 3JJ",
+        ),
+        "safety": Authority(
+            name="Health and Safety Executive (HSE)",
+            email="0300 003 1747",
+            portal_url="https://www.hse.gov.uk",
+            description="Regulates workplace health and safety under the Health and Safety at Work Act 1974. Address: Redgrave Court, Merton Road, Bootle, Merseyside, L20 7HS",
+        ),
+        "leave": Authority(
+            name="Advisory, Conciliation and Arbitration Service (ACAS)",
+            email="0300 123 1100",
+            portal_url="https://www.acas.org.uk",
+            description="Provides advice on employment rights including leave entitlements, and mandatory pre-claim conciliation. Address: Euston Tower, 286 Euston Road, London, NW1 3JJ",
+        ),
+        "unfair_dismissal": Authority(
+            name="Employment Tribunals (via ACAS)",
+            email="0300 123 1100 (ACAS) / 0300 123 1024 (Tribunals)",
+            portal_url="https://www.gov.uk/courts-tribunals/employment-tribunal",
+            description="Handles unfair dismissal claims. Pre-claim conciliation through ACAS is mandatory before tribunal proceedings. Address: Employment Tribunals (multiple locations across England, Wales, and Scotland)",
+        ),
+        "harassment": Authority(
+            name="Equality and Human Rights Commission (EHRC)",
+            email="0808 800 0082",
+            portal_url="https://www.equalityhumanrights.com",
+            description="Oversees enforcement of harassment protections under the Equality Act 2010 and ERA 2025 preventive duty. Address: Arndale House, The Arndale Centre, Manchester, M4 3AQ",
+        ),
+        "industrial_relations_gb": Authority(
+            name="Central Arbitration Committee (CAC)",
+            email="0330 109 3610",
+            portal_url="https://www.gov.uk/government/organisations/central-arbitration-committee",
+            description="Handles trade union recognition disputes, disclosure of information complaints, and European works council issues. Address: Fleetbank House, 2-6 Salisbury Square, London, EC4Y 8JX",
+        ),
+    },
+    "hk": {
+        "discrimination_hk": Authority(
+            name="Equal Opportunities Commission (EOC)",
+            email="(852) 2511 8211",
+            portal_url="https://www.eoc.org.hk",
+            description="Investigates discrimination complaints, promotes equal opportunities, and enforces the four discrimination ordinances. Address: 19/F, CityPlaza Three, 14 Taikoo Wan Road, Taikoo Shing, Hong Kong",
+        ),
+        "wages_hk": Authority(
+            name="Labour Department",
+            email="(852) 2717 1771",
+            portal_url="https://www.labour.gov.hk",
+            description="Enforces the Employment Ordinance and Minimum Wage Ordinance, handles wage disputes and employment claims. Address: Harbour Building, 38 Pier Road, Central, Hong Kong",
+        ),
+        "safety_hk": Authority(
+            name="Labour Department, Occupational Safety and Health Branch",
+            email="(852) 2559 2297",
+            portal_url="https://www.labour.gov.hk",
+            description="Inspects workplaces, investigates accidents, and enforces the Occupational Safety and Health Ordinance. Address: Harbour Building, 38 Pier Road, Central, Hong Kong",
+        ),
+        "leave_hk": Authority(
+            name="Labour Department",
+            email="(852) 2717 1771",
+            portal_url="https://www.labour.gov.hk",
+            description="Advises on statutory leave entitlements under the Employment Ordinance and handles related disputes. Address: Harbour Building, 38 Pier Road, Central, Hong Kong",
+        ),
+        "unfair_dismissal_hk": Authority(
+            name="Labour Department / Labour Tribunal",
+            email="(852) 2717 1771 (Labour Dept) / (852) 2625 0555 (Tribunal)",
+            portal_url="https://www.labour.gov.hk",
+            description="Handles employment claims including unreasonable and unlawful dismissal. The Labour Tribunal provides quick and inexpensive dispute resolution. Address: Harbour Building, 38 Pier Road, Central, Hong Kong",
+        ),
+        "harassment_hk": Authority(
+            name="Equal Opportunities Commission (EOC)",
+            email="(852) 2511 8211",
+            portal_url="https://www.eoc.org.hk",
+            description="Handles sexual harassment, disability harassment, and racial harassment complaints under the discrimination ordinances. Address: 19/F, CityPlaza Three, 14 Taikoo Wan Road, Taikoo Shing, Hong Kong",
+        ),
+        "social_security_hk": Authority(
+            name="Mandatory Provident Fund Schemes Authority (MPFA)",
+            email="(852) 2918 0102",
+            portal_url="https://www.mpfa.org.hk",
+            description="Regulates and supervises the MPF system, ensures employer and employee compliance with contribution requirements. Address: Units 2501-08, Level 25, Tower 1, Kowloon Commerce Centre, 51 Kwai Cheong Road, Kwai Chung",
+        ),
+    },
     "th": {
         "discrimination": Authority(
             name="Department of Labour Protection and Welfare (DLPW)",

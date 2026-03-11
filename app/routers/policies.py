@@ -12,7 +12,9 @@ templates = Jinja2Templates(directory="app/templates")
 
 COUNTRY_NAMES = {
     "us": "United States",
+    "gb": "United Kingdom",
     "sg": "Singapore",
+    "hk": "Hong Kong",
     "my": "Malaysia",
     "id": "Indonesia",
     "ph": "Philippines",
@@ -1872,6 +1874,722 @@ Failure to comply with social security obligations may result in:
 
 10. CONTACT
 For questions about social security enrollment, contributions, or benefits, contact {hr_contact} or {contact_person}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+    ],
+    "gb": [
+        {
+            "id": "equal_opportunities_gb",
+            "title": "Equal Opportunities Policy",
+            "category": "Equality",
+            "summary": "Equality Act 2010 compliant policy covering all nine protected characteristics, reasonable adjustments, and complaint procedures.",
+            "template": """EQUAL OPPORTUNITIES POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to promoting equality of opportunity and eliminating unlawful discrimination in accordance with the Equality Act 2010. This policy sets out our approach to equal opportunities and the avoidance of discrimination at work.
+
+2. SCOPE
+This policy applies to all employees, workers, agency staff, consultants, contractors, job applicants, and visitors of {company_name} across all UK operations.
+
+3. PROTECTED CHARACTERISTICS
+Under the Equality Act 2010, there are nine protected characteristics:
+- Age
+- Disability
+- Gender reassignment
+- Marriage and civil partnership
+- Pregnancy and maternity
+- Race (including colour, nationality, and ethnic or national origin)
+- Religion or belief (including lack of belief)
+- Sex
+- Sexual orientation
+
+{company_name} will not discriminate against, harass, or victimise any individual on the basis of any protected characteristic.
+
+4. PROHIBITED CONDUCT
+The following forms of conduct are prohibited under this policy:
+
+a) Direct Discrimination: Treating someone less favourably because of a protected characteristic.
+b) Indirect Discrimination: Applying a provision, criterion, or practice that puts individuals sharing a protected characteristic at a particular disadvantage, unless objectively justified.
+c) Harassment: Unwanted conduct related to a protected characteristic that has the purpose or effect of violating a person's dignity or creating an intimidating, hostile, degrading, humiliating, or offensive environment.
+d) Victimisation: Subjecting someone to a detriment because they have made a complaint or allegation of discrimination, or have supported someone else in doing so.
+
+5. REASONABLE ADJUSTMENTS
+{company_name} will make reasonable adjustments for employees and job applicants with disabilities to ensure they are not placed at a substantial disadvantage. Employees requiring adjustments should contact {contact_person} or {hr_contact} to discuss their needs.
+
+6. COMPLAINT PROCEDURE
+Any employee who believes they have been subjected to discrimination, harassment, or victimisation should raise their concern through one or more of the following channels:
+- Their line manager (unless the line manager is the subject of the complaint)
+- Human Resources at {hr_contact}
+- {contact_person}
+
+All complaints will be dealt with seriously, promptly, and confidentially. The full grievance procedure will be followed where appropriate.
+
+7. MONITORING
+{company_name} will monitor the composition of its workforce and the operation of this policy on an ongoing basis. This includes analysing data on recruitment, promotion, training, pay, and grievances by protected characteristic where practicable.
+
+8. BREACH OF THIS POLICY
+Any employee who is found to have committed an act of discrimination, harassment, or victimisation will be subject to disciplinary action, up to and including dismissal. Making a knowingly false or malicious allegation of discrimination is also a disciplinary offence.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "anti_harassment_gb",
+            "title": "Anti-Harassment and Bullying Policy",
+            "category": "Harassment",
+            "summary": "ERA 2025 compliant policy with preventive duty, covering third-party harassment and confidential reporting.",
+            "template": """ANTI-HARASSMENT AND BULLYING POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to providing a working environment free from harassment and bullying. This policy complies with the Equality Act 2010 and the Employment Rights Act 2025 (ERA 2025), including the employer's preventive duty regarding sexual harassment.
+
+2. SCOPE
+This policy applies to all employees, workers, agency staff, contractors, and visitors of {company_name}. It covers behaviour in the workplace, at work-related events, on business trips, and on work-related social media.
+
+3. DEFINITIONS
+
+a) Harassment: Unwanted conduct related to a protected characteristic that has the purpose or effect of violating a person's dignity or creating an intimidating, hostile, degrading, humiliating, or offensive environment.
+b) Sexual Harassment: Unwanted conduct of a sexual nature, including unwelcome sexual advances, requests for sexual favours, and other verbal, non-verbal, or physical conduct of a sexual nature.
+c) Bullying: Offensive, intimidating, malicious, or insulting behaviour involving the misuse of power that is meant to undermine, humiliate, or injure the person on the receiving end. Bullying may be a single incident or a pattern of behaviour.
+
+4. THIRD-PARTY HARASSMENT
+{company_name} will take reasonable steps to protect employees from harassment by third parties, including clients, customers, suppliers, and members of the public. Employees who experience harassment from a third party should report it immediately using the channels described below.
+
+5. EMPLOYER'S PREVENTIVE DUTY (ERA 2025)
+Under the Employment Rights Act 2025, {company_name} has a legal duty to take reasonable steps to prevent sexual harassment of its employees. {company_name} will:
+- Conduct regular risk assessments to identify and mitigate harassment risks
+- Provide mandatory training for all staff on preventing sexual harassment
+- Establish clear reporting and investigation procedures
+- Monitor and review the effectiveness of prevention measures
+- Take prompt action on any reports or identified risks
+
+6. REPORTING PROCEDURE
+Employees who experience or witness harassment or bullying should report it through one or more of the following channels:
+- Their line manager (unless the manager is the subject of the complaint)
+- Human Resources at {hr_contact}
+- {contact_person}
+- Anonymous reporting where available
+
+Reports may be made verbally or in writing.
+
+7. INVESTIGATION PROCESS
+All reports of harassment or bullying will be investigated promptly, thoroughly, and impartially. The investigation will be conducted by a trained and independent investigator. Both the complainant and the respondent will have the opportunity to present their account and be accompanied at meetings by a colleague or trade union representative.
+
+8. CONFIDENTIALITY
+{company_name} will maintain confidentiality throughout the complaint and investigation process to the greatest extent possible. Information will only be disclosed on a need-to-know basis.
+
+9. NDA LIMITATION (ERA 2025)
+In accordance with the Employment Rights Act 2025, {company_name} will not use non-disclosure agreements (NDAs) to prevent victims of harassment from making disclosures to the police, regulated health and legal professionals, or to prescribed persons under whistleblowing legislation.
+
+10. PENALTIES
+Any employee found to have committed harassment or bullying will be subject to disciplinary action up to and including summary dismissal. Managers who fail to act on reports of harassment may also face disciplinary action.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "whistleblowing_gb",
+            "title": "Whistleblowing Policy",
+            "category": "Compliance",
+            "summary": "PIDA 1998 compliant protected disclosure policy with reporting channels and protection guarantees.",
+            "template": """WHISTLEBLOWING POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to the highest standards of openness, integrity, and accountability. This policy encourages employees and others to raise genuine concerns about malpractice within the organisation, in accordance with the Public Interest Disclosure Act 1998 (PIDA).
+
+2. SCOPE
+This policy applies to all employees, officers, workers, agency staff, contractors, consultants, and suppliers of {company_name}.
+
+3. WHAT IS A PROTECTED DISCLOSURE
+A protected disclosure is a disclosure of information that, in the reasonable belief of the worker, is made in the public interest and tends to show one or more of the qualifying categories of wrongdoing listed below.
+
+4. QUALIFYING DISCLOSURES
+A qualifying disclosure covers information that the worker reasonably believes tends to show that one or more of the following has occurred, is occurring, or is likely to occur:
+- A criminal offence has been committed, is being committed, or is likely to be committed
+- A person has failed, is failing, or is likely to fail to comply with any legal obligation
+- A miscarriage of justice has occurred, is occurring, or is likely to occur
+- The health or safety of any individual has been, is being, or is likely to be endangered
+- The environment has been, is being, or is likely to be damaged
+- Information tending to show any of the above has been, is being, or is likely to be deliberately concealed
+
+5. REPORTING CHANNELS
+Employees should raise concerns through the following internal channels:
+- Their line manager or supervisor
+- Human Resources at {hr_contact}
+- {contact_person}
+- A designated Whistleblowing Officer (if appointed)
+
+Reports may be made verbally or in writing and should include as much detail as possible about the nature of the concern, including dates, individuals involved, and any evidence.
+
+6. INVESTIGATION
+{company_name} will acknowledge receipt of a concern within five working days and carry out an initial assessment to determine the scope and nature of the investigation required. Investigations will be conducted by suitably qualified and independent personnel. The whistleblower will be kept informed of progress where possible.
+
+7. PROTECTION FROM DETRIMENT
+{company_name} will not tolerate any form of detriment, retaliation, or victimisation against a worker who makes a protected disclosure in good faith. This includes (but is not limited to):
+- Dismissal or selection for redundancy
+- Demotion, suspension, or transfer
+- Denial of training, promotion, or other opportunities
+- Bullying, harassment, or ostracism
+- Any other unfavourable treatment connected to the disclosure
+
+Any employee who retaliates against a whistleblower will be subject to disciplinary action up to and including dismissal.
+
+8. EXTERNAL REPORTING
+If an employee feels unable to raise a concern internally, or if they believe the internal process has not addressed the matter, they may report concerns to a prescribed person or body, such as:
+- The relevant regulatory authority (e.g., HSE, FCA, CQC, HMRC, Environment Agency)
+- Their Member of Parliament
+- A legal adviser
+
+Workers who make qualifying disclosures to prescribed persons will receive the same legal protection as for internal disclosures.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "health_safety_gb",
+            "title": "Health and Safety Policy",
+            "category": "Safety",
+            "summary": "HSWA 1974 compliant policy statement with risk assessment procedures and employee responsibilities.",
+            "template": """HEALTH AND SAFETY POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+PART 1: GENERAL POLICY STATEMENT
+
+{company_name} recognises and accepts its responsibility as an employer under the Health and Safety at Work etc. Act 1974 (HSWA) and all associated regulations. {company_name} is committed to ensuring, so far as is reasonably practicable, the health, safety, and welfare of all employees, contractors, visitors, and anyone else who may be affected by our activities.
+
+This policy statement is signed by senior management and will be reviewed annually.
+
+Signed: ____________________
+Position: Senior Management Representative
+Date: {effective_date}
+
+PART 2: ORGANISATION (RESPONSIBILITIES)
+
+a) Senior Management
+Senior management is responsible for:
+- Ensuring that adequate resources are provided for health and safety
+- Reviewing health and safety performance and this policy at least annually
+- Leading by example in health and safety matters
+
+b) Managers and Supervisors
+Managers and supervisors are responsible for:
+- Implementing the health and safety policy within their areas
+- Conducting and reviewing risk assessments
+- Ensuring employees receive appropriate training and supervision
+- Reporting accidents, incidents, and near misses
+- Consulting with employees on health and safety matters
+
+c) All Employees
+All employees are responsible for:
+- Taking reasonable care for their own health and safety and that of others
+- Cooperating with {company_name} on health and safety matters
+- Not interfering with or misusing anything provided for health and safety
+- Reporting hazards, accidents, and near misses to their manager
+
+d) Health and Safety Contact
+For health and safety queries, employees should contact {contact_person} or {hr_contact}.
+
+PART 3: ARRANGEMENTS
+
+a) Risk Assessments
+{company_name} will carry out suitable and sufficient risk assessments of all work activities to identify hazards, evaluate risks, and implement appropriate control measures. Risk assessments will be reviewed regularly and whenever there is a significant change in work activities.
+
+b) Training
+{company_name} will provide employees with adequate health and safety training upon induction, when they are exposed to new or increased risks, and at regular intervals thereafter. Records of all training will be maintained.
+
+c) First Aid
+{company_name} will ensure that adequate first aid provision is available at all times, including trained first aiders, first aid kits, and clear signage.
+
+d) Fire Safety
+{company_name} will maintain a fire risk assessment and ensure appropriate fire detection, warning systems, firefighting equipment, escape routes, and evacuation procedures are in place. Fire drills will be conducted at regular intervals.
+
+e) Accident Reporting
+All accidents, incidents, and near misses must be reported and recorded. Reportable incidents will be notified to the Health and Safety Executive (HSE) under the Reporting of Injuries, Diseases and Dangerous Occurrences Regulations 2013 (RIDDOR).
+
+f) Consultation with Employees
+{company_name} will consult with employees or their elected safety representatives on matters affecting their health and safety, in accordance with the Health and Safety (Consultation with Employees) Regulations 1996.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "family_leave_gb",
+            "title": "Family Leave Policy",
+            "category": "Leave",
+            "summary": "Comprehensive family leave policy covering maternity, paternity, shared parental, parental, and bereavement leave entitlements.",
+            "template": """FAMILY LEAVE POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to supporting employees who are starting or growing their families. This policy sets out the family leave entitlements available to eligible employees in accordance with UK legislation.
+
+2. MATERNITY LEAVE
+Eligible employees are entitled to up to 52 weeks of maternity leave, comprising:
+- 26 weeks of Ordinary Maternity Leave (OML)
+- 26 weeks of Additional Maternity Leave (AML)
+
+Statutory Maternity Pay (SMP) is payable for up to 39 weeks:
+- Weeks 1-6: 90% of average weekly earnings (no cap)
+- Weeks 7-39: The lower of GBP 184.03 per week (or the current prescribed rate) or 90% of average weekly earnings
+
+Employees must give at least 15 weeks' notice before the expected week of childbirth and provide a MATB1 certificate. Maternity leave can start no earlier than 11 weeks before the expected week of childbirth.
+
+3. PATERNITY LEAVE
+Eligible employees are entitled to up to 2 weeks of paternity leave, which may be taken as one block of one or two weeks within 56 days of the birth or placement.
+
+From April 2026, paternity leave is a day-one right — there is no qualifying service requirement. Statutory Paternity Pay (SPP) is paid at the current prescribed weekly rate or 90% of average weekly earnings, whichever is lower.
+
+4. SHARED PARENTAL LEAVE
+Eligible parents may share up to 50 weeks of leave and up to 37 weeks of Shared Parental Pay (ShPP) between them. ShPP is paid at the current prescribed weekly rate or 90% of average weekly earnings, whichever is lower.
+
+To be eligible, employees must share responsibility for the child with another parent, and the mother (or adopter) must have curtailed their maternity (or adoption) leave or pay. Employees must give at least 8 weeks' notice of each period of shared parental leave.
+
+5. PARENTAL LEAVE
+All employees with at least one year of continuous service who have parental responsibility for a child under 18 are entitled to up to 18 weeks of unpaid parental leave per child. Leave must be taken in blocks of one week (unless the child is disabled) and is limited to 4 weeks per child per year, unless otherwise agreed with {company_name}.
+
+6. BEREAVEMENT LEAVE
+Employees who lose a child under the age of 18 (including a stillbirth after 24 weeks of pregnancy) are entitled to 2 weeks of statutory bereavement leave. Statutory parental bereavement pay is available to eligible employees.
+
+{company_name} may also grant compassionate leave in other bereavement situations at the discretion of management.
+
+7. KEEPING IN TOUCH (KIT) DAYS
+Employees on maternity or adoption leave may work up to 10 KIT days during their leave without bringing their leave to an end. Employees on shared parental leave may work up to 20 Shared Parental Leave In Touch (SPLIT) days. KIT and SPLIT days are voluntary and must be agreed between the employee and {company_name}.
+
+8. RETURN TO WORK
+Employees returning from Ordinary Maternity Leave, paternity leave, or parental leave of 4 weeks or less are entitled to return to the same job. Employees returning from Additional Maternity Leave, shared parental leave of more than 26 weeks, or parental leave of more than 4 weeks are entitled to return to the same job or, if that is not reasonably practicable, to a suitable and appropriate alternative role on no less favourable terms.
+
+For queries about family leave, contact {hr_contact} or {contact_person}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "right_to_work_gb",
+            "title": "Right to Work Verification Procedure",
+            "category": "Immigration",
+            "summary": "Immigration compliance procedure for verifying right to work status, conducting checks, and maintaining records.",
+            "template": """RIGHT TO WORK VERIFICATION PROCEDURE
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+This procedure sets out the steps {company_name} must follow to verify that all prospective and current employees have the legal right to work in the United Kingdom. Compliance with this procedure is essential to establish a statutory excuse against liability for employing an illegal worker.
+
+2. LEGAL REQUIREMENT
+Under the Immigration, Asylum and Nationality Act 2006, it is a criminal offence to knowingly employ a person who does not have the right to work in the UK. Employers who have not conducted prescribed right to work checks may also face civil penalties.
+
+3. BEFORE EMPLOYMENT STARTS
+A right to work check must be completed for every prospective employee before their first day of paid work. No offer of employment should be made unconditional until a satisfactory right to work check has been completed.
+
+4. DOCUMENT CHECKS
+The type of check required depends on the individual's immigration status:
+
+a) British and Irish Citizens
+British and Irish citizens may prove their right to work by presenting a valid UK or Irish passport. Irish citizens may also present a valid passport card. Alternatively, a manual document check may be carried out using acceptable documents from the Home Office's published lists.
+
+b) Settled Status (EU Settlement Scheme)
+Individuals with settled or pre-settled status under the EU Settlement Scheme must have their right to work verified using the Home Office online checking service. Physical documents (e.g., EU passports or national identity cards) are not acceptable on their own for right to work purposes.
+
+c) Visa Holders
+Individuals holding a visa or immigration permission (e.g., Skilled Worker visa, Graduate visa, or other work visa) must have their right to work verified using the Home Office online checking service. The employer must check the individual's conditions of stay, including any restrictions on the type of work or hours permitted.
+
+5. ONLINE CHECKS (SHARE CODES)
+Where an online right to work check is required, the individual will provide a share code, which the employer must use alongside the individual's date of birth to check their status via the Home Office online service. A copy of the online check result (the profile page) must be retained.
+
+6. FOLLOW-UP CHECKS (TIME-LIMITED PERMISSIONS)
+For employees with time-limited right to work (e.g., visa holders, pre-settled status), {company_name} must conduct a follow-up check before the employee's current permission expires. This follow-up check must be completed using the same prescribed method and a record must be retained.
+
+Managers and HR must set calendar reminders to ensure follow-up checks are completed on time.
+
+7. RECORD KEEPING
+{company_name} must retain a clear copy of all right to work documents or online check results for the duration of employment and for a further two years after employment ends. Records must be stored securely and in compliance with data protection legislation.
+
+8. PENALTIES FOR NON-COMPLIANCE
+Failure to conduct right to work checks may result in:
+- A civil penalty of up to GBP 60,000 per illegal worker (for a first offence; higher for repeat offences)
+- Criminal prosecution for knowingly employing an illegal worker (up to 5 years' imprisonment)
+- Damage to the organisation's reputation and sponsor licence (if applicable)
+
+For questions about right to work checks, contact {hr_contact} or {contact_person}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+    ],
+    "hk": [
+        {
+            "id": "employment_contract_hk",
+            "title": "Employment Contract Template",
+            "category": "Compliance",
+            "summary": "Employment Ordinance compliant contract covering mandatory terms including wages, hours, rest days, notice period, and end-of-year payment.",
+            "template": """EMPLOYMENT CONTRACT TEMPLATE
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PARTIES
+This contract of employment is entered into between {company_name} (the "Employer") and the Employee named below.
+
+2. POSITION AND DUTIES
+The Employee is employed in the position of [Position Title]. The Employee shall perform such duties as are reasonably assigned by {company_name} and as are consistent with the role.
+
+3. COMMENCEMENT DATE
+The employment shall commence on {effective_date} and shall continue until terminated in accordance with the terms of this contract and the Employment Ordinance (Cap. 57).
+
+4. PROBATION PERIOD
+The first [one/three/six] months of employment shall be a probationary period. During the first month of probation, either party may terminate the contract without notice. After the first month of probation, either party may terminate with not less than 7 days' written notice or payment in lieu.
+
+5. WORKING HOURS AND REST DAYS
+The Employee's normal working hours shall be [specify hours] per day, [specify days] per week. The Employee is entitled to not less than one rest day in every period of seven days, in accordance with the Employment Ordinance.
+
+6. REMUNERATION
+The Employee's wages shall be [amount] per [month/hour], payable on or before the [date] of each month. Wages shall not be paid later than 7 days after the end of the wage period. {company_name} will comply with the Statutory Minimum Wage Ordinance (Cap. 608).
+
+7. MANDATORY PROVIDENT FUND (MPF)
+The Employee will be enrolled in a Mandatory Provident Fund scheme in accordance with the MPF Schemes Ordinance (Cap. 485). Both the Employer and Employee shall contribute 5% of the Employee's relevant income, subject to the minimum and maximum relevant income levels.
+
+8. LEAVE ENTITLEMENTS
+The Employee shall be entitled to:
+- Annual leave in accordance with the Employment Ordinance (7 to 14 days based on years of service)
+- Statutory holidays as prescribed by the Employment Ordinance
+- Sick leave and sickness allowance in accordance with the Employment Ordinance
+- Maternity leave, paternity leave, and other statutory leave as applicable
+Full details of leave entitlements are set out in {company_name}'s Leave Entitlements Policy.
+
+9. NOTICE PERIOD
+After probation, either party may terminate this contract by giving not less than [one month's] written notice or payment in lieu of notice. The notice period must be agreed in the contract and must be not less than 7 days.
+
+10. TERMINATION
+Either party may terminate the contract by giving the required notice or payment in lieu. {company_name} may summarily dismiss the Employee without notice for serious misconduct as defined in the Employment Ordinance. The Employee may terminate without notice if they are in fear of physical danger, are subjected to ill-treatment, or have been employed for not less than 5 years and are certified as permanently unfit.
+
+11. CONFIDENTIALITY
+The Employee agrees to keep confidential all proprietary information, trade secrets, and business information of {company_name} during and after employment.
+
+12. GOVERNING LAW
+This contract shall be governed by and construed in accordance with the laws of the Hong Kong Special Administrative Region.
+
+For queries regarding this contract, contact {hr_contact} or {contact_person}.
+
+Employer: ____________________
+Employee: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "anti_discrimination_hk",
+            "title": "Equal Opportunities Policy",
+            "category": "Equality",
+            "summary": "Policy covering the four discrimination ordinances: sex, disability, family status, and race discrimination.",
+            "template": """EQUAL OPPORTUNITIES POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to providing a fair and inclusive working environment free from discrimination. This policy is established in compliance with Hong Kong's four anti-discrimination ordinances.
+
+2. SCOPE
+This policy applies to all employees, job applicants, contractors, and visitors of {company_name} in Hong Kong. It covers all aspects of employment, including recruitment, terms of employment, promotion, transfer, training, and dismissal.
+
+3. PROTECTED GROUNDS
+Under Hong Kong law, discrimination is prohibited on the following grounds:
+- Sex, including pregnancy and breastfeeding (Sex Discrimination Ordinance, Cap. 480)
+- Marital status (Sex Discrimination Ordinance, Cap. 480)
+- Disability, including physical, mental, intellectual, and sensory disabilities, as well as the presence of organisms causing disease (Disability Discrimination Ordinance, Cap. 487)
+- Family status, meaning responsibility for the care of an immediate family member (Family Status Discrimination Ordinance, Cap. 527)
+- Race, including colour, descent, national or ethnic origin (Race Discrimination Ordinance, Cap. 602)
+
+4. PROHIBITED CONDUCT
+The following forms of conduct are prohibited:
+- Direct discrimination: treating a person less favourably on a protected ground
+- Indirect discrimination: applying a requirement or condition that disadvantages persons of a particular group without justification
+- Harassment: engaging in unwelcome conduct related to a protected ground
+- Victimisation: treating a person unfavourably because they have made or intend to make a complaint under a discrimination ordinance
+
+5. REASONABLE ACCOMMODATION (DISABILITY)
+{company_name} will provide reasonable accommodation for employees and job applicants with disabilities, unless doing so would cause unjustifiable hardship. Employees who require accommodation should contact {contact_person} or {hr_contact}.
+
+6. COMPLAINT PROCEDURE
+Any employee who believes they have been subjected to discrimination, harassment, or victimisation should raise their concern through one or more of the following channels:
+- Their direct supervisor or manager
+- Human Resources at {hr_contact}
+- {contact_person}
+
+All complaints will be treated seriously, investigated promptly, and handled confidentially.
+
+7. EQUAL OPPORTUNITIES COMMISSION (EOC) RESOURCES
+Employees may also seek assistance from the Equal Opportunities Commission (EOC), which provides free enquiry, conciliation, and legal assistance services. The EOC can be contacted at:
+- Hotline: 2511 8211
+- Website: www.eoc.org.hk
+
+8. MONITORING
+{company_name} will regularly review its employment practices and this policy to ensure compliance with anti-discrimination legislation and to promote equality of opportunity.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "anti_harassment_hk",
+            "title": "Anti-Sexual Harassment Policy",
+            "category": "Harassment",
+            "summary": "SDO Cap 480 compliant policy addressing sexual harassment, employer vicarious liability, and complaint handling.",
+            "template": """ANTI-SEXUAL HARASSMENT POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to maintaining a working environment free from sexual harassment. This policy is established in compliance with the Sex Discrimination Ordinance (SDO), Cap. 480, and aims to prevent sexual harassment and to provide effective procedures for handling complaints.
+
+2. LEGAL FRAMEWORK (SDO)
+The Sex Discrimination Ordinance (Cap. 480) prohibits sexual harassment in the workplace. Sexual harassment is unlawful whether committed by an employer, employee, or any person in the workplace.
+
+3. DEFINITION OF SEXUAL HARASSMENT
+Under the SDO, sexual harassment occurs when a person:
+- Makes an unwelcome sexual advance or an unwelcome request for sexual favours to another person, or
+- Engages in other unwelcome conduct of a sexual nature in relation to another person,
+in circumstances where a reasonable person would have anticipated that the other person would be offended, humiliated, or intimidated.
+
+Sexual harassment also includes conduct that creates a sexually hostile or intimidating work environment.
+
+Examples include but are not limited to:
+- Unwelcome physical contact, touching, or gestures
+- Sexually suggestive comments, jokes, or propositions
+- Display of sexually offensive materials
+- Unwelcome sexual messages via email, phone, or social media
+- Sexual assault
+
+4. SCOPE
+This policy applies to all employees, contractors, clients, customers, suppliers, and any persons present in the workplace of {company_name}. It covers behaviour in the workplace, at work-related events, and during business travel.
+
+5. EMPLOYER'S VICARIOUS LIABILITY
+Under the SDO, {company_name} may be held vicariously liable for acts of sexual harassment committed by its employees in the course of employment, unless {company_name} can show that it took reasonably practicable steps to prevent the harassment. This policy and associated training form part of those preventive steps.
+
+6. REPORTING PROCEDURE
+Employees who experience or witness sexual harassment should report it promptly through one or more of the following channels:
+- Their direct supervisor or manager (unless the manager is the subject of the complaint)
+- Human Resources at {hr_contact}
+- {contact_person}
+
+Reports may be made verbally or in writing.
+
+7. INVESTIGATION
+All complaints will be investigated promptly, thoroughly, and impartially. The investigation will be conducted by a trained and independent person. Both the complainant and the respondent will have an opportunity to present their account.
+
+8. DISCIPLINARY ACTION
+If a complaint of sexual harassment is substantiated, {company_name} will take appropriate disciplinary action against the harasser, up to and including summary dismissal. Disciplinary action will be proportionate to the seriousness of the conduct.
+
+9. CONFIDENTIALITY
+{company_name} will maintain confidentiality throughout the complaint and investigation process to the greatest extent possible. Information will only be disclosed to those who need to know for the purpose of investigating and resolving the complaint.
+
+10. SUPPORT RESOURCES
+Employees affected by sexual harassment may seek support from:
+- Human Resources at {hr_contact}
+- {contact_person}
+- The Equal Opportunities Commission (EOC) Hotline: 2511 8211
+- The Association Concerning Sexual Violence Against Women Hotline: 2375 5322
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "safety_hk",
+            "title": "Occupational Safety and Health Policy",
+            "category": "Safety",
+            "summary": "Cap 509 compliant workplace safety policy with risk assessment and accident reporting procedures.",
+            "template": """OCCUPATIONAL SAFETY AND HEALTH POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+{company_name} is committed to providing and maintaining a safe and healthy working environment for all employees, contractors, and visitors. This policy sets out our approach to occupational safety and health in compliance with Hong Kong legislation.
+
+2. LEGAL FRAMEWORK
+This policy is established in compliance with:
+- Occupational Safety and Health Ordinance (Cap. 509)
+- Factories and Industrial Undertakings Ordinance (Cap. 59) (where applicable)
+and their subsidiary regulations.
+
+3. GENERAL DUTIES
+{company_name} will, so far as is reasonably practicable:
+- Provide and maintain plant and systems of work that are safe and without risk to health
+- Ensure safety and the absence of risks to health in connection with the use, handling, storage, and transport of articles and substances
+- Provide such information, instruction, training, and supervision as necessary to ensure safety and health at work
+- Maintain the workplace in a condition that is safe and without risk to health
+- Provide and maintain means of access to and egress from the workplace that are safe and without risk
+
+4. RISK ASSESSMENT
+{company_name} will conduct regular risk assessments of all work activities to identify hazards, evaluate risks, and implement appropriate control measures. Risk assessments will be reviewed periodically and whenever there is a significant change in work activities or after any accident or incident.
+
+5. TRAINING
+{company_name} will provide adequate occupational safety and health training to all employees upon induction and at regular intervals. Specific training will be provided for employees exposed to particular hazards or who are assigned special safety responsibilities.
+
+6. ACCIDENT REPORTING
+All workplace accidents, dangerous occurrences, and occupational diseases must be reported to management immediately. {company_name} will report accidents and dangerous occurrences to the Labour Department as required under the Employees' Compensation Ordinance (Cap. 282) and the Occupational Safety and Health Ordinance (Cap. 509).
+
+Accidents resulting in death or serious bodily injury must be reported to the Commissioner for Labour within 24 hours, and a written notice must be submitted within 7 days.
+
+7. PERSONAL PROTECTIVE EQUIPMENT (PPE)
+Where hazards cannot be adequately controlled by other means, {company_name} will provide appropriate personal protective equipment at no cost to employees. Employees are required to use PPE as instructed and to report any defects.
+
+8. EMERGENCY PROCEDURES
+{company_name} will establish and maintain emergency procedures, including fire evacuation plans, first aid arrangements, and emergency contact information. Fire drills will be conducted at regular intervals, and emergency exits and equipment will be clearly marked and maintained.
+
+9. EMPLOYEE RESPONSIBILITIES
+All employees are responsible for:
+- Taking reasonable care for their own safety and health and that of others
+- Cooperating with {company_name} on safety and health matters
+- Using equipment, substances, and PPE in accordance with training and instructions
+- Reporting hazards, accidents, and near misses to their supervisor
+- Not intentionally or recklessly interfering with or misusing anything provided for safety
+
+For safety and health queries, contact {hr_contact} or {contact_person}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "leave_hk",
+            "title": "Leave Entitlements Policy",
+            "category": "Leave",
+            "summary": "Comprehensive leave policy covering annual leave, statutory holidays, sick leave, maternity, paternity, and the broadened continuous contract rules.",
+            "template": """LEAVE ENTITLEMENTS POLICY
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+This policy sets out the leave entitlements available to employees of {company_name} in Hong Kong under the Employment Ordinance (Cap. 57) and company policy.
+
+2. ANNUAL LEAVE
+Employees who have been employed under a continuous contract for 12 months are entitled to paid annual leave on the following scale:
+- After 1 year of service: 7 days
+- After 2 years of service: 7 days
+- After 3 years of service: 8 days
+- After 4 years of service: 9 days
+- After 5 years of service: 10 days
+- After 6 years of service: 11 days
+- After 7 years of service: 12 days
+- After 8 years of service: 13 days
+- After 9 or more years of service: 14 days
+
+Annual leave pay is calculated at the average daily wages earned in the 12 months preceding the leave.
+
+3. STATUTORY HOLIDAYS
+Employees are entitled to 15 statutory holidays in 2026. All employees, regardless of length of service, are entitled to the statutory holidays. Employees who have been employed under a continuous contract for 3 months are entitled to holiday pay.
+
+4. SICK LEAVE
+Employees accumulate paid sickness days at the rate of 2 days per month for the first 12 months and 4 days per month thereafter, up to a maximum accumulation of 120 days. To be entitled to sickness allowance, an employee must:
+- Have accumulated sufficient paid sickness days
+- Have been absent for at least 4 consecutive days (or for day-surgery, 1 day)
+- Produce a medical certificate
+
+Sickness allowance is paid at a rate of four-fifths (4/5) of the employee's average daily wages.
+
+5. MATERNITY LEAVE
+A female employee who has been employed under a continuous contract and has given notice of pregnancy is entitled to 14 weeks of maternity leave. Maternity leave pay is calculated at four-fifths (4/5) of the employee's average daily wages. The Government reimburses employers for the additional 4 weeks (weeks 11-14) through a reimbursement scheme.
+
+6. PATERNITY LEAVE
+A male employee who has been employed under a continuous contract is entitled to 5 days of paternity leave for each confinement of his spouse or partner. Paternity leave pay is calculated at four-fifths (4/5) of the employee's average daily wages.
+
+7. CONTINUOUS CONTRACT DEFINITION
+From January 2026, the continuous contract threshold is broadened. An employee is regarded as being employed under a continuous contract if they have been employed continuously by the same employer for 4 weeks or more, working at least 68 hours in aggregate during that 4-week period. This broadened definition replaces the previous requirement of working 18 hours or more per week.
+
+Employees meeting the new continuous contract threshold are entitled to statutory benefits including rest days, paid statutory holidays, annual leave, sickness allowance, severance payment, and long service payment.
+
+8. APPLICATION PROCEDURE
+Employees should apply for leave through {company_name}'s designated leave application system or by contacting {hr_contact}. Leave applications should be submitted in advance wherever possible.
+
+For queries about leave entitlements, contact {hr_contact} or {contact_person}.
+
+Approved by: ____________________
+Title: ____________________
+Date: {effective_date}""",
+        },
+        {
+            "id": "mpf_compliance_hk",
+            "title": "MPF Compliance Procedure",
+            "category": "Compliance",
+            "summary": "Mandatory Provident Fund enrolment and contribution procedures, including the MPF offsetting abolition from May 2025.",
+            "template": """MPF COMPLIANCE PROCEDURE
+
+Company: {company_name}
+Effective Date: {effective_date}
+
+1. PURPOSE
+This procedure sets out the obligations of {company_name} regarding the enrolment of employees in a Mandatory Provident Fund (MPF) scheme and the management of contributions in compliance with Hong Kong law.
+
+2. LEGAL FRAMEWORK (CAP. 485)
+The Mandatory Provident Fund Schemes Ordinance (Cap. 485) requires employers to enrol eligible employees in a registered MPF scheme and to make regular contributions. Non-compliance is a criminal offence.
+
+3. ELIGIBILITY
+All employees aged 18 to 64 who have been employed for 60 or more consecutive days are required to join an MPF scheme, unless they fall within a specific exemption category.
+
+4. ENROLMENT
+{company_name} must enrol eligible employees in the company's MPF scheme within 60 days of the commencement of their employment. Enrolment forms and scheme information will be provided by {hr_contact} during the onboarding process.
+
+5. CONTRIBUTION RATES
+Both {company_name} (the employer) and the employee are required to contribute 5% of the employee's relevant income to the MPF scheme, subject to the following:
+- Minimum relevant income level: Employees earning below the minimum relevant income level are not required to make employee contributions, but {company_name} must still contribute 5% of the employee's relevant income.
+- Maximum relevant income level: Contributions are capped at 5% of the maximum relevant income level (currently HKD 30,000 per month), resulting in a maximum mandatory contribution of HKD 1,500 per month from each party.
+
+Contributions must be paid to the MPF trustee within the contribution period (i.e., on or before the 10th day of the month following the contribution period).
+
+6. EXEMPTIONS
+The following categories of employees are exempt from the MPF requirement:
+- Employees from overseas who enter Hong Kong for employment for a period not exceeding 13 months, or who are covered by an overseas retirement scheme
+- Employees aged 65 or above
+- Employees aged under 18
+- Domestic employees
+- Self-employed hawkers
+- Persons covered by statutory pension or provident fund schemes (e.g., civil servants)
+
+7. RECORD KEEPING
+{company_name} must maintain records of all MPF contributions, enrolment forms, and related correspondence for a minimum of 7 years. Monthly contribution records must be made available to employees on request.
+
+8. MPF OFFSETTING ABOLITION (MAY 2025)
+From 1 May 2025, the use of MPF employer contributions to offset severance payment and long service payment has been abolished for employment periods on or after that date. This means:
+- For employment periods before 1 May 2025, the previous offsetting arrangement continues to apply.
+- For employment periods on or after 1 May 2025, {company_name} may not use MPF employer contributions to offset severance payment or long service payment.
+
+9. SEVERANCE AND LONG SERVICE PAYMENT BUDGETING
+In light of the abolition of MPF offsetting, {company_name} will set aside dedicated reserves or establish a designated savings account to budget for potential severance payment and long service payment liabilities arising from employment periods on or after 1 May 2025. The Government's 25-year subsidy scheme may be utilised where applicable.
+
+10. MPFA COMPLIANCE
+{company_name} will cooperate fully with the Mandatory Provident Fund Schemes Authority (MPFA) in relation to inspections, audits, and enquiries. Any suspected non-compliance or irregularities should be reported immediately to {hr_contact} or {contact_person}.
+
+Failure to comply with MPF obligations may result in:
+- Surcharges of 5% on outstanding contributions
+- Financial penalties imposed by the MPFA
+- Criminal prosecution for persistent non-compliance
+
+For questions about MPF enrolment, contributions, or compliance, contact {hr_contact} or {contact_person}.
 
 Approved by: ____________________
 Title: ____________________

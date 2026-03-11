@@ -38,7 +38,7 @@ async def register(
             {"request": request, "error": "An account with that email already exists."},
         )
 
-    valid_countries = {"us", "sg", "my", "id", "ph", "th"}
+    valid_countries = {"us", "sg", "my", "id", "ph", "th", "gb", "hk"}
     if country not in valid_countries:
         country = "us"
 

@@ -353,6 +353,110 @@ DEFAULT_ITEMS_BY_COUNTRY = {
             "description": "Employees trained on anti-harassment obligations under LPA Section 16 and Gender Equality Act. Supervisors trained on complaint handling.",
         },
     ],
+    "gb": [
+        {
+            "category": "Immigration",
+            "requirement": "Right to work checks completed",
+            "description": "Conduct right-to-work checks for all new employees before start date; maintain records and track visa expiry dates. Penalty: up to GBP 60,000 per illegal worker.",
+        },
+        {
+            "category": "Pensions",
+            "requirement": "Auto-enrolment pension scheme active",
+            "description": "Enrol eligible workers (aged 22+, earning over GBP 10,000/year) into a qualifying pension scheme. Minimum contributions: 3% employer, 5% employee.",
+        },
+        {
+            "category": "Wages",
+            "requirement": "National Minimum/Living Wage compliance",
+            "description": "Pay at least GBP 12.71/hour for workers aged 21+ (from April 2026). Maintain detailed payroll records.",
+        },
+        {
+            "category": "Contracts",
+            "requirement": "Written employment particulars issued",
+            "description": "Provide written statement of employment particulars on or before day one of employment as required by the Employment Rights Act 1996.",
+        },
+        {
+            "category": "Safety",
+            "requirement": "Health and safety risk assessments documented",
+            "description": "Conduct and document risk assessments under HSWA 1974. Written health and safety policy mandatory if 5 or more employees.",
+        },
+        {
+            "category": "Equality",
+            "requirement": "Anti-harassment and equal opportunities policies",
+            "description": "Implement policies covering all nine protected characteristics under the Equality Act 2010. Take all reasonable steps to prevent sexual harassment (ERA 2025 duty).",
+        },
+        {
+            "category": "Working Time",
+            "requirement": "Working time compliance verified",
+            "description": "Ensure 48-hour week cap (or signed opt-outs), daily and weekly rest breaks, and minimum 28 days annual leave including bank holidays.",
+        },
+        {
+            "category": "Whistleblowing",
+            "requirement": "Whistleblowing policy established",
+            "description": "Establish a whistleblowing policy with clear reporting channels and protections for workers making protected disclosures under PIDA 1998.",
+        },
+        {
+            "category": "Tax",
+            "requirement": "Employer NIC registered",
+            "description": "Register for employer National Insurance Contributions at 15% rate. Apply Employment Allowance (GBP 10,500) if eligible.",
+        },
+        {
+            "category": "ERA 2025",
+            "requirement": "ERA 2025 readiness reviewed",
+            "description": "Review probation/dismissal procedures for 6-month qualifying period (January 2027), trade union access agreements (April 2026), and SSP day-one entitlement.",
+        },
+    ],
+    "hk": [
+        {
+            "category": "Contracts",
+            "requirement": "Written employment contracts executed",
+            "description": "Execute written employment contracts covering mandatory terms: wages, hours, rest days, notice period, and end-of-year payment before or at commencement.",
+        },
+        {
+            "category": "Wages",
+            "requirement": "Statutory Minimum Wage compliance",
+            "description": "Pay at least HKD 43.1/hour (from May 2026). Maintain detailed wage and time records for at least 12 months.",
+        },
+        {
+            "category": "MPF",
+            "requirement": "MPF scheme enrolment",
+            "description": "Enrol all eligible employees in an MPF scheme within 60 days of employment start. Contribute 5% of relevant income (capped at HKD 1,500/month).",
+        },
+        {
+            "category": "Immigration",
+            "requirement": "Work visa verification",
+            "description": "Verify immigration and work visa status of all non-permanent residents before employment. Maintain records. Penalty: HKD 350,000 fine and 3 years imprisonment.",
+        },
+        {
+            "category": "Leave",
+            "requirement": "Statutory leave entitlements provided",
+            "description": "Provide rest days, 15 statutory holidays (2026), annual leave (7-14 days based on service), sick leave, maternity (14 weeks), and paternity (5 days) leave.",
+        },
+        {
+            "category": "Continuous Contract",
+            "requirement": "Broadened continuous contract compliance",
+            "description": "Under Employment (Amendment) Ordinance 2025 (effective January 2026), employees working 68+ hours over 4 consecutive weeks qualify for full statutory protections.",
+        },
+        {
+            "category": "Equality",
+            "requirement": "Anti-discrimination and anti-harassment policies",
+            "description": "Implement policies covering sex, disability, family status, and race discrimination under the four discrimination ordinances. Train managers on obligations.",
+        },
+        {
+            "category": "Safety",
+            "requirement": "Workplace risk assessments completed",
+            "description": "Comply with the Occupational Safety and Health Ordinance (Cap 509). Report workplace accidents to the Labour Department within specified timeframes.",
+        },
+        {
+            "category": "MPF Offsetting",
+            "requirement": "MPF offsetting abolition compliance",
+            "description": "Since May 2025, employer mandatory MPF contributions cannot offset severance pay or long service payments for post-transition service. Budget separately.",
+        },
+        {
+            "category": "Working Hours",
+            "requirement": "Duty of care for working hours",
+            "description": "No statutory maximum working hours in Hong Kong, but employers owe a common law duty of care regarding overwork and employee wellbeing.",
+        },
+    ],
 }
 
 # Backwards-compatible alias.
