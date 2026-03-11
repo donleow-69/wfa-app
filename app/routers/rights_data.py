@@ -11,7 +11,7 @@ COUNTRY_NAMES = {
 
 RIGHTS_BY_COUNTRY = {
     # ──────────────────────────────────────────────────────────────
-    # UNITED STATES  (9 categories)
+    # UNITED STATES  (10 categories)
     # ──────────────────────────────────────────────────────────────
     "us": [
         {
@@ -321,10 +321,48 @@ RIGHTS_BY_COUNTRY = {
                 "A company classifies full-time workers as independent contractors to avoid providing benefits — this is misclassification.",
             ],
         },
+        {
+            "id": "labor_relations",
+            "title": "National Labor Relations Act (NLRA)",
+            "summary": "Protects employees' rights to organise, form unions, and bargain collectively.",
+            "details": [
+                "Employees have the right to form, join, or assist labour unions and to bargain collectively (Section 7).",
+                "Employees also have the right to refrain from union activity.",
+                "Employers cannot interfere with, restrain, or coerce employees exercising union rights.",
+                "Employers cannot discriminate against employees for union membership or activity.",
+                "Both employers and unions must bargain in good faith over wages, hours, and working conditions.",
+                "Strikes are protected concerted activity, though secondary strikes and boycotts are prohibited.",
+                "Right-to-work laws in some states prohibit mandatory union membership as a condition of employment.",
+            ],
+            "what_to_do": "File an unfair labor practice charge with the NLRB regional office within 6 months of the violation. The NLRB investigates and can issue complaints.",
+            "enforcement_agency": "National Labor Relations Board (NLRB)",
+            "agency_contact": "1-844-762-6572 | www.nlrb.gov",
+            "penalties": [
+                "Reinstatement of wrongfully terminated employees.",
+                "Back pay with interest for lost wages.",
+                "Cease-and-desist orders against unfair labour practices.",
+                "Posting of notices informing employees of their rights.",
+            ],
+            "key_laws": [
+                {"name": "National Labor Relations Act (Wagner Act, 1935)", "scope": "Private-sector employees' right to organise and bargain collectively"},
+                {"name": "Labor Management Relations Act (Taft-Hartley Act, 1947)", "scope": "Union unfair labour practices, secondary boycott ban, right-to-work"},
+                {"name": "Labor-Management Reporting and Disclosure Act (Landrum-Griffin Act, 1959)", "scope": "Union transparency, member rights within unions"},
+            ],
+            "effective_date": "1935 (NLRA); amended 1947 (Taft-Hartley), 1959 (Landrum-Griffin)",
+            "faq": [
+                {"q": "Does the NLRA cover all workers?", "a": "No. It excludes government employees, agricultural labourers, domestic workers, independent contractors, and supervisors."},
+                {"q": "Can my employer fire me for union activity?", "a": "No. Termination for union activity is an unfair labour practice. File a charge with the NLRB within 6 months."},
+                {"q": "What is a right-to-work state?", "a": "A state where employees cannot be required to join or pay dues to a union as a condition of employment."},
+            ],
+            "case_examples": [
+                "An employer threatens to close the business if workers vote to unionise — this violates Section 8(a)(1) of the NLRA.",
+                "A worker is fired shortly after leading a union organising effort — this is likely an unfair labour practice under Section 8(a)(3).",
+            ],
+        },
     ],
 
     # ──────────────────────────────────────────────────────────────
-    # SINGAPORE  (9 categories)
+    # SINGAPORE  (10 categories)
     # ──────────────────────────────────────────────────────────────
     "sg": [
         {
@@ -538,6 +576,37 @@ RIGHTS_BY_COUNTRY = {
             "faq": [
                 {"q": "How long do I have to file a wrongful dismissal claim?", "a": "You must file with TADM within one month of the last day of employment."},
                 {"q": "What remedies are available?", "a": "Reinstatement or compensation (capped at an amount equivalent to the salary you would have earned had you not been dismissed)."},
+            ],
+        },
+        {
+            "id": "industrial_relations_sg",
+            "title": "Industrial Relations Act 1960",
+            "summary": "Governs trade union recognition, collective bargaining, and industrial dispute resolution.",
+            "details": [
+                "Trade unions may seek recognition from employers to represent workers in collective bargaining.",
+                "Once recognised, unions negotiate collective agreements covering wages, hours, and working conditions.",
+                "Collective agreements must be for 2 to 3 years and certified by the Industrial Arbitration Court (IAC) to be enforceable.",
+                "Disputes follow a three-tier process: collective bargaining, then MOM conciliation, then compulsory arbitration by the IAC.",
+                "Industrial action (strikes/lockouts) is prohibited once a dispute has been referred to the IAC.",
+                "Workers in essential services face additional restrictions on industrial action.",
+                "Management retains prerogatives over promotion, transfer, hiring, and retrenchment, though unions may raise matters of a general character on these topics.",
+            ],
+            "what_to_do": "Contact MOM for conciliation services if collective bargaining breaks down. Trade union members can seek assistance from the National Trades Union Congress (NTUC).",
+            "enforcement_agency": "Ministry of Manpower (MOM) / Industrial Arbitration Court (IAC)",
+            "agency_contact": "MOM: 6438 5122 | NTUC: 6213 8008",
+            "penalties": [
+                "Illegal strikes: fine up to $2,000 and/or imprisonment up to 12 months.",
+                "Employer refusal to recognise a union: MOM can direct recognition.",
+                "Breach of collective agreement: enforceable through the IAC.",
+            ],
+            "key_laws": [
+                {"name": "Industrial Relations Act 1960", "scope": "Collective bargaining, dispute resolution, and industrial action"},
+                {"name": "Trade Unions Act (Cap. 333)", "scope": "Formation, registration, and governance of trade unions"},
+            ],
+            "effective_date": "1960 (amended regularly; major amendments in 1968)",
+            "faq": [
+                {"q": "Can I go on strike in Singapore?", "a": "Strikes are legal but prohibited once a dispute is referred to the IAC. Essential service workers face additional restrictions."},
+                {"q": "How does my union get recognised?", "a": "The union applies to the employer for recognition. If refused, MOM may intervene and direct the employer to recognise the union."},
             ],
         },
     ],
@@ -834,7 +903,7 @@ RIGHTS_BY_COUNTRY = {
     ],
 
     # ──────────────────────────────────────────────────────────────
-    # PHILIPPINES  (6 categories)
+    # PHILIPPINES  (7 categories)
     # ──────────────────────────────────────────────────────────────
     "ph": [
         {
@@ -977,6 +1046,38 @@ RIGHTS_BY_COUNTRY = {
                 {"name": "Labor Code, Book III", "scope": "Conditions of employment — wages, hours, benefits"},
             ],
             "effective_date": "Various — Wage Act: 1989, 13th Month: 1975",
+        },
+        {
+            "id": "labor_relations_ph",
+            "title": "Labor Relations & Collective Bargaining",
+            "summary": "Workers' rights to self-organisation, union formation, collective bargaining, and lawful strikes.",
+            "details": [
+                "Workers have the right to self-organisation and to form, join, or assist labour unions (Labor Code, Book V).",
+                "A certified exclusive bargaining agent negotiates collective bargaining agreements (CBAs) with the employer.",
+                "CBAs are valid for 5 years, with economic provisions renegotiable after 3 years.",
+                "Employer unfair labour practices include interference with union activity, discrimination for union membership, and refusal to bargain.",
+                "Union unfair labour practices include restraining employees' right to self-organise and refusing to bargain in good faith.",
+                "Strike notice: 30 days for bargaining deadlocks, 15 days for unfair labour practice strikes.",
+                "A strike vote must be approved by a majority of union members by secret ballot.",
+                "Disputes go through grievance machinery, then voluntary arbitration, then NCMB conciliation, then NLRC compulsory arbitration.",
+            ],
+            "what_to_do": "Contact the National Conciliation and Mediation Board (NCMB) for dispute mediation. File unfair labour practice complaints with the NLRC.",
+            "enforcement_agency": "National Labor Relations Commission (NLRC) / National Conciliation and Mediation Board (NCMB)",
+            "agency_contact": "NLRC: (02) 8527-3000 | NCMB: (02) 8527-3485 | DOLE Hotline: 1349",
+            "penalties": [
+                "Illegal strikes: criminal liability for union officers who knowingly participate.",
+                "Unfair labour practices: reinstatement, back wages, and damages.",
+                "Illegal lockouts: penalties equivalent to those for illegal strikes.",
+            ],
+            "key_laws": [
+                {"name": "Labor Code, Book V (Labor Relations)", "scope": "Union rights, collective bargaining, strikes, and dispute resolution"},
+                {"name": "RA 6715 (Herrera-Veloso Law, 1989)", "scope": "Strengthened workers' rights to self-organisation and collective bargaining"},
+            ],
+            "effective_date": "1974 (Labor Code); 1989 (RA 6715)",
+            "faq": [
+                {"q": "How many workers are needed to form a union?", "a": "At least 20% of employees in the bargaining unit must support the petition for union registration."},
+                {"q": "Can my employer prevent me from joining a union?", "a": "No. Interference with union rights is an unfair labour practice punishable under the Labor Code."},
+            ],
         },
     ],
 
