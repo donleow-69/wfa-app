@@ -8,7 +8,8 @@ load_dotenv()
 
 from fastapi import Depends, Request
 from fastapi.applications import FastAPI
-from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
+from fastapi.exceptions import HTTPException
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -28,6 +29,13 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Workplace Fairness", lifespan=lifespan)
+
+
+@app.exception_handler(401)
+async def unauthorized_handler(request: Request, exc: HTTPException):
+    """Redirect unauthenticated users to login instead of showing JSON error."""
+    return RedirectResponse(url="/login", status_code=303)
+
 
 # Serve sw.js from root so its scope covers the whole origin
 @app.get("/sw.js")

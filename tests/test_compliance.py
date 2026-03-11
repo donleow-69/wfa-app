@@ -6,7 +6,7 @@ from tests.conftest import create_test_user
 
 async def test_compliance_requires_auth(client):
     resp = await client.get("/compliance/")
-    assert resp.status_code == 401
+    assert resp.status_code == 303
 
 
 async def test_create_checklist_with_defaults(auth_client, db_session, test_user):

@@ -8,7 +8,7 @@ from tests.conftest import create_test_user
 
 async def test_chat_page_requires_auth(client):
     resp = await client.get("/chat/")
-    assert resp.status_code == 401
+    assert resp.status_code == 303
 
 
 async def test_chat_send_empty_message(auth_client):

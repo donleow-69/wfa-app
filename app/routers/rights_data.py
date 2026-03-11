@@ -450,6 +450,8 @@ RIGHTS_BY_COUNTRY = {
                 "Foreign workers must hold a valid work pass (Work Permit, S Pass, or Employment Pass).",
                 "Employers must not collect or deduct kickbacks from foreign workers' salaries.",
                 "Employers must provide acceptable accommodation and bear medical costs for Work Permit holders.",
+                "Employers must purchase and maintain compulsory medical insurance for all Work Permit and S Pass holders, covering at least $15,000 per year for inpatient care and day surgery.",
+                "Employers must also purchase personal accident insurance for Work Permit holders (minimum $40,000 for permanent disability or death).",
                 "Foreign workers have the same Employment Act protections as local workers.",
                 "Employers cannot hold workers' passports or restrict their movement.",
             ],

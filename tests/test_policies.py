@@ -3,7 +3,7 @@
 
 async def test_policies_list_requires_auth(client):
     resp = await client.get("/policies/")
-    assert resp.status_code == 401
+    assert resp.status_code == 303
 
 
 async def test_policies_list_renders(auth_client):

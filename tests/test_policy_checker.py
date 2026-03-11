@@ -8,7 +8,7 @@ import pytest
 
 async def test_checker_requires_auth(client):
     resp = await client.get("/policy-checker/")
-    assert resp.status_code == 401
+    assert resp.status_code == 303
 
 
 async def test_checker_requires_subscription(auth_client):
@@ -26,7 +26,7 @@ async def test_checker_form_renders_for_subscriber(subscribed_client):
 
 async def test_analyze_requires_auth(client):
     resp = await client.post("/policy-checker/analyze", data={"policy_text": "test"})
-    assert resp.status_code == 401
+    assert resp.status_code == 303
 
 
 async def test_analyze_requires_subscription(auth_client):

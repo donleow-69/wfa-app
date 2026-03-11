@@ -13,7 +13,7 @@ async def test_subscribe_redirects_if_subscribed(subscribed_client):
 
 async def test_checkout_requires_auth(client):
     resp = await client.post("/subscribe/checkout")
-    assert resp.status_code == 401
+    assert resp.status_code == 303
 
 
 async def test_checkout_no_stripe_key(auth_client):

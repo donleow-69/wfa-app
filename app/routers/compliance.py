@@ -125,6 +125,11 @@ DEFAULT_ITEMS_BY_COUNTRY = {
             "description": "All foreign employees hold valid work passes. No passport retention, no salary kickbacks, acceptable accommodation and medical coverage per EFMA.",
         },
         {
+            "category": "Foreign Workers",
+            "requirement": "Compulsory insurance for foreign workers",
+            "description": "Medical insurance (min $15,000/year inpatient) for all Work Permit and S Pass holders. Personal accident insurance (min $40,000) for Work Permit holders. Policies must remain valid throughout employment.",
+        },
+        {
             "category": "Leave",
             "requirement": "Statutory leave entitlements communicated",
             "description": "Employees informed of annual leave (7-14 days), sick leave (14 days outpatient, 60 days hospitalisation), maternity (16 weeks), paternity (2 weeks), and childcare leave entitlements.",

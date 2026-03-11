@@ -6,7 +6,7 @@ from tests.conftest import create_test_user
 
 async def test_complaints_list_requires_auth(client):
     resp = await client.get("/complaints/")
-    assert resp.status_code == 401
+    assert resp.status_code == 303
 
 
 async def test_complaints_list_empty(auth_client):
