@@ -424,7 +424,7 @@ DEFAULT_ITEMS_BY_COUNTRY = {
         {
             "category": "Immigration",
             "requirement": "Work visa verification",
-            "description": "Verify immigration and work visa status of all non-permanent residents before employment. Maintain records. Penalty: HKD 350,000 fine and 3 years imprisonment.",
+            "description": "Verify immigration and work visa status of all non-permanent residents before employment. Maintain records. Penalty: HKD 500,000 fine and 10 years imprisonment.",
         },
         {
             "category": "Leave",

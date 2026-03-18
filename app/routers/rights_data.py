@@ -136,9 +136,9 @@ RIGHTS_BY_COUNTRY = {
             "enforcement_agency": "Occupational Safety and Health Administration (OSHA)",
             "agency_contact": "1-800-321-6742 | www.osha.gov",
             "penalties": [
-                "Serious violations: up to $17,004 per violation.",
-                "Wilful or repeated violations: up to $170,046 per violation.",
-                "Failure to abate: up to $17,004 per day beyond abatement date.",
+                "Serious violations: up to $16,550 per violation.",
+                "Wilful or repeated violations: up to $165,514 per violation.",
+                "Failure to abate: up to $16,550 per day beyond abatement date.",
             ],
             "key_laws": [
                 {"name": "Occupational Safety and Health Act of 1970 (OSH Act)", "scope": "Most private-sector employers; general duty clause and specific standards"},
@@ -624,7 +624,7 @@ RIGHTS_BY_COUNTRY = {
             "enforcement_agency": "UK Visas and Immigration (UKVI) / Home Office",
             "agency_contact": "www.gov.uk/ukvi | Employer helpline: 0300 123 4699",
             "penalties": [
-                "Civil penalty of up to £60,000 per illegal worker for employers who fail to conduct right-to-work checks.",
+                "Civil penalty of up to £45,000 per illegal worker (first breach) or £60,000 (repeat breach) for employers who fail to conduct right-to-work checks.",
                 "Criminal prosecution for knowingly employing illegal workers — unlimited fine and up to 5 years' imprisonment.",
                 "Sponsor licence revocation for non-compliance with sponsor duties.",
             ],
@@ -1001,8 +1001,8 @@ RIGHTS_BY_COUNTRY = {
             "enforcement_agency": "Labour Department — Occupational Safety and Health Branch (OSHB)",
             "agency_contact": "2559 2297 | www.labour.gov.hk/eng/osh",
             "penalties": [
-                "Fines of HKD 200,000 to HKD 500,000 for breaches depending on the ordinance and severity.",
-                "Imprisonment for up to 6 months to 2 years for serious offences.",
+                "Breach of general duty under OSHO (Cap 509): fine up to HKD 3 million (summary) or HKD 10 million (indictment). Wilful breach: imprisonment up to 6 months (summary) or 2 years (indictment).",
+                "Penalties under FIUO (Cap 59) range from HKD 200,000 to HKD 500,000 depending on severity.",
                 "Improvement notices and suspension notices can be issued to halt dangerous activities.",
             ],
             "key_laws": [
@@ -1177,7 +1177,7 @@ RIGHTS_BY_COUNTRY = {
             "enforcement_agency": "Immigration Department",
             "agency_contact": "2824 6111 | www.immd.gov.hk",
             "penalties": [
-                "Employing a person not lawfully employable: fine of HKD 350,000 and imprisonment for 3 years.",
+                "Employing a person not lawfully employable: fine of HKD 500,000 and imprisonment for 10 years.",
                 "Working without permission: fine of HKD 50,000 and imprisonment for 2 years.",
                 "Employers may face prosecution for aiding illegal employment.",
             ],
@@ -1247,7 +1247,7 @@ RIGHTS_BY_COUNTRY = {
             "enforcement_agency": "Department of Labour (Jabatan Tenaga Kerja)",
             "agency_contact": "03-8886 5000 | jtksm.mohr.gov.my",
             "penalties": [
-                "Fines up to RM50,000 per offence.",
+                "Fines up to RM100,000 per offence.",
                 "Imprisonment up to 2 years for serious violations.",
                 "Court orders to pay outstanding wages and benefits.",
             ],
@@ -1718,8 +1718,8 @@ RIGHTS_BY_COUNTRY = {
             "enforcement_agency": "Department of Labour Protection and Welfare (DLPW)",
             "agency_contact": "Hotline: 1506 | www.labour.go.th",
             "penalties": [
-                "Fines up to THB 200,000 for violating labour protection standards.",
-                "Imprisonment up to 1 year for serious offences.",
+                "Fines up to THB 100,000 and/or imprisonment up to 6 months for violating labour protection standards.",
+                "Employing foreign workers without work permits: fines of THB 400,000 to THB 800,000 per worker.",
                 "Court orders to pay outstanding wages and severance.",
             ],
             "key_laws": [
