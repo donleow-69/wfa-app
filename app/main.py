@@ -19,7 +19,7 @@ from .models.user import User
 
 # Import models so Base.metadata knows about all tables.
 from .models import chat, complaint, compliance, user  # noqa: F401
-from .routers import auth_routes, chat as chat_router, complaints, compliance as compliance_router, policies, policy_checker, rights, subscription
+from .routers import audit, auth_routes, chat as chat_router, complaints, compliance as compliance_router, policies, policy_checker, rights, subscription
 
 
 @asynccontextmanager
@@ -47,6 +47,7 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 templates = Jinja2Templates(directory="app/templates")
 
 # Register routers
+app.include_router(audit.router)
 app.include_router(auth_routes.router)
 app.include_router(rights.router)
 app.include_router(complaints.router)
