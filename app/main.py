@@ -124,6 +124,24 @@ async def delete_account(request: Request, user: User | None = Depends(get_optio
     return response
 
 
+@app.get("/feedback", response_class=HTMLResponse)
+async def feedback_page(request: Request):
+    return templates.TemplateResponse("feedback.html", {"request": request})
+
+
+@app.post("/feedback", response_class=HTMLResponse)
+async def feedback_submit(request: Request):
+    form = await request.form()
+    rating = form.get("rating", "")
+    category = form.get("category", "")
+    message = form.get("message", "")
+    email = form.get("email", "")
+    # Log feedback to stdout (visible in Render logs)
+    import logging
+    logging.info(f"FEEDBACK | rating={rating} | category={category} | email={email} | message={message[:200]}")
+    return templates.TemplateResponse("feedback.html", {"request": request, "success": True})
+
+
 @app.get("/dashboard", response_class=HTMLResponse)
 async def dashboard(request: Request, view: str | None = None, user: User = Depends(get_optional_user)):
     if not user:

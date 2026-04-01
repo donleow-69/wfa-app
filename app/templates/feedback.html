@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+<div class="container" style="max-width:640px;margin:2rem auto;padding:0 1rem;">
+    <h1>App Feedback</h1>
+    <p>Help us improve Workplace Fairness! Your feedback is anonymous unless you choose to include your email.</p>
+
+    {% if success %}
+    <div class="alert alert-success" style="background:#16a34a22;border:1px solid #16a34a;padding:1rem;border-radius:8px;margin:1.5rem 0;">
+        <strong>Thank you!</strong> Your feedback has been submitted.
+    </div>
+    {% else %}
+    <form method="post" action="/feedback" style="display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem;">
+        <label for="rating"><strong>Overall rating</strong></label>
+        <select id="rating" name="rating" required style="padding:0.5rem;border-radius:6px;border:1px solid var(--border-color, #444);background:var(--bg-secondary, #1e1e2e);color:var(--text-color, #e0e0e0);">
+            <option value="">Select...</option>
+            <option value="5">5 — Excellent</option>
+            <option value="4">4 — Good</option>
+            <option value="3">3 — Average</option>
+            <option value="2">2 — Poor</option>
+            <option value="1">1 — Very Poor</option>
+        </select>
+
+        <label for="category"><strong>Feedback type</strong></label>
+        <select id="category" name="category" style="padding:0.5rem;border-radius:6px;border:1px solid var(--border-color, #444);background:var(--bg-secondary, #1e1e2e);color:var(--text-color, #e0e0e0);">
+            <option value="general">General feedback</option>
+            <option value="bug">Bug report</option>
+            <option value="feature">Feature request</option>
+            <option value="content">Content accuracy</option>
+            <option value="usability">Usability / UI</option>
+        </select>
+
+        <label for="message"><strong>Your feedback</strong></label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell us what you think..." style="padding:0.5rem;border-radius:6px;border:1px solid var(--border-color, #444);background:var(--bg-secondary, #1e1e2e);color:var(--text-color, #e0e0e0);resize:vertical;"></textarea>
+
+        <label for="email"><strong>Email</strong> <span style="opacity:0.6">(optional — only if you want a reply)</span></label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" style="padding:0.5rem;border-radius:6px;border:1px solid var(--border-color, #444);background:var(--bg-secondary, #1e1e2e);color:var(--text-color, #e0e0e0);">
+
+        <button type="submit" class="btn btn-primary" style="margin-top:0.5rem;">Submit Feedback</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
