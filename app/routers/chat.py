@@ -39,7 +39,7 @@ def _get_client() -> anthropic.AsyncAnthropic:
 
 @router.get("/", response_class=HTMLResponse)
 async def chat_page(request: Request, user: User = Depends(get_current_user)):
-    return templates.TemplateResponse("chat.html", {"request": request, "user": user})
+    return templates.TemplateResponse(request, "chat.html", {"user": user})
 
 
 @router.get("/history", response_class=JSONResponse)

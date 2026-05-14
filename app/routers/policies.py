@@ -2617,9 +2617,9 @@ async def policies_list(
 
     policy_templates = _get_all_templates_for_country(selected)
     return templates.TemplateResponse(
+        request,
         "policies.html",
         {
-            "request": request,
             "user": user,
             "policies": policy_templates,
             "countries": COUNTRY_NAMES,
@@ -2633,8 +2633,9 @@ async def custom_policy_form(request: Request, user: User = Depends(get_current_
     if not user.is_subscribed:
         return RedirectResponse("/subscribe?next=/policies/custom", status_code=303)
     return templates.TemplateResponse(
+        request,
         "policy_custom_form.html",
-        {"request": request, "user": user, "countries": COUNTRY_NAMES},
+        {"user": user, "countries": COUNTRY_NAMES},
     )
 
 
@@ -2715,9 +2716,9 @@ Date: {date}
 DISCLAIMER: This policy provides a general framework and should be reviewed by legal counsel to ensure full compliance with the specific laws and regulations of {country_name} applicable to your organisation."""
 
     return templates.TemplateResponse(
+        request,
         "policy_custom_result.html",
         {
-            "request": request,
             "user": user,
             "topic": topic,
             "rendered": rendered,
@@ -2746,8 +2747,9 @@ async def policy_form(
     if not policy:
         return RedirectResponse("/policies", status_code=303)
     return templates.TemplateResponse(
+        request,
         "policy_form.html",
-        {"request": request, "user": user, "policy": policy, "selected_country": selected},
+        {"user": user, "policy": policy, "selected_country": selected},
     )
 
 
@@ -2783,9 +2785,9 @@ async def generate_policy(
     )
 
     return templates.TemplateResponse(
+        request,
         "policy_result.html",
         {
-            "request": request,
             "user": user,
             "policy": policy,
             "rendered": rendered,

@@ -27,9 +27,9 @@ async def rights_overview(
 
     categories = RIGHTS_BY_COUNTRY[selected]
     return templates.TemplateResponse(
+        request,
         "rights.html",
         {
-            "request": request,
             "user": user,
             "categories": categories,
             "countries": COUNTRY_NAMES,
@@ -56,12 +56,12 @@ async def rights_detail(
     category = next((c for c in categories if c["id"] == category_id), None)
     if not category:
         return templates.TemplateResponse(
-            "404.html", {"request": request, "user": user}, status_code=404
+            request, "404.html", {"user": user}, status_code=404
         )
     return templates.TemplateResponse(
+        request,
         "rights_detail.html",
         {
-            "request": request,
             "user": user,
             "category": category,
             "selected_country": selected,

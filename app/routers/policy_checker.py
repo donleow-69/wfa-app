@@ -114,9 +114,9 @@ async def checker_form(request: Request, user: User = Depends(get_current_user))
     if not user.is_subscribed:
         return RedirectResponse("/subscribe", status_code=303)
     return templates.TemplateResponse(
+        request,
         "policy_checker.html",
         {
-            "request": request,
             "user": user,
             "countries": COUNTRY_NAMES,
         },
@@ -152,9 +152,9 @@ async def analyze_policy(
 
     if error:
         return templates.TemplateResponse(
+            request,
             "policy_checker.html",
             {
-                "request": request,
                 "user": user,
                 "countries": COUNTRY_NAMES,
                 "error": error,
@@ -179,9 +179,9 @@ async def analyze_policy(
     except json.JSONDecodeError:
         error = "Failed to parse the analysis results. Please try again."
         return templates.TemplateResponse(
+            request,
             "policy_checker.html",
             {
-                "request": request,
                 "user": user,
                 "countries": COUNTRY_NAMES,
                 "error": error,
@@ -191,9 +191,9 @@ async def analyze_policy(
     except Exception as exc:
         error = f"AI service error: {exc}"
         return templates.TemplateResponse(
+            request,
             "policy_checker.html",
             {
-                "request": request,
                 "user": user,
                 "countries": COUNTRY_NAMES,
                 "error": error,
@@ -203,9 +203,9 @@ async def analyze_policy(
 
     country_name = COUNTRY_NAMES.get(country, "United States")
     return templates.TemplateResponse(
+        request,
         "policy_checker_result.html",
         {
-            "request": request,
             "user": user,
             "analysis": analysis,
             "country_name": country_name,

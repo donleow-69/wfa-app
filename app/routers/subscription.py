@@ -30,8 +30,9 @@ async def subscribe_page(
     if user and user.is_subscribed:
         return RedirectResponse(next or "/dashboard", status_code=303)
     return templates.TemplateResponse(
+        request,
         "subscribe.html",
-        {"request": request, "user": user, "next_url": next or "/policies"},
+        {"user": user, "next_url": next or "/policies"},
     )
 
 
@@ -88,8 +89,9 @@ async def subscribe_success(
             pass
 
     return templates.TemplateResponse(
+        request,
         "subscribe_success.html",
-        {"request": request, "user": user},
+        {"user": user},
     )
 
 

@@ -60,17 +60,17 @@ app.include_router(chat_router.router)
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request, user: User | None = Depends(get_optional_user)):
-    return templates.TemplateResponse("index.html", {"request": request, "user": user})
+    return templates.TemplateResponse(request, "index.html", {"user": user})
 
 
 @app.get("/privacy", response_class=HTMLResponse)
 async def privacy(request: Request):
-    return templates.TemplateResponse("privacy.html", {"request": request})
+    return templates.TemplateResponse(request, "privacy.html", {})
 
 
 @app.get("/offline", response_class=HTMLResponse)
 async def offline(request: Request):
-    return templates.TemplateResponse("offline.html", {"request": request})
+    return templates.TemplateResponse(request, "offline.html", {})
 
 
 @app.get("/.well-known/assetlinks.json")
@@ -94,7 +94,7 @@ async def asset_links():
 
 @app.get("/delete-account", response_class=HTMLResponse)
 async def delete_account_page(request: Request, user: User | None = Depends(get_optional_user)):
-    return templates.TemplateResponse("delete_account.html", {"request": request, "user": user})
+    return templates.TemplateResponse(request, "delete_account.html", {"user": user})
 
 
 @app.post("/delete-account", response_class=HTMLResponse)
@@ -119,14 +119,14 @@ async def delete_account(request: Request, user: User | None = Depends(get_optio
         await db.execute(delete(Complaint).where(Complaint.user_id == user.id))
         await db.execute(delete(User).where(User.id == user.id))
         await db.commit()
-    response = templates.TemplateResponse("delete_account.html", {"request": request, "user": None, "success": True})
+    response = templates.TemplateResponse(request, "delete_account.html", {"user": None, "success": True})
     response.delete_cookie("session_token")
     return response
 
 
 @app.get("/feedback", response_class=HTMLResponse)
 async def feedback_page(request: Request):
-    return templates.TemplateResponse("feedback.html", {"request": request})
+    return templates.TemplateResponse(request, "feedback.html", {})
 
 
 @app.post("/feedback", response_class=HTMLResponse)
@@ -139,7 +139,7 @@ async def feedback_submit(request: Request):
     # Log feedback to stdout (visible in Render logs)
     import logging
     logging.info(f"FEEDBACK | rating={rating} | category={category} | email={email} | message={message[:200]}")
-    return templates.TemplateResponse("feedback.html", {"request": request, "success": True})
+    return templates.TemplateResponse(request, "feedback.html", {"success": True})
 
 
 @app.get("/dashboard", response_class=HTMLResponse)
@@ -149,5 +149,5 @@ async def dashboard(request: Request, view: str | None = None, user: User = Depe
         return RedirectResponse("/login", status_code=303)
     active_view = view if view in ("employee", "employer") else user.role
     return templates.TemplateResponse(
-        "dashboard.html", {"request": request, "user": user, "active_view": active_view}
+        request, "dashboard.html", {"user": user, "active_view": active_view}
     )

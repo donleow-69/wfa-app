@@ -474,7 +474,7 @@ async def compliance_dashboard(
     )
     checklists = result.scalars().all()
     return templates.TemplateResponse(
-        "compliance.html", {"request": request, "user": user, "checklists": checklists}
+        request, "compliance.html", {"user": user, "checklists": checklists}
     )
 
 
@@ -532,9 +532,9 @@ async def view_checklist(
     total = len(items)
 
     return templates.TemplateResponse(
+        request,
         "checklist.html",
         {
-            "request": request,
             "user": user,
             "checklist": checklist,
             "categories": categories,

@@ -60,15 +60,16 @@ async def complaints_list(
     )
     complaints = result.scalars().all()
     return templates.TemplateResponse(
-        "complaints.html", {"request": request, "user": user, "complaints": complaints}
+        request, "complaints.html", {"user": user, "complaints": complaints}
     )
 
 
 @router.get("/new", response_class=HTMLResponse)
 async def new_complaint(request: Request, user: User = Depends(get_current_user)):
     return templates.TemplateResponse(
+        request,
         "complaint_form.html",
-        {"request": request, "user": user, "categories": COMPLAINT_CATEGORIES, "complaint": None},
+        {"user": user, "categories": COMPLAINT_CATEGORIES, "complaint": None},
     )
 
 
@@ -118,9 +119,9 @@ async def view_complaint(
     if not complaint:
         return RedirectResponse("/complaints", status_code=303)
     return templates.TemplateResponse(
+        request,
         "complaint_detail.html",
         {
-            "request": request,
             "user": user,
             "complaint": complaint,
             "categories": COMPLAINT_CATEGORIES,
@@ -148,9 +149,9 @@ async def preview_complaint(
     smtp_ok = is_smtp_configured()
 
     return templates.TemplateResponse(
+        request,
         "complaint_preview.html",
         {
-            "request": request,
             "user": user,
             "complaint": complaint,
             "authority": authority,
@@ -213,9 +214,9 @@ async def edit_complaint(
     if not complaint or complaint.status not in ("draft",):
         return RedirectResponse("/complaints", status_code=303)
     return templates.TemplateResponse(
+        request,
         "complaint_form.html",
         {
-            "request": request,
             "user": user,
             "complaint": complaint,
             "categories": COMPLAINT_CATEGORIES,
