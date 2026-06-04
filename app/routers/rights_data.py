@@ -680,7 +680,7 @@ RIGHTS_BY_COUNTRY = {
             "details": [
                 "Covers all employees under a contract of service except seafarers, domestic workers, and public servants.",
                 "Maximum 44 working hours per week (or 88 hours over 2 weeks). Overtime capped at 72 hours per month.",
-                "Overtime pay at 1.5x the hourly basic rate for non-workmen earning up to S$2,600/month.",
+                "Overtime pay at 1.5x the hourly basic rate applies to: workmen earning up to S$4,500/month, and non-workmen earning up to S$2,600/month.",
                 "Minimum 7 days annual leave after 3 months, increasing to 14 days after 8 years.",
                 "11 paid public holidays per year. Sick leave: 14 days outpatient, 60 days hospitalisation.",
                 "Employers must issue itemised payslips and key employment terms within 14 days of employment.",
@@ -704,6 +704,7 @@ RIGHTS_BY_COUNTRY = {
             "case_examples": [
                 "An employer fails to issue itemised payslips — this is an offence under the Employment Act.",
                 "A non-workman earning S$2,400/month is denied overtime pay — this violates the Employment Act.",
+                "A workman earning S$4,000/month is denied overtime pay — this violates the Employment Act (Part IV covers workmen up to S$4,500/month).",
             ],
         },
         {
