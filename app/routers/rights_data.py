@@ -114,7 +114,7 @@ RIGHTS_BY_COUNTRY = {
             ],
             "effective_date": "FLSA: 1938 (amended regularly)",
             "faq": [
-                {"q": "Am I entitled to overtime pay?", "a": "Non-exempt employees must receive overtime pay at 1.5 times their regular rate for hours over 40 per workweek. Exemptions apply to certain salaried professional, administrative, and executive employees."},
+                {"q": "Am I entitled to overtime pay?", "a": "Non-exempt employees must receive overtime pay at 1.5 times their regular rate for hours over 40 per workweek. Salaried executive, administrative, and professional employees are exempt if they earn at least $684/week ($35,568/year) — this is the current threshold after a 2024 DOL rule raising it to $1,128/week was struck down by courts in November 2024."},
                 {"q": "Can my employer deduct money from my paycheck?", "a": "Deductions cannot bring your pay below minimum wage. Certain deductions (like for cash register shortages) are restricted."},
             ],
             "case_examples": [
@@ -464,7 +464,7 @@ RIGHTS_BY_COUNTRY = {
             "summary": "Statutory entitlements to annual leave, sick pay, maternity, paternity, and shared parental leave.",
             "details": [
                 "All workers are entitled to 5.6 weeks (28 days for full-time) paid annual leave per year, which can include bank holidays.",
-                "Statutory Sick Pay (SSP) is payable from the first day of sickness absence under the Employment Rights Act 2025 reforms (previously from day 4).",
+                "Statutory Sick Pay (SSP) is payable from the first day of sickness absence (April 2026, ERA 2025 reform). Rate is £123.25/week. The Lower Earnings Limit has been abolished — all employees qualify regardless of how much they earn.",
                 "Maternity leave is 52 weeks (39 weeks paid). Statutory Maternity Pay is 90% of average weekly earnings for 6 weeks, then a flat rate.",
                 "Paternity leave is 2 weeks, becoming a day-one right from April 2026 under ERA 2025 reforms.",
                 "Shared Parental Leave allows eligible parents to share up to 50 weeks of leave and 37 weeks of pay.",
@@ -485,7 +485,7 @@ RIGHTS_BY_COUNTRY = {
             "effective_date": "Various — WTR 1998; ERA 2025 reforms phased from 2025–2027",
             "faq": [
                 {"q": "Can my employer include bank holidays in my 28-day entitlement?", "a": "Yes. The statutory minimum is 5.6 weeks, and employers may count bank holidays within that total."},
-                {"q": "When does SSP start?", "a": "Under the ERA 2025 reforms, SSP is payable from the first day of sickness absence (previously there were 3 waiting days)."},
+                {"q": "When does SSP start?", "a": "From April 2026, SSP is payable from the first day of sickness absence (previously there were 3 waiting days). The rate is £123.25/week and the Lower Earnings Limit no longer applies."},
             ],
         },
         {
@@ -499,7 +499,7 @@ RIGHTS_BY_COUNTRY = {
                 "Fire-and-rehire is banned under ERA 2025 — dismissing an employee in order to re-engage on inferior terms is automatically unfair.",
                 "ACAS early conciliation is mandatory before an Employment Tribunal claim.",
             ],
-            "what_to_do": "Request written reasons for dismissal (your right if you have 2+ years' service, or from day one if pregnant). Contact ACAS for early conciliation within 3 months less 1 day of dismissal.",
+            "what_to_do": "Request written reasons for dismissal (your right if you have 2+ years' service, or from day one if pregnant). Contact ACAS for early conciliation within 3 months less 1 day of dismissal (this time limit extends to 6 months for all claims from October 2026).",
             "enforcement_agency": "Employment Tribunals / ACAS",
             "agency_contact": "ACAS helpline: 0300 123 1100 | www.gov.uk/employment-tribunals",
             "penalties": [
@@ -561,6 +561,8 @@ RIGHTS_BY_COUNTRY = {
             "details": [
                 "Workers have the right to join or not join a trade union. It is unlawful to dismiss or subject a worker to detriment for union membership or activities.",
                 "ERA 2025 reforms include: right of union access to workplaces, simplified statutory recognition process, repeal of the 50% turnout requirement for industrial action ballots.",
+                "From October 2026: employers must proactively inform all new and existing employees of their right to join a trade union.",
+                "Collective redundancy protective award for failure to consult was doubled from 90 to 180 days' pay (April 2026).",
                 "Union recognition ballots now require only a simple majority. The recognition mandate lasts 12 months (new under ERA 2025).",
                 "Industrial action notice periods reduced from 14 to 10 days under ERA 2025.",
                 "Workers taking lawful industrial action are protected from unfair dismissal for the first 12 weeks of action.",
@@ -740,7 +742,7 @@ RIGHTS_BY_COUNTRY = {
                 "Job advertisements must not state preference for any particular characteristic unless it is an inherent job requirement.",
                 "Selection criteria should be based on skills, experience, and ability to perform the job.",
                 "The Tripartite Guidelines on Fair Employment Practices (TGFEP) are enforceable under the Employment Act.",
-                "The Workplace Fairness Act was passed in January 2025 and is expected to take effect in late 2027, providing statutory protections against workplace discrimination.",
+                "The Workplace Fairness Act was passed in two parts: Part 1 (discrimination protections) in January 2025 and Part 2 (dispute resolution framework) in November 2025. Both parts take effect in late 2027.",
             ],
             "what_to_do": "Report discriminatory practices to TAFEP (tafep.sg). You can file a complaint online or call the TAFEP hotline at 6838 0969.",
             "enforcement_agency": "Tripartite Alliance for Fair & Progressive Employment Practices (TAFEP)",
@@ -816,8 +818,9 @@ RIGHTS_BY_COUNTRY = {
             "summary": "Mandatory social security contributions for retirement, healthcare, and housing.",
             "details": [
                 "Employers must make CPF contributions for Singapore citizens and permanent residents.",
-                "Employer contribution rates: up to 17% of wages (varies by age group).",
-                "Employee contribution rates: up to 20% of wages (varies by age group).",
+                "Ordinary Wage ceiling is S$8,000/month from January 2026 (raised from S$7,400); CPF is only computed on wages up to this ceiling.",
+                "Employer contribution rates: up to 17% of wages (varies by age group). Employee contribution rates: up to 20% of wages (varies by age group).",
+                "Contribution rates for employees aged 55–65 increased by up to 1.5 percentage points from January 2026.",
                 "CPF covers Ordinary Account (housing, education), Special Account (retirement), and MediSave (healthcare).",
                 "Non-payment or late payment of CPF is a criminal offence.",
                 "Employees can check their CPF contributions online via the CPF Board website.",
@@ -1118,6 +1121,7 @@ RIGHTS_BY_COUNTRY = {
                 "There is NO collective bargaining legislation — employers have no statutory obligation to recognise or negotiate with trade unions.",
                 "Workers have the right to strike, but the legal framework for industrial action is limited.",
                 "Anti-union discrimination by employers is prohibited, but enforcement mechanisms are weak.",
+                "The Trade Unions (Amendment) Ordinance 2025 (effective January 2026) gives the Registrar of Trade Unions expanded powers to reject or cancel registrations on national security grounds and restricts trade union funding from overseas sources.",
             ],
             "what_to_do": "Contact the Registry of Trade Unions for information on forming or joining a union. If subjected to anti-union discrimination, seek legal advice or file a complaint with the Labour Department.",
             "enforcement_agency": "Registry of Trade Unions / Labour Department",
@@ -1402,7 +1406,8 @@ RIGHTS_BY_COUNTRY = {
             "title": "Omnibus Law on Job Creation (Law No. 6/2023)",
             "summary": "Indonesia's comprehensive employment reform covering wages, contracts, and severance.",
             "details": [
-                "Minimum wage set by provincial governors based on economic conditions and purchasing power.",
+                "Minimum wage set by provincial governors using a formula of inflation plus (economic growth × alpha), with alpha ranging 0.5–0.9. This revised formula (effective 2026) results in approximately 5–7% annual increases across provinces.",
+                "Note: A Constitutional Court ruling (Decision 168/2023) requires lawmakers to enact a comprehensive new Manpower Law by November 2026, separating workforce provisions from the Omnibus Law. Major changes to these rules are possible after that date.",
                 "Fixed-term employment contracts (PKWT) can be extended but limited to 5 years total.",
                 "Severance pay required for termination: up to 9 months' salary depending on tenure.",
                 "Outsourcing is permitted for supporting activities with worker protections maintained.",
@@ -1528,7 +1533,8 @@ RIGHTS_BY_COUNTRY = {
             "summary": "Comprehensive law governing employment, wages, working conditions, and labour relations.",
             "details": [
                 "Normal working hours: 8 hours per day. Overtime pay at 25% premium (30% for holidays/rest days).",
-                "Minimum wage set by Regional Tripartite Wages and Productivity Boards.",
+                "Minimum wage set by Regional Tripartite Wages and Productivity Boards. As of 2026, the NCR (Metro Manila) rate is ₱695/day for non-agriculture workers and ₱658/day for agriculture and small establishments. Rates vary by region.",
+                "A national wage hike bill (refiled in the 20th Congress, 2026) proposing a ₱100–200/day increase is pending in Congress — not yet law.",
                 "13th month pay mandatory for all rank-and-file employees.",
                 "Service incentive leave of 5 days for employees who have worked at least 1 year.",
                 "Maternity leave of 105 days (RA 11210). Paternity leave of 7 days.",
@@ -1706,8 +1712,9 @@ RIGHTS_BY_COUNTRY = {
             "title": "Labor Protection Act B.E. 2541 (1998)",
             "summary": "Thailand's primary labour law covering wages, hours, leave, and termination protections.",
             "details": [
-                "Normal working hours: maximum 8 hours/day and 48 hours/week. Overtime at 1.5x rate.",
-                "Minimum wage set by the National Wage Committee (varies by province).",
+                "Normal working hours: maximum 8 hours/day and 48 hours/week. Overtime at 1.5x rate. A draft amendment reducing standard hours to 40/week (and hazardous work to 35/week) passed its first reading in parliament in September 2025 — not yet law.",
+                "Minimum wage set by the National Wage Committee (varies by province). Bangkok and highest-tier provinces: THB 400/day (effective July 2025).",
+                "Employee Welfare Fund: from October 2026, employers with 10+ employees and their employees must each contribute 0.25% of wages to a new national Employee Welfare Fund (scaling to 0.5% from October 2031).",
                 "Annual leave of at least 6 working days after 1 year of service.",
                 "Sick leave up to 30 working days per year with pay (medical certificate required after 3 days).",
                 "Maternity leave of 120 days (60 days paid by employer, remainder by Social Security) — increased from 98 days under LPA No. 9 (effective December 2025).",
