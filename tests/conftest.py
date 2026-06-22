@@ -7,10 +7,19 @@ from sqlalchemy.orm import sessionmaker
 
 from app.auth import create_token, hash_password
 from app.database import Base, get_db
+from app.limiter import limiter
 from app.models.user import User
 
 # Import all models so Base.metadata knows every table.
-from app.models import chat, complaint, compliance, user as _user_mod  # noqa: F401
+from app.models import chat, complaint, compliance, spend, user as _user_mod  # noqa: F401
+
+
+@pytest.fixture(autouse=True)
+def _reset_rate_limiter():
+    """The rate limiter's in-memory storage is a module-level singleton —
+    reset it between tests so request counts don't leak across tests."""
+    limiter.reset()
+    yield
 
 
 @pytest.fixture

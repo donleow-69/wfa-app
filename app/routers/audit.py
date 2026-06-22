@@ -5,9 +5,17 @@ import os
 from datetime import datetime
 
 import anthropic
-from fastapi import APIRouter, Query, Request
+from fastapi import APIRouter, Depends, Query, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 
+from ..cost_control import (
+    KILL_SWITCH_THRESHOLD_USD,
+    MONTHLY_CAP_USD,
+    current_month,
+    get_month_spend,
+    record_spend,
+)
+from ..database import get_db
 from .rights_data import COUNTRY_NAMES, RIGHTS_BY_COUNTRY
 
 router = APIRouter()
@@ -76,7 +84,7 @@ Respond with JSON only (no markdown fences). Use this exact structure:
 If everything is correct, return an empty issues array. Be conservative — only flag items you are confident are wrong. Put items you're unsure about in the uncertain array."""
 
 
-async def _audit_country(country_code: str) -> dict:
+async def _audit_country(country_code: str, db) -> dict:
     """Run the audit for a single country."""
     country_name = COUNTRY_NAMES.get(country_code, country_code)
     entries = _extract_penalties(country_code)
@@ -87,10 +95,11 @@ async def _audit_country(country_code: str) -> dict:
 
     client = anthropic.AsyncAnthropic(api_key=os.getenv("ANTHROPIC_API_KEY", ""))
     response = await client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-4-6",
         max_tokens=2000,
         messages=[{"role": "user", "content": prompt}],
     )
+    await record_spend(db, "claude-sonnet-4-6", response.usage)
 
     text = response.content[0].text.strip()
     text = text.replace("```json", "").replace("```", "").strip()
@@ -199,7 +208,7 @@ function renderResults(data) {{
 
 
 @router.get("/admin/audit/run")
-async def run_audit(key: str = Query(""), country: str = Query("all")):
+async def run_audit(key: str = Query(""), country: str = Query("all"), db=Depends(get_db)):
     """Run the legislation audit (returns JSON)."""
     if not AUDIT_SECRET or key != AUDIT_SECRET:
         return JSONResponse({"error": "Forbidden"}, status_code=403)
@@ -207,11 +216,28 @@ async def run_audit(key: str = Query(""), country: str = Query("all")):
     if country == "all":
         results = []
         for code in COUNTRY_NAMES:
-            result = await _audit_country(code)
+            result = await _audit_country(code, db)
             results.append(result)
         return JSONResponse(results)
     elif country in COUNTRY_NAMES:
-        result = await _audit_country(country)
+        result = await _audit_country(country, db)
         return JSONResponse(result)
     else:
         return JSONResponse({"error": f"Unknown country: {country}"}, status_code=400)
+
+
+@router.get("/admin/spend")
+async def admin_spend(key: str = Query(""), db=Depends(get_db)):
+    """Month-to-date Anthropic API spend vs. the monthly cap (requires AUDIT_SECRET)."""
+    if not AUDIT_SECRET or key != AUDIT_SECRET:
+        return JSONResponse({"error": "Forbidden"}, status_code=403)
+
+    spend_usd = await get_month_spend(db)
+    return JSONResponse({
+        "month": current_month(),
+        "spend_usd": round(spend_usd, 4),
+        "monthly_cap_usd": MONTHLY_CAP_USD,
+        "kill_switch_threshold_usd": KILL_SWITCH_THRESHOLD_USD,
+        "pct_of_cap": round(100 * spend_usd / MONTHLY_CAP_USD, 2),
+        "kill_switch_active": spend_usd >= KILL_SWITCH_THRESHOLD_USD,
+    })

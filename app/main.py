@@ -12,13 +12,16 @@ from fastapi.exceptions import HTTPException
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from slowapi import _rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
 
 from .auth import get_optional_user
 from .database import init_db
+from .limiter import limiter
 from .models.user import User
 
 # Import models so Base.metadata knows about all tables.
-from .models import chat, complaint, compliance, user  # noqa: F401
+from .models import chat, complaint, compliance, spend, user  # noqa: F401
 from .routers import audit, auth_routes, chat as chat_router, complaints, compliance as compliance_router, policies, policy_checker, rights, subscription
 
 
@@ -29,6 +32,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Workplace Fairness", lifespan=lifespan)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 
 @app.exception_handler(401)

@@ -10,6 +10,8 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
 from ..auth import get_current_user
+from ..cost_control import record_spend
+from ..database import get_db
 from ..models.user import User
 from .compliance import DEFAULT_ITEMS_BY_COUNTRY
 from .policies import COUNTRY_NAMES
@@ -127,6 +129,7 @@ async def checker_form(request: Request, user: User = Depends(get_current_user))
 async def analyze_policy(
     request: Request,
     user: User = Depends(get_current_user),
+    db=Depends(get_db),
     country: str = Form("us"),
     policy_text: str = Form(""),
     file: UploadFile | None = File(None),
@@ -170,10 +173,11 @@ async def analyze_policy(
     try:
         client = _get_client()
         response = await client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model="claude-sonnet-4-6",
             max_tokens=4096,
             messages=[{"role": "user", "content": prompt}],
         )
+        await record_spend(db, "claude-sonnet-4-6", response.usage)
         result_text = response.content[0].text
         analysis = _parse_json_response(result_text)
     except json.JSONDecodeError:

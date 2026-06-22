@@ -1,9 +1,14 @@
 """Tests for the policy compliance checker feature."""
 
 import json
+from types import SimpleNamespace
 from unittest.mock import AsyncMock, patch
 
 import pytest
+
+_USAGE = SimpleNamespace(
+    input_tokens=100, output_tokens=200, cache_creation_input_tokens=0, cache_read_input_tokens=0
+)
 
 
 async def test_checker_requires_auth(client):
@@ -80,6 +85,7 @@ async def test_analyze_with_mocked_claude(subscribed_client):
 
     mock_response = AsyncMock()
     mock_response.content = [AsyncMock(text=json.dumps(analysis))]
+    mock_response.usage = _USAGE
 
     mock_client = AsyncMock()
     mock_client.messages.create = AsyncMock(return_value=mock_response)
@@ -115,6 +121,7 @@ async def test_analyze_handles_markdown_fenced_json(subscribed_client):
 
     mock_response = AsyncMock()
     mock_response.content = [AsyncMock(text=fenced)]
+    mock_response.usage = _USAGE
 
     mock_client = AsyncMock()
     mock_client.messages.create = AsyncMock(return_value=mock_response)

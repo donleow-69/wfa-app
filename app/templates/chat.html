@@ -8,6 +8,11 @@
 <div class="alert alert-rate-limit" id="rate-banner" style="display:none;">
     You have reached your daily message limit (5 messages). <a href="/subscribe">Upgrade to Pro</a> for unlimited chat.
 </div>
+<div class="alert alert-rate-limit" id="capacity-banner" style="display:none;">
+    We've reached our free chat capacity for this month. Free access resumes next month —
+    <a href="/subscribe">upgrade to Pro</a> for uninterrupted access.
+</div>
+<p class="text-muted" id="quota-display"></p>
 {% endif %}
 
 <div class="chat-container">
@@ -25,6 +30,8 @@
     var input = document.getElementById('chat-input');
     var sendBtn = document.getElementById('chat-send');
     var rateBanner = document.getElementById('rate-banner');
+    var capacityBanner = document.getElementById('capacity-banner');
+    var quotaDisplay = document.getElementById('quota-display');
 
     function addBubble(role, content) {
         var bubble = document.createElement('div');
@@ -34,12 +41,27 @@
         messagesEl.scrollTop = messagesEl.scrollHeight;
     }
 
+    function refreshQuota() {
+        if (!quotaDisplay) return;
+        fetch('/chat/quota')
+            .then(function(r) { return r.json(); })
+            .then(function(q) {
+                if (q.unlimited) {
+                    quotaDisplay.textContent = '';
+                } else {
+                    quotaDisplay.textContent = q.remaining + ' of ' + q.limit + ' free messages left today.';
+                }
+            });
+    }
+
     // Load history
     fetch('/chat/history')
         .then(function(r) { return r.json(); })
         .then(function(msgs) {
             msgs.forEach(function(m) { addBubble(m.role, m.content); });
         });
+
+    refreshQuota();
 
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -64,6 +86,9 @@
                 addBubble('assistant', data.error);
             } else if (!res.ok) {
                 addBubble('assistant', data.error || 'Something went wrong.');
+            } else if (data.capacity_reached) {
+                if (capacityBanner) capacityBanner.style.display = 'block';
+                addBubble('assistant', data.content);
             } else {
                 addBubble('assistant', data.content);
             }
@@ -71,6 +96,7 @@
             addBubble('assistant', 'Network error. Please try again.');
         }
 
+        refreshQuota();
         sendBtn.disabled = false;
         sendBtn.textContent = 'Send';
     });
