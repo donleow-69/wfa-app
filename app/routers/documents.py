@@ -20,11 +20,6 @@ MODEL = "claude-sonnet-4-6"
 MAX_TOKENS = 2048
 
 DOCUMENT_TYPES = {
-    "resignation": {
-        "title": "Resignation Letter",
-        "description": "A professional resignation letter with correct notice period references.",
-        "audience": "employee",
-    },
     "warning": {
         "title": "Warning Letter",
         "description": "A formal written warning or performance improvement plan letter.",
@@ -45,24 +40,6 @@ DOCUMENT_TYPES = {
 
 def _get_client() -> anthropic.AsyncAnthropic:
     return anthropic.AsyncAnthropic(api_key=os.getenv("ANTHROPIC_API_KEY", ""))
-
-
-def _build_resignation_prompt(country: str, data: dict) -> str:
-    country_name = COUNTRY_NAMES.get(country, "United States")
-    return (
-        f"Draft a professional resignation letter for an employee in {country_name}.\n\n"
-        f"Details:\n"
-        f"- Employee name: {data['employee_name']}\n"
-        f"- Job title: {data['job_title']}\n"
-        f"- Company name: {data['company_name']}\n"
-        f"- Manager name: {data['manager_name']}\n"
-        f"- Notice period: {data['notice_period']}\n"
-        f"- Last working day: {data['last_working_day']}\n"
-        f"- Reason (optional): {data.get('reason') or 'personal reasons'}\n\n"
-        f"Write a complete, professional resignation letter. Use formal business letter format. "
-        f"Reference the statutory notice period requirements under {country_name} employment law if relevant. "
-        f"Keep it concise and professional. Output the letter text only — no preamble or explanation."
-    )
 
 
 def _build_warning_prompt(country: str, data: dict) -> str:
@@ -179,9 +156,7 @@ async def generate_document(
     country = str(form.get("country", "us"))
     data = {k: str(v).strip() for k, v in form.items()}
 
-    if doc_type == "resignation":
-        prompt = _build_resignation_prompt(country, data)
-    elif doc_type == "warning":
+    if doc_type == "warning":
         prompt = _build_warning_prompt(country, data)
     elif doc_type == "termination":
         prompt = _build_termination_prompt(country, data)

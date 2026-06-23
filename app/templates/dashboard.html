@@ -38,14 +38,6 @@
         <p>Check an employment contract for illegal clauses and red flags.</p>
         <a href="/contract-checker" class="btn btn-sm btn-primary">Check a Contract</a>
     </div>
-    <div class="card card-hover">
-        <h3>Resignation Letter</h3>
-        <p>Generate a professional resignation letter with correct notice period references.</p>
-        <a href="/documents/resignation" class="btn btn-sm btn-primary">Generate Letter</a>
-        {% if not user.is_subscribed %}
-        <p class="text-muted text-hint">Requires Pro subscription</p>
-        {% endif %}
-    </div>
 </div>
 
 {% else %}

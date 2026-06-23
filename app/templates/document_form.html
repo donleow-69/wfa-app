@@ -20,40 +20,7 @@
         </select>
     </div>
 
-    {% if doc_type == "resignation" %}
-    <div class="card">
-        <h3>Details</h3>
-        <div class="form-group">
-            <label>Your Full Name</label>
-            <input type="text" name="employee_name" value="{{ user.full_name }}" required class="form-input">
-        </div>
-        <div class="form-group">
-            <label>Your Job Title / Position</label>
-            <input type="text" name="job_title" placeholder="e.g. Senior Software Engineer" required class="form-input">
-        </div>
-        <div class="form-group">
-            <label>Company Name</label>
-            <input type="text" name="company_name" placeholder="e.g. Acme Pte Ltd" required class="form-input">
-        </div>
-        <div class="form-group">
-            <label>Manager's Name</label>
-            <input type="text" name="manager_name" placeholder="e.g. Jane Smith" required class="form-input">
-        </div>
-        <div class="form-group">
-            <label>Notice Period</label>
-            <input type="text" name="notice_period" placeholder="e.g. 1 month" required class="form-input">
-        </div>
-        <div class="form-group">
-            <label>Last Working Day</label>
-            <input type="text" name="last_working_day" placeholder="e.g. 31 July 2026" required class="form-input">
-        </div>
-        <div class="form-group">
-            <label>Reason (optional)</label>
-            <input type="text" name="reason" placeholder="Leave blank for 'personal reasons'" class="form-input">
-        </div>
-    </div>
-
-    {% elif doc_type == "warning" %}
+    {% if doc_type == "warning" %}
     <div class="card">
         <h3>Details</h3>
         <div class="form-group">
