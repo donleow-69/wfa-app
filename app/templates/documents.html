@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Document Generator{% endblock %}
+{% block content %}
+<h1>Document Generator</h1>
+<p class="text-muted">Generate professionally drafted employment documents tailored to your country's laws.</p>
+
+<div class="card-grid">
+    {% for type_key, info in document_types.items() %}
+    <div class="card card-hover">
+        <h3>{{ info.title }}</h3>
+        <p>{{ info.description }}</p>
+        <p class="text-muted text-hint">For: {{ 'Employee' if info.audience == 'employee' else 'Employer / HR' }}</p>
+        <a href="/documents/{{ type_key }}" class="btn btn-sm btn-primary">Generate</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -33,6 +33,11 @@
         <p>View and track your submitted complaints.</p>
         <a href="/complaints" class="btn btn-sm btn-secondary">View All</a>
     </div>
+    <div class="card card-hover">
+        <h3>Contract Checker</h3>
+        <p>Check an employment contract for illegal clauses and red flags.</p>
+        <a href="/contract-checker" class="btn btn-sm btn-primary">Check a Contract</a>
+    </div>
 </div>
 
 {% else %}
@@ -62,6 +67,19 @@
         <h3>Employment Laws</h3>
         <p>Review the employment law requirements for {{ country_names.get(user.country, "your region") }}.</p>
         <a href="/rights?country={{ user.country }}" class="btn btn-sm btn-secondary">View Requirements</a>
+    </div>
+    <div class="card card-hover">
+        <h3>Document Generator</h3>
+        <p>Draft resignation letters, warning letters, termination letters, and investigation reports.</p>
+        <a href="/documents" class="btn btn-sm btn-primary">Generate Documents</a>
+        {% if not user.is_subscribed %}
+        <p class="text-muted text-hint">Requires Pro subscription</p>
+        {% endif %}
+    </div>
+    <div class="card card-hover">
+        <h3>Contract Checker</h3>
+        <p>Check employment contracts for illegal clauses and red flags.</p>
+        <a href="/contract-checker" class="btn btn-sm btn-primary">Check a Contract</a>
     </div>
 </div>
 

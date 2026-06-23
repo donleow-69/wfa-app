@@ -30,6 +30,8 @@
                 <a href="/complaints" {% if request and request.url.path.startswith('/complaints') %}class="active"{% endif %}>Complaints</a>
                 <a href="/compliance" {% if request and request.url.path.startswith('/compliance') %}class="active"{% endif %}>Compliance</a>
                 <a href="/policies" {% if request and request.url.path.startswith('/polic') %}class="active"{% endif %}>Policies</a>
+                <a href="/contract-checker" {% if request and request.url.path.startswith('/contract-checker') %}class="active"{% endif %}>Contract Check</a>
+                <a href="/documents" {% if request and request.url.path.startswith('/documents') %}class="active"{% endif %}>Documents</a>
                 <a href="/chat/" {% if request and request.url.path.startswith('/chat') %}class="active"{% endif %}>Chat</a>
                 <a href="/dashboard" {% if request and request.url.path == '/dashboard' %}class="active"{% endif %}>Dashboard</a>
                 <a href="/logout">Logout</a>

@@ -21,8 +21,8 @@ from .limiter import limiter
 from .models.user import User
 
 # Import models so Base.metadata knows about all tables.
-from .models import chat, complaint, compliance, spend, user  # noqa: F401
-from .routers import audit, auth_routes, chat as chat_router, complaints, compliance as compliance_router, policies, policy_checker, rights, subscription
+from .models import chat, complaint, compliance, contract_check, spend, user  # noqa: F401
+from .routers import audit, auth_routes, chat as chat_router, complaints, compliance as compliance_router, contract_checker, documents, policies, policy_checker, rights, subscription
 
 
 @asynccontextmanager
@@ -59,6 +59,8 @@ app.include_router(complaints.router)
 app.include_router(compliance_router.router)
 app.include_router(policies.router)
 app.include_router(policy_checker.router)
+app.include_router(contract_checker.router)
+app.include_router(documents.router)
 app.include_router(subscription.router)
 app.include_router(chat_router.router)
 

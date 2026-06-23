@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% block title %}{{ doc_info.title }}{% endblock %}
+{% block content %}
+<h1>{{ doc_info.title }}</h1>
+<p class="text-muted">{{ doc_info.description }}</p>
+
+{% if error %}
+<div class="card error-card">
+    <p>{{ error }}</p>
+</div>
+{% endif %}
+
+<form action="/documents/{{ doc_type }}/generate" method="post" id="doc-form">
+    <div class="card">
+        <h3>Country</h3>
+        <select name="country" class="checker-select">
+            {% for code, name in countries.items() %}
+            <option value="{{ code }}" {% if code == user.country %}selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    {% if doc_type == "resignation" %}
+    <div class="card">
+        <h3>Details</h3>
+        <div class="form-group">
+            <label>Your Full Name</label>
+            <input type="text" name="employee_name" value="{{ user.full_name }}" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Your Job Title / Position</label>
+            <input type="text" name="job_title" placeholder="e.g. Senior Software Engineer" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" name="company_name" placeholder="e.g. Acme Pte Ltd" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Manager's Name</label>
+            <input type="text" name="manager_name" placeholder="e.g. Jane Smith" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Notice Period</label>
+            <input type="text" name="notice_period" placeholder="e.g. 1 month" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Last Working Day</label>
+            <input type="text" name="last_working_day" placeholder="e.g. 31 July 2026" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Reason (optional)</label>
+            <input type="text" name="reason" placeholder="Leave blank for 'personal reasons'" class="form-input">
+        </div>
+    </div>
+
+    {% elif doc_type == "warning" %}
+    <div class="card">
+        <h3>Details</h3>
+        <div class="form-group">
+            <label>Employee Name</label>
+            <input type="text" name="employee_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Employee Job Title</label>
+            <input type="text" name="job_title" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" name="company_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Manager / Issuer Name</label>
+            <input type="text" name="manager_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Date of Incident</label>
+            <input type="text" name="incident_date" placeholder="e.g. 20 June 2026" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Description of Issue</label>
+            <textarea name="incident_description" rows="4" required class="form-input" placeholder="Describe the conduct or performance issue..."></textarea>
+        </div>
+        <div class="form-group">
+            <label>Previous Warnings</label>
+            <input type="text" name="previous_warnings" placeholder="e.g. Verbal warning on 1 May 2026, or None" class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Improvement Required</label>
+            <textarea name="improvement_required" rows="3" required class="form-input" placeholder="Specific improvements expected..."></textarea>
+        </div>
+        <div class="form-group">
+            <label>Improvement Deadline</label>
+            <input type="text" name="improvement_deadline" placeholder="e.g. 31 July 2026" required class="form-input">
+        </div>
+    </div>
+
+    {% elif doc_type == "termination" %}
+    <div class="card">
+        <h3>Details</h3>
+        <div class="form-group">
+            <label>Employee Name</label>
+            <input type="text" name="employee_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Employee Job Title</label>
+            <input type="text" name="job_title" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" name="company_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Manager / Issuer Name</label>
+            <input type="text" name="manager_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Termination Date</label>
+            <input type="text" name="termination_date" placeholder="e.g. 31 July 2026" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Reason for Termination</label>
+            <select name="termination_reason" class="form-input">
+                <option value="redundancy">Redundancy / Retrenchment</option>
+                <option value="misconduct">Misconduct</option>
+                <option value="poor performance">Poor Performance</option>
+                <option value="end of contract">End of Fixed-Term Contract</option>
+                <option value="mutual agreement">Mutual Agreement</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Notice Period or Payment in Lieu</label>
+            <input type="text" name="notice_details" placeholder="e.g. 1 month notice / payment in lieu of notice" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Final Pay Date (optional)</label>
+            <input type="text" name="final_pay_date" placeholder="e.g. Last day of employment" class="form-input">
+        </div>
+    </div>
+
+    {% elif doc_type == "investigation" %}
+    <div class="card">
+        <h3>Details</h3>
+        <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" name="company_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Investigator Name</label>
+            <input type="text" name="investigator_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Report Date</label>
+            <input type="text" name="report_date" placeholder="e.g. 23 June 2026" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Complainant Name</label>
+            <input type="text" name="complainant_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Respondent Name</label>
+            <input type="text" name="respondent_name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Allegation Summary</label>
+            <textarea name="allegation_summary" rows="3" required class="form-input" placeholder="Brief description of the allegation..."></textarea>
+        </div>
+        <div class="form-group">
+            <label>Investigation Start Date</label>
+            <input type="text" name="investigation_start_date" placeholder="e.g. 5 June 2026" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Witnesses Interviewed (optional)</label>
+            <input type="text" name="witnesses" placeholder="e.g. John Tan, Sarah Lee" class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Evidence Reviewed (optional)</label>
+            <input type="text" name="evidence_reviewed" placeholder="e.g. Emails, CCTV footage, HR records" class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Findings</label>
+            <textarea name="findings" rows="4" required class="form-input" placeholder="Summary of factual findings from the investigation..."></textarea>
+        </div>
+        <div class="form-group">
+            <label>Outcome</label>
+            <select name="outcome" class="form-input">
+                <option value="substantiated">Allegation Substantiated</option>
+                <option value="partially substantiated">Allegation Partially Substantiated</option>
+                <option value="unsubstantiated">Allegation Unsubstantiated</option>
+                <option value="inconclusive">Inconclusive</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Recommendations (optional)</label>
+            <textarea name="recommendations" rows="3" class="form-input" placeholder="Any recommended actions or outcomes..."></textarea>
+        </div>
+    </div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+        Generate {{ doc_info.title }}
+    </button>
+</form>
+
+<script>
+document.getElementById('doc-form').addEventListener('submit', function() {
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Generating… this may take 15–20 seconds';
+});
+</script>
+{% endblock %}
