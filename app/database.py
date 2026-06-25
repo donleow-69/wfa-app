@@ -6,8 +6,10 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 _raw_url = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./wfa.db")
-# Render provides postgres:// but asyncpg requires postgresql+asyncpg://
-if _raw_url.startswith("postgres://"):
+# Render provides postgres:// or postgresql:// but asyncpg requires postgresql+asyncpg://
+if _raw_url.startswith("postgresql://"):
+    _raw_url = "postgresql+asyncpg://" + _raw_url[len("postgresql://"):]
+elif _raw_url.startswith("postgres://"):
     _raw_url = "postgresql+asyncpg://" + _raw_url[len("postgres://"):]
 DATABASE_URL = _raw_url
 
