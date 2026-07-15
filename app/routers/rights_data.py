@@ -741,10 +741,10 @@ RIGHTS_BY_COUNTRY = {
                 "WICA 2019 (in force 1 September 2020) replaced the Workmen's Compensation Act. Employees do not need to prove employer negligence to claim.",
                 "Covers all employees under a contract of service or apprenticeship, including part-time and foreign workers.",
                 "Employers must buy work injury compensation (WIC) insurance for: all employees doing manual work (regardless of salary), and non-manual employees earning S$2,600/month or less.",
-                "Medical expenses: capped at S$45,000 per accident, for treatment within 1 year of the accident.",
+                "Medical expenses: capped at S$53,000 per accident (raised from S$45,000 effective 1 Nov 2025), for treatment within 1 year of the accident.",
                 "Temporary incapacity (MC leave): 4/5 of average monthly earnings per day on MC, for up to 1 year.",
-                "Permanent incapacity: lump sum based on assessed percentage of permanent incapacity. Maximum for total permanent incapacity is S$289,000.",
-                "Death: lump sum to dependants, maximum S$225,000.",
+                "Permanent incapacity: lump sum based on assessed percentage of permanent incapacity. For accidents on or after 1 Nov 2025: maximum S$346,000 (total permanent incapacity), minimum S$116,000. An additional 25% is paid on top for 100% permanent incapacity to offset care costs.",
+                "Death: lump sum to dependants. For accidents on or after 1 Nov 2025: maximum S$269,000, minimum S$91,000.",
                 "Employers must report to MOM within 10 days if the employee is on MC for more than 3 consecutive days or is hospitalised.",
                 "Employees may instead pursue a civil suit under common law, but cannot claim under both WICA and common law for the same injury.",
             ],
@@ -759,7 +759,7 @@ RIGHTS_BY_COUNTRY = {
             "key_laws": [
                 {"name": "Work Injury Compensation Act 2019 (WICA)", "scope": "All employees under a contract of service in Singapore"},
             ],
-            "effective_date": "1 September 2020 (replaced Workmen's Compensation Act)",
+            "effective_date": "1 September 2020 (replaced Workmen's Compensation Act); compensation limits last revised 1 November 2025",
             "faq": [
                 {"q": "Does WICA cover self-employed persons?", "a": "No. WICA only covers employees under a contract of service. Self-employed persons are not covered."},
                 {"q": "What if my employer refuses to report my injury?", "a": "You can report the work accident directly to MOM. MOM will investigate and can compel the employer to comply."},
