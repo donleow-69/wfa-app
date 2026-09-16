@@ -152,6 +152,15 @@ async def checker_form(request: Request, user: User = Depends(get_current_user),
     )
 
 
+@router.get("/analyze")
+async def analyze_get_redirect():
+    """/analyze only accepts POST (form submission). A bookmark or
+    home-screen icon saved while the address bar was sitting on this URL
+    (e.g. captured from an error response) would otherwise 405 forever with
+    no way back to the actual form — send it to the form instead."""
+    return RedirectResponse(url="/contract-checker/", status_code=307)
+
+
 @router.post("/analyze", response_class=HTMLResponse)
 async def analyze_contract(
     request: Request,

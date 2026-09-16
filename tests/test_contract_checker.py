@@ -18,6 +18,15 @@ async def test_checker_requires_auth(client):
     assert resp.status_code == 303
 
 
+async def test_get_analyze_redirects_to_form(auth_client):
+    """A bookmark/home-screen icon saved from an error state can end up
+    pointing at the POST-only /analyze URL. GET-ing it used to 405 with no
+    way back to the actual form — redirect to the form instead."""
+    resp = await auth_client.get("/contract-checker/analyze", follow_redirects=False)
+    assert resp.status_code in (302, 303, 307, 308)
+    assert resp.headers["location"] == "/contract-checker/"
+
+
 async def test_checker_form_renders(auth_client):
     resp = await auth_client.get("/contract-checker/")
     assert resp.status_code == 200
