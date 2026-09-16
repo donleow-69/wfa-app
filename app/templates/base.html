@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>{% block title %}Home{% endblock %} — Workplace Fairness</title>
     <meta name="description" content="Know your workplace rights, file complaints, and stay compliant.">
     <meta name="theme-color" content="#1a1a2e">
@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Workplace Fairness">
     <script>
     (function() {
         var t = localStorage.getItem('theme');
@@ -21,6 +22,15 @@
     </script>
 </head>
 <body>
+    <div id="ios-install-banner" class="ios-install-banner" hidden>
+        <img src="/static/icons/icon-192.png" alt="" class="ios-install-banner-icon">
+        <div class="ios-install-banner-text">
+            <strong>Install this app</strong>
+            <span>Tap Share, then "Add to Home Screen"</span>
+        </div>
+        <button type="button" class="ios-install-banner-close" aria-label="Dismiss">&times;</button>
+    </div>
+
     <nav class="navbar">
         <a href="/" class="nav-brand">Workplace Fairness</a>
         <button class="nav-toggle" onclick="this.parentElement.classList.toggle('open')" aria-label="Menu">&#9776;</button>
@@ -55,6 +65,29 @@
     if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/sw.js").catch(function() {});
     }
+
+    // iOS "Add to Home Screen" prompt — Safari has no native install banner
+    // (unlike Android's beforeinstallprompt), so users never discover this
+    // exists unless we tell them.
+    (function() {
+        var isIos = /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        var isStandalone = window.navigator.standalone === true ||
+            window.matchMedia("(display-mode: standalone)").matches;
+        if (!isIos || isStandalone || localStorage.getItem("ios-install-dismissed")) return;
+
+        var banner = document.getElementById("ios-install-banner");
+        if (!banner) return;
+        banner.hidden = false;
+        // Reserve exactly the banner's rendered height (it can wrap to extra
+        // lines on narrow screens) so page content never sits behind it.
+        document.body.style.paddingBottom = banner.offsetHeight + "px";
+        banner.querySelector(".ios-install-banner-close").addEventListener("click", function() {
+            banner.hidden = true;
+            document.body.style.paddingBottom = "";
+            localStorage.setItem("ios-install-dismissed", "1");
+        });
+    })();
 
     // Dark mode toggle
     (function() {

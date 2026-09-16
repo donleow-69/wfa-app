@@ -303,6 +303,29 @@ a.tab:hover { color: var(--color-primary); }
     to { transform: translateY(1rem); opacity: 0; }
 }
 
+/* === iOS install banner === */
+.ios-install-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -2px 12px var(--color-shadow);
+    z-index: 9998;
+    animation: toast-in 0.3s ease;
+}
+.ios-install-banner-icon { width: 40px; height: 40px; border-radius: 9px; flex-shrink: 0; }
+.ios-install-banner-text { flex: 1; display: flex; flex-direction: column; font-size: 0.85rem; color: var(--color-text); }
+.ios-install-banner-text strong { font-size: 0.9rem; }
+.ios-install-banner-text span { color: var(--color-text-muted); }
+.ios-install-banner-close { background: none; border: none; font-size: 1.5rem; line-height: 1; color: var(--color-text-muted); cursor: pointer; padding: 0.25rem 0.5rem; }
+body { transition: padding-bottom 0.2s ease; }
+
 /* === Timestamps === */
 .timestamp { font-variant-numeric: tabular-nums; }
 
@@ -346,4 +369,5 @@ a.tab:hover { color: var(--color-primary); }
     .card { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
     .container { max-width: 100%; margin: 0; padding: 0; }
     .toast { display: none !important; }
+    .ios-install-banner { display: none !important; }
 }
