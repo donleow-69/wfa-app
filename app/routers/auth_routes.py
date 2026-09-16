@@ -6,7 +6,7 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from ..auth import create_token, get_optional_user, hash_password, verify_password
+from ..auth import TOKEN_EXPIRE_MINUTES, create_token, get_optional_user, hash_password, verify_password
 from ..database import get_db
 from ..models.user import User
 
@@ -55,7 +55,12 @@ async def register(
     await db.refresh(user)
 
     response = RedirectResponse("/dashboard", status_code=303)
-    response.set_cookie("access_token", create_token(user.id, user.email), httponly=True)
+    response.set_cookie(
+        "access_token",
+        create_token(user.id, user.email),
+        httponly=True,
+        max_age=TOKEN_EXPIRE_MINUTES * 60,
+    )
     return response
 
 
@@ -84,7 +89,12 @@ async def login(
         )
 
     response = RedirectResponse("/dashboard", status_code=303)
-    response.set_cookie("access_token", create_token(user.id, user.email), httponly=True)
+    response.set_cookie(
+        "access_token",
+        create_token(user.id, user.email),
+        httponly=True,
+        max_age=TOKEN_EXPIRE_MINUTES * 60,
+    )
     return response
 
 

@@ -76,6 +76,36 @@ async def test_login_success(client, db_session):
     assert "access_token" in resp.cookies
 
 
+async def test_login_cookie_persists_past_the_browser_session(client, db_session):
+    """Without an explicit lifetime, browsers treat a cookie as a *session*
+    cookie — discarded when the browser/app closes, regardless of how long
+    the JWT inside it claims to be valid for. This is what broke "staying
+    logged in after a break": the token was good for 24h, but the cookie
+    carrying it wasn't told to outlive the browser session."""
+    await create_test_user(db_session, email="persist@example.com", password="mypassword1")
+    resp = await client.post(
+        "/login",
+        data={"email": "persist@example.com", "password": "mypassword1"},
+        follow_redirects=False,
+    )
+    set_cookie = resp.headers["set-cookie"].lower()
+    assert "max-age=" in set_cookie or "expires=" in set_cookie
+
+
+async def test_register_cookie_persists_past_the_browser_session(client):
+    resp = await client.post(
+        "/register",
+        data={
+            "full_name": "Persist User",
+            "email": "persist-register@example.com",
+            "password": "securepass1",
+        },
+        follow_redirects=False,
+    )
+    set_cookie = resp.headers["set-cookie"].lower()
+    assert "max-age=" in set_cookie or "expires=" in set_cookie
+
+
 async def test_login_wrong_password(client, db_session):
     await create_test_user(db_session, email="wrong@example.com", password="rightpass1")
     resp = await client.post(
