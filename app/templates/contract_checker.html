@@ -101,7 +101,16 @@
         }
     });
 
-    form.addEventListener('submit', function() {
+    form.addEventListener('submit', function(event) {
+        // If a file was rejected for size, its input was cleared — without
+        // this check the form would silently submit empty (neither file nor
+        // pasted text), producing the generic "please paste or upload"
+        // error instead of the actual reason: the file was too large.
+        if (!fileSizeError.hidden) {
+            event.preventDefault();
+            fileSizeError.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            return;
+        }
         submitBtn.disabled = true;
         submitBtn.textContent = 'Analyzing… this may take 15–30 seconds';
     });

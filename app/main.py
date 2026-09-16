@@ -1,10 +1,17 @@
 """FastAPI application entry point."""
 
+import logging
 from contextlib import asynccontextmanager
 
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Without this, the root logger defaults to WARNING — every logger.info() call
+# in the app (diagnostics, request tracing) is silently dropped even though
+# uvicorn's own access logs still show, which made a real production bug look
+# unreachable when it wasn't.
+logging.basicConfig(level=logging.INFO)
 
 from fastapi import Depends, Request
 from fastapi.applications import FastAPI
