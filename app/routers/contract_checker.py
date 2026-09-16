@@ -187,6 +187,7 @@ async def analyze_contract(
             text = await _extract_text_from_upload(file)
         except ValueError as e:
             error = str(e)
+            logger.warning("Contract upload rejected for %r: %s", file.filename, error)
         except Exception:
             logger.exception("Failed to extract text from uploaded contract %r", file.filename)
             error = "Failed to process the uploaded file."
