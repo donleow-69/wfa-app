@@ -182,6 +182,13 @@ async def analyze_contract(
     # Extract text
     text = ""
     error = None
+    logger.info(
+        "Contract analyze request: file=%r file.filename=%r content_type=%r pasted_text_len=%d",
+        file,
+        getattr(file, "filename", None),
+        getattr(file, "content_type", None),
+        len(contract_text),
+    )
     if file and file.filename:
         try:
             text = await _extract_text_from_upload(file)
