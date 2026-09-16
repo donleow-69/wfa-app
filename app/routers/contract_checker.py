@@ -2,6 +2,7 @@
 
 import io
 import json
+import logging
 import os
 from datetime import date
 
@@ -20,8 +21,13 @@ from .policies import COUNTRY_NAMES
 
 router = APIRouter(prefix="/contract-checker")
 templates = Jinja2Templates(directory="app/templates")
+logger = logging.getLogger(__name__)
 
-MAX_FILE_SIZE = 2 * 1024 * 1024  # 2 MB
+# Real-world contracts are often phone-scanned multi-page PDFs, which commonly
+# run several MB — 2 MB was rejecting normal uploads silently (the size check
+# only runs after the whole file has already uploaded, with no client-side
+# warning), which is exactly what a "nothing happens" report turned out to be.
+MAX_FILE_SIZE = 8 * 1024 * 1024  # 8 MB
 MAX_CHARS = 50_000
 FREE_DAILY_CHECKS = 3
 PAID_MODEL = "claude-sonnet-4-6"
@@ -66,7 +72,11 @@ async def _extract_text_from_upload(file: UploadFile) -> str:
         raise ValueError("Unsupported file type. Please upload a PDF or DOCX file.")
 
     if not text.strip():
-        raise ValueError("Could not extract text from the uploaded file.")
+        raise ValueError(
+            "Could not find any text in this file — it may be a scanned or "
+            "photographed document with no selectable text. Try a digital "
+            "export of the contract, or paste the text in below instead."
+        )
     return text[:MAX_CHARS]
 
 
@@ -138,7 +148,7 @@ async def checker_form(request: Request, user: User = Depends(get_current_user),
     return templates.TemplateResponse(
         request,
         "contract_checker.html",
-        {"user": user, "countries": COUNTRY_NAMES, "remaining": remaining},
+        {"user": user, "countries": COUNTRY_NAMES, "max_file_size_mb": MAX_FILE_SIZE // (1024 * 1024), "remaining": remaining},
     )
 
 
@@ -162,7 +172,7 @@ async def analyze_contract(
                 "contract_checker.html",
                 {
                     "user": user,
-                    "countries": COUNTRY_NAMES,
+                    "countries": COUNTRY_NAMES, "max_file_size_mb": MAX_FILE_SIZE // (1024 * 1024),
                     "remaining": remaining,
                     "error": f"Daily limit reached ({FREE_DAILY_CHECKS} checks/day). Upgrade to Pro for unlimited access.",
                 },
@@ -178,6 +188,7 @@ async def analyze_contract(
         except ValueError as e:
             error = str(e)
         except Exception:
+            logger.exception("Failed to extract text from uploaded contract %r", file.filename)
             error = "Failed to process the uploaded file."
     else:
         text = contract_text.strip()
@@ -190,7 +201,7 @@ async def analyze_contract(
         return templates.TemplateResponse(
             request,
             "contract_checker.html",
-            {"user": user, "countries": COUNTRY_NAMES, "remaining": remaining, "error": error},
+            {"user": user, "countries": COUNTRY_NAMES, "max_file_size_mb": MAX_FILE_SIZE // (1024 * 1024), "remaining": remaining, "error": error},
             status_code=400,
         )
 
@@ -214,7 +225,7 @@ async def analyze_contract(
         return templates.TemplateResponse(
             request,
             "contract_checker.html",
-            {"user": user, "countries": COUNTRY_NAMES, "remaining": remaining, "error": error},
+            {"user": user, "countries": COUNTRY_NAMES, "max_file_size_mb": MAX_FILE_SIZE // (1024 * 1024), "remaining": remaining, "error": error},
             status_code=502,
         )
     except Exception as exc:
@@ -223,7 +234,7 @@ async def analyze_contract(
         return templates.TemplateResponse(
             request,
             "contract_checker.html",
-            {"user": user, "countries": COUNTRY_NAMES, "remaining": remaining, "error": error},
+            {"user": user, "countries": COUNTRY_NAMES, "max_file_size_mb": MAX_FILE_SIZE // (1024 * 1024), "remaining": remaining, "error": error},
             status_code=502,
         )
 

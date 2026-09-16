@@ -31,8 +31,9 @@
 
     <div class="card">
         <h3>Upload Contract</h3>
-        <p class="text-muted text-hint">PDF or DOCX, max 2 MB</p>
-        <input type="file" name="file" id="file-input" accept=".pdf,.docx" class="checker-file">
+        <p class="text-muted text-hint">PDF or DOCX, max {{ max_file_size_mb }} MB</p>
+        <input type="file" name="file" id="file-input" accept=".pdf,.docx" class="checker-file" data-max-bytes="{{ max_file_size_mb * 1024 * 1024 }}">
+        <p class="text-hint text-hint-error" id="file-size-error" hidden></p>
     </div>
 
     <div class="card">
@@ -58,9 +59,28 @@
     var textInput = document.getElementById('text-input');
     var form = document.getElementById('checker-form');
     var submitBtn = document.getElementById('submit-btn');
+    var fileSizeError = document.getElementById('file-size-error');
+    var maxBytes = parseInt(fileInput.getAttribute('data-max-bytes'), 10);
 
     fileInput.addEventListener('change', function() {
+        fileSizeError.hidden = true;
+        fileSizeError.textContent = '';
+
         if (this.files.length > 0) {
+            var file = this.files[0];
+            if (file.size > maxBytes) {
+                // Reject immediately — a scanned multi-page contract can be
+                // several MB, and without this check the browser would sit
+                // there uploading it (looking like nothing is happening,
+                // especially on mobile data) only to be rejected by the
+                // server after the fact.
+                fileSizeError.textContent = 'This file is ' + (file.size / (1024 * 1024)).toFixed(1) +
+                    ' MB, which is over the ' + (maxBytes / (1024 * 1024)) + ' MB limit. ' +
+                    'Try a smaller export, or paste the text below instead.';
+                fileSizeError.hidden = false;
+                this.value = '';
+                return;
+            }
             textInput.disabled = true;
             textInput.style.opacity = '0.5';
             textInput.placeholder = 'File selected — clear the file to paste text instead.';

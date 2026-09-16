@@ -332,6 +332,7 @@ body { transition: padding-bottom 0.2s ease; }
 /* === Utility === */
 .text-muted { color: var(--color-text-muted); }
 .text-hint { font-size: 0.85rem; margin-top: 0.5rem; }
+.text-hint-error { color: var(--color-error); }
 .text-center { text-align: center; }
 .mt-1 { margin-top: 1rem; }
 .mb-1 { margin-bottom: 1rem; }
