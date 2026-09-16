@@ -1,7 +1,7 @@
 """Chat with Claude about workplace fairness topics."""
 
 import os
-from datetime import date
+from datetime import date, datetime, time, timedelta
 
 import anthropic
 from fastapi import APIRouter, Depends, Request
@@ -52,14 +52,19 @@ def _get_client() -> anthropic.AsyncAnthropic:
 
 
 async def _daily_message_count(db, user_id: int) -> int:
-    today = date.today().isoformat()
+    # See contract_checker._daily_check_count for why this avoids func.date():
+    # that pattern 500s against real Postgres ("operator does not exist: date
+    # = character varying") despite passing on SQLite in tests.
+    today_start = datetime.combine(date.today(), time.min)
+    tomorrow_start = today_start + timedelta(days=1)
     result = await db.execute(
         select(func.count())
         .select_from(ChatMessage)
         .where(
             ChatMessage.user_id == user_id,
             ChatMessage.role == "user",
-            func.date(ChatMessage.created_at) == today,
+            ChatMessage.created_at >= today_start,
+            ChatMessage.created_at < tomorrow_start,
         )
     )
     return result.scalar() or 0

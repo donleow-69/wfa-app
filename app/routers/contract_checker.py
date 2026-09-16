@@ -4,7 +4,7 @@ import io
 import json
 import logging
 import os
-from datetime import date
+from datetime import date, datetime, time, timedelta
 
 import anthropic
 from fastapi import APIRouter, Depends, File, Form, Request, UploadFile
@@ -81,13 +81,21 @@ async def _extract_text_from_upload(file: UploadFile) -> str:
 
 
 async def _daily_check_count(db, user_id: int) -> int:
-    today = date.today().isoformat()
+    # A plain range comparison against the raw timestamp — rather than
+    # func.date(created_at) == today.isoformat() — works identically on both
+    # SQLite (used in tests) and Postgres (production). The isoformat-string
+    # version passed the test suite but 500'd against real Postgres:
+    # "operator does not exist: date = character varying", since Postgres
+    # requires the same type on both sides while SQLite coerces silently.
+    today_start = datetime.combine(date.today(), time.min)
+    tomorrow_start = today_start + timedelta(days=1)
     result = await db.execute(
         select(func.count())
         .select_from(ContractCheck)
         .where(
             ContractCheck.user_id == user_id,
-            func.date(ContractCheck.created_at) == today,
+            ContractCheck.created_at >= today_start,
+            ContractCheck.created_at < tomorrow_start,
         )
     )
     return result.scalar() or 0
