@@ -1,6 +1,7 @@
 """Authentication — password hashing, JWT tokens, current-user dependency."""
 
 import os
+import secrets
 from datetime import datetime, timedelta, timezone
 
 import bcrypt
@@ -15,6 +16,16 @@ from .models.user import User
 SECRET_KEY = os.getenv("SECRET_KEY", "change-me-in-production")
 ALGORITHM = "HS256"
 TOKEN_EXPIRE_MINUTES = 60 * 24  # 24 hours
+RESET_TOKEN_EXPIRE_MINUTES = 30
+
+
+def generate_reset_token() -> str:
+    return secrets.token_urlsafe(32)
+
+
+def utcnow_naive() -> datetime:
+    """Naive UTC now, matching the naive values stored in DateTime columns."""
+    return datetime.now(timezone.utc).replace(tzinfo=None)
 
 
 def hash_password(password: str) -> str:
