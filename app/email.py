@@ -23,6 +23,26 @@ async def send_complaint_email(
     reply_to: str = "",
 ) -> bool:
     """Send an email via SMTP. Returns True on success, False on failure or if not configured."""
+    return await _send_email(to_email, subject, html_body, reply_to)
+
+
+async def send_password_reset_email(to_email: str, reset_url: str) -> bool:
+    """Send a password-reset link. Returns True on success, False on failure or if not configured."""
+    subject = "Reset your Workplace Fairness password"
+    html_body = (
+        f"<p>We received a request to reset your Workplace Fairness password.</p>"
+        f'<p><a href="{reset_url}">Click here to reset your password</a></p>'
+        f"<p>This link expires in 30 minutes. If you didn't request this, you can safely ignore this email.</p>"
+    )
+    return await _send_email(to_email, subject, html_body)
+
+
+async def _send_email(
+    to_email: str,
+    subject: str,
+    html_body: str,
+    reply_to: str = "",
+) -> bool:
     if not is_smtp_configured():
         logger.info("SMTP not configured — skipping email send.")
         return False
